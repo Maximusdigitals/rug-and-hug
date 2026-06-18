@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover, interactive-widget=resizes-content">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#07070a">
+  <meta name="description" content="Rug or Hug — survive 20 days of crypto chaos">
+  <title>Rug or Hug</title>
+  <link rel="icon" href="assets/brand/hyperliquid-favicon.ico">
+  <link rel="apple-touch-icon" href="assets/logos/curated/hyperliquid.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="ambient" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="orb orb-c"></div>
+  </div>
+
+  <div id="app">
+    <header class="hud glass">
+      <div class="hud-brand">
+        <span class="hud-logo">RUG OR HUG</span>
+        <span class="hud-act" id="act-label">Hyperbole Capital</span>
+      </div>
+      <div class="hud-center">
+        <div class="progress-wrap">
+          <div class="progress-track"><div class="progress-fill" id="day-progress"></div></div>
+          <span class="progress-label mono"><span id="day-label">1/20</span> · <span id="day-progress-val">0/20</span></span>
+        </div>
+      </div>
+      <div class="hud-stats">
+        <div class="chip chip-void" id="void-mode-chip" hidden title="Free skip enabled">
+          <span class="chip-label">VOID</span>
+        </div>
+        <div class="chip chip-conv">
+          <span class="chip-label">CONV</span>
+          <span class="chip-val mono" id="conviction-val">100</span>
+          <div class="conviction-bar"><div class="conviction-fill" id="conviction-fill" style="width:100%"></div></div>
+        </div>
+        <div class="chip chip-timer mono"><span id="timer">20</span><small>s</small></div>
+      </div>
+    </header>
+
+    <main class="stage">
+      <section class="screen active" id="screen-title">
+        <div class="panel panel-hero glass">
+          <div class="hero-glow" aria-hidden="true"></div>
+          <p class="eyebrow">Hyperbole Capital · Internship Simulator</p>
+          <h1 class="display">Rug or Hug</h1>
+          <p class="lede">20 days. 20 narratives. Zero due diligence.<br>Survive the trenches or get fired.</p>
+          <div class="logo-bento">
+            <div class="logo-tile"><img src="assets/logos/curated/bitcoin.png" alt=""></div>
+            <div class="logo-tile"><img src="assets/logos/curated/solana.png" alt=""></div>
+            <div class="logo-tile"><img src="assets/logos/curated/hyperliquid.png" alt=""></div>
+            <div class="logo-tile"><img src="assets/logos/curated/polymarket-icon.png" alt=""></div>
+            <div class="logo-tile"><img src="assets/logos/curated/pump-fun.png" alt=""></div>
+          </div>
+          <button class="btn btn-glow" id="btn-start">Start Internship</button>
+          <div class="title-access" id="title-access">
+            <input type="text" id="void-activate" class="skip-code-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Access code" maxlength="32">
+            <button type="button" class="btn btn-ghost btn-sm" id="btn-void-activate">Unlock</button>
+          </div>
+          <p class="fine">Parody · Not financial advice</p>
+        </div>
+      </section>
+
+      <section class="screen" id="screen-briefing">
+        <div class="panel glass">
+          <div class="accent-line" id="accent-bar"></div>
+          <div class="panel-head">
+            <div class="logo-bento sm" id="briefing-logos"></div>
+            <div>
+              <p class="eyebrow" id="briefing-day">Day 1</p>
+              <h2 id="briefing-title">Level</h2>
+            </div>
+          </div>
+          <div class="panel-body center">
+            <div class="callout glass-inset" id="briefing-boss"></div>
+          </div>
+          <div class="panel-foot">
+            <span class="fine">vibes only · no DD</span>
+            <div class="panel-foot-actions">
+              <button type="button" class="btn btn-ghost btn-sm void-skip-btn" id="btn-void-skip-briefing" hidden>Skip Day</button>
+              <button class="btn btn-glow btn-sm" id="btn-next-briefing">Begin</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen" id="screen-play">
+        <div class="panel panel-play glass">
+          <div class="accent-line" id="accent-bar-play"></div>
+          <div class="play-shell">
+            <div class="play-meta">
+              <div class="play-meta-row">
+                <span class="play-prompt" id="instruction">...</span>
+                <button type="button" class="btn btn-ghost btn-sm void-skip-btn" id="btn-void-skip-play" hidden>Skip</button>
+              </div>
+              <div class="hint-bar" id="hint-bar" hidden></div>
+            </div>
+            <div id="play-area" class="canvas-frame">
+              <canvas id="game-canvas" width="1" height="1"></canvas>
+              <button id="btn-tap" type="button">TAP</button>
+            </div>
+            <div id="dialogue-panel" style="display:none;">
+              <div class="callout glass-inset" id="dialogue-q"></div>
+              <div class="dialogue-options" id="dialogue-opts"></div>
+            </div>
+            <div class="countdown mono" id="countdown">3</div>
+            <div class="result-overlay" id="result-overlay">
+              <p class="result-eyebrow">DAY RESULT</p>
+              <h3 id="result-title">CLEARED</h3>
+              <p id="result-msg"></p>
+              <p class="result-hint" id="result-hint" hidden></p>
+              <div class="skip-code-panel" id="skip-code-panel" hidden>
+                <label class="skip-code-label" for="skip-gate">Bypass code</label>
+                <div class="skip-code-row">
+                  <input type="text" id="skip-gate" class="skip-code-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Type code" maxlength="32">
+                  <button type="button" class="btn btn-ghost btn-sm" id="btn-skip-code">Apply</button>
+                </div>
+                <p class="skip-code-fine">Skip this day · −10 conviction</p>
+              </div>
+              <div class="btn-row">
+                <button class="btn btn-glow" id="btn-next" style="display:none">Next Day</button>
+                <button class="btn btn-ghost" id="btn-retry" style="display:none">Retry</button>
+                <button class="btn btn-x" id="btn-skip" style="display:none">Skip · Post on 𝕏</button>
+                <button class="btn btn-ghost void-skip-btn" id="btn-void-skip-result" style="display:none">Skip Day</button>
+                <button class="btn btn-ghost" id="btn-home" style="display:none">Menu</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen" id="screen-end">
+        <div class="panel panel-hero glass">
+          <div class="end-mark" id="screen-end-icon">✓</div>
+          <p class="eyebrow">Internship Complete</p>
+          <h2 id="screen-end-title">Ending</h2>
+          <p class="lede" id="screen-end-msg"></p>
+          <button class="btn btn-glow" id="btn-home-end">Play Again</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="feed glass">
+      <div class="feed-head">
+        <img src="assets/logos/curated/x-logo.svg" alt="">
+        <span>CT Feed</span>
+      </div>
+      <div class="feed-body" id="ct-feed-posts">
+        <div class="feed-item"><strong>@HyperboleCap</strong> interns wanted. exposure only.</div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/effects.js"></script>
+  <script src="js/levels.js"></script>
+  <script src="js/level-meta.js"></script>
+  <script src="js/engine.js"></script>
+  <script>
+    document.getElementById("btn-next-briefing").onclick = () => game.nextDay();
+    document.getElementById("btn-home-end").onclick = () => game.resetToTitle();
+  </script>
+</body>
+</html>

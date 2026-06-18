@@ -1,0 +1,60 @@
+{
+  "project": "Rug or Hug",
+  "updated": "2026-06-17",
+  "curatedPath": "assets/logos/curated/",
+  "brandColors": "docs/brand-colors.json",
+  "manifest": "assets/manifest.csv",
+  "sources": {
+    "official": [
+      "Polymarket brand pack (polymarket.com/brand)",
+      "Hyperliquid HYPE SVG (app.hyperliquid.xyz)",
+      "Circle chain logos (circle.com/usdc)",
+      "Bitcoin symbol (bitcoin.design)"
+    ],
+    "reference": [
+      "CoinGecko CDN token icons",
+      "CoinMarketCap static icons (fallback)",
+      "pump.fun site logo",
+      "Wikimedia / cryptologos (where available)"
+    ]
+  },
+  "curated": {
+    "bitcoin": "bitcoin.png",
+    "solana": "solana.png",
+    "hyperliquid": "hyperliquid.png",
+    "hyperliquidMark": "hyperliquid-mark.svg",
+    "zcash": "zcash.png",
+    "ondo": "ondo.png",
+    "usdc": "usdc.png",
+    "usdt": "usdt.png",
+    "ethereum": "ethereum.png",
+    "polymarket": "polymarket.svg",
+    "polymarketIcon": "polymarket-icon.png",
+    "pumpFun": "pump-fun.png",
+    "bonk": "bonk.png",
+    "wif": "wif.png",
+    "jupiter": "jupiter.png",
+    "xLogo": "x-logo.svg",
+    "circle": "circle.avif",
+    "fearGreed": "fear-greed.png",
+    "megaeth": "megaeth.png",
+    "eigenlayer": "eigenlayer.png",
+    "veniceVvv": "venice-vvv.png",
+    "blackrockIbit": "blackrock-ibit.png",
+    "coinbase": "coinbase.png",
+    "dash": "dash.png",
+    "dusk": "dusk.png",
+    "jito": "jito.png"
+  },
+  "brandPacks": {
+    "polymarketLogos": "assets/brand/polymarket-logos/",
+    "polymarketFull": "assets/brand/polymarket-full-brand/",
+    "polymarketFont": "assets/brand/polymarket-inter-font/",
+    "hyperliquidFavicon": "assets/brand/hyperliquid-favicon.ico"
+  },
+  "notes": [
+    "Hyperliquid GitBook brand-kit files require browser auth; use hype.svg from app.hyperliquid.xyz instead.",
+    "Use curated/ folder in game code for predictable filenames.",
+    "Logos are for parody game accuracy; not financial endorsement."
+  ]
+}

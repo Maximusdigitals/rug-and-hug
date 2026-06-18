@@ -1,0 +1,12 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+__MACOSX/
+*.log
+
+# Archives (not needed in production)
+*.zip
+
+# Local / secrets
+.env
+.netlify/

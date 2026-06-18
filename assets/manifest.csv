@@ -1,0 +1,1177 @@
+"PSPath","PSParentPath","PSChildName","PSDrive","PSProvider","PSIsContainer","Mode","VersionInfo","BaseName","Target","LinkType","Name","Length","DirectoryName","Directory","IsReadOnly","Exists","FullName","Extension","CreationTime","CreationTimeUtc","LastAccessTime","LastAccessTimeUtc","LastWriteTime","LastWriteTimeUtc","Attributes"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\manifest.csv","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets","manifest.csv","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\manifest.csv
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","manifest","System.Collections.Generic.List`1[System.String]",,"manifest.csv","0","C:\Users\LENOVO\rug-or-hug\assets","C:\Users\LENOVO\rug-or-hug\assets","False","True","C:\Users\LENOVO\rug-or-hug\assets\manifest.csv",".csv","18/6/2026 01:27:40","18/6/2026 00:27:40","18/6/2026 01:32:53","18/6/2026 00:32:53","18/6/2026 01:32:53","18/6/2026 00:32:53","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid-favicon.ico","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand","hyperliquid-favicon.ico","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid-favicon.ico
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","hyperliquid-favicon","System.Collections.Generic.List`1[System.String]",,"hyperliquid-favicon.ico","1426","C:\Users\LENOVO\rug-or-hug\assets\brand","C:\Users\LENOVO\rug-or-hug\assets\brand","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid-favicon.ico",".ico","18/6/2026 01:32:20","18/6/2026 00:32:20","18/6/2026 01:32:20","18/6/2026 00:32:20","18/6/2026 01:32:20","18/6/2026 00:32:20","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-full-brand.zip","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand","polymarket-full-brand.zip","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-full-brand.zip
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","polymarket-full-brand","System.Collections.Generic.List`1[System.String]",,"polymarket-full-brand.zip","1026289","C:\Users\LENOVO\rug-or-hug\assets\brand","C:\Users\LENOVO\rug-or-hug\assets\brand","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-full-brand.zip",".zip","18/6/2026 01:29:56","18/6/2026 00:29:56","18/6/2026 01:30:00","18/6/2026 00:30:00","18/6/2026 01:30:00","18/6/2026 00:30:00","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-inter-font.zip","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand","polymarket-inter-font.zip","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-inter-font.zip
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","polymarket-inter-font","System.Collections.Generic.List`1[System.String]",,"polymarket-inter-font.zip","956594","C:\Users\LENOVO\rug-or-hug\assets\brand","C:\Users\LENOVO\rug-or-hug\assets\brand","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-inter-font.zip",".zip","18/6/2026 01:30:00","18/6/2026 00:30:00","18/6/2026 01:30:04","18/6/2026 00:30:04","18/6/2026 01:30:04","18/6/2026 00:30:04","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos.zip","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand","polymarket-logos.zip","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos.zip
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","polymarket-logos","System.Collections.Generic.List`1[System.String]",,"polymarket-logos.zip","77449","C:\Users\LENOVO\rug-or-hug\assets\brand","C:\Users\LENOVO\rug-or-hug\assets\brand","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos.zip",".zip","18/6/2026 01:29:54","18/6/2026 00:29:54","18/6/2026 01:29:55","18/6/2026 00:29:55","18/6/2026 01:29:55","18/6/2026 00:29:55","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid\2TNqF9iYtJX18xLXdUcf","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid","2TNqF9iYtJX18xLXdUcf","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid\2TNqF9iYtJX18xLXdUcf
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","2TNqF9iYtJX18xLXdUcf","System.Collections.Generic.List`1[System.String]",,"2TNqF9iYtJX18xLXdUcf","162358","C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid","C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid\2TNqF9iYtJX18xLXdUcf","","18/6/2026 01:30:18","18/6/2026 00:30:18","18/6/2026 01:30:19","18/6/2026 00:30:19","18/6/2026 01:30:19","18/6/2026 00:30:19","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid\fdqkV3HguYG0A47dGZSL","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid","fdqkV3HguYG0A47dGZSL","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid\fdqkV3HguYG0A47dGZSL
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","fdqkV3HguYG0A47dGZSL","System.Collections.Generic.List`1[System.String]",,"fdqkV3HguYG0A47dGZSL","162358","C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid","C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid\fdqkV3HguYG0A47dGZSL","","18/6/2026 01:30:13","18/6/2026 00:30:13","18/6/2026 01:30:14","18/6/2026 00:30:14","18/6/2026 01:30:14","18/6/2026 00:30:14","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid\T0FDh3K3AlAAmMMZTwrQ","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid","T0FDh3K3AlAAmMMZTwrQ","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid\T0FDh3K3AlAAmMMZTwrQ
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","T0FDh3K3AlAAmMMZTwrQ","System.Collections.Generic.List`1[System.String]",,"T0FDh3K3AlAAmMMZTwrQ","162358","C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid","C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid\T0FDh3K3AlAAmMMZTwrQ","","18/6/2026 01:30:12","18/6/2026 00:30:12","18/6/2026 01:30:13","18/6/2026 00:30:13","18/6/2026 01:30:13","18/6/2026 00:30:13","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid\T8NeIiN5pb727AmbFfAu","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid","T8NeIiN5pb727AmbFfAu","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid\T8NeIiN5pb727AmbFfAu
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","T8NeIiN5pb727AmbFfAu","System.Collections.Generic.List`1[System.String]",,"T8NeIiN5pb727AmbFfAu","162358","C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid","C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid\T8NeIiN5pb727AmbFfAu","","18/6/2026 01:30:10","18/6/2026 00:30:10","18/6/2026 01:30:11","18/6/2026 00:30:11","18/6/2026 01:30:11","18/6/2026 00:30:11","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid\u0i3k0bbzyOl4AvBWeF5","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid","u0i3k0bbzyOl4AvBWeF5","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid\u0i3k0bbzyOl4AvBWeF5
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","u0i3k0bbzyOl4AvBWeF5","System.Collections.Generic.List`1[System.String]",,"u0i3k0bbzyOl4AvBWeF5","162315","C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid","C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid\u0i3k0bbzyOl4AvBWeF5","","18/6/2026 01:30:16","18/6/2026 00:30:16","18/6/2026 01:30:16","18/6/2026 00:30:16","18/6/2026 01:30:16","18/6/2026 00:30:16","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid\WXEVWQzUEBzsLA9cPPF8","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid","WXEVWQzUEBzsLA9cPPF8","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid\WXEVWQzUEBzsLA9cPPF8
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","WXEVWQzUEBzsLA9cPPF8","System.Collections.Generic.List`1[System.String]",,"WXEVWQzUEBzsLA9cPPF8","162358","C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid","C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid\WXEVWQzUEBzsLA9cPPF8","","18/6/2026 01:30:14","18/6/2026 00:30:14","18/6/2026 01:30:15","18/6/2026 00:30:15","18/6/2026 01:30:15","18/6/2026 00:30:15","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid\ycNNyLuiLRKdxseGpQWb","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid","ycNNyLuiLRKdxseGpQWb","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid\ycNNyLuiLRKdxseGpQWb
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","ycNNyLuiLRKdxseGpQWb","System.Collections.Generic.List`1[System.String]",,"ycNNyLuiLRKdxseGpQWb","162358","C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid","C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\hyperliquid\ycNNyLuiLRKdxseGpQWb","","18/6/2026 01:30:16","18/6/2026 00:30:16","18/6/2026 01:30:17","18/6/2026 00:30:17","18/6/2026 01:30:17","18/6/2026 00:30:17","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-full-brand\pm-logos-and-fonts\pm-inter.zip","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-full-brand\pm-logos-and-fonts","pm-inter.zip","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-full-brand\pm-logos-and-fonts\pm-inter.zip
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","pm-inter","System.Collections.Generic.List`1[System.String]",,"pm-inter.zip","956594","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-full-brand\pm-logos-and-fonts","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-full-brand\pm-logos-and-fonts","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-full-brand\pm-logos-and-fonts\pm-inter.zip",".zip","18/6/2026 01:31:53","18/6/2026 00:31:53","18/6/2026 01:31:53","18/6/2026 00:31:53","5/3/2026 13:52:26","5/3/2026 12:52:26","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-full-brand\pm-logos-and-fonts\pm-logos.zip","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-full-brand\pm-logos-and-fonts","pm-logos.zip","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-full-brand\pm-logos-and-fonts\pm-logos.zip
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","pm-logos","System.Collections.Generic.List`1[System.String]",,"pm-logos.zip","78693","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-full-brand\pm-logos-and-fonts","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-full-brand\pm-logos-and-fonts","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-full-brand\pm-logos-and-fonts\pm-logos.zip",".zip","18/6/2026 01:31:53","18/6/2026 00:31:53","18/6/2026 01:31:53","18/6/2026 00:31:53","5/3/2026 13:53:36","5/3/2026 12:53:36","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-full-brand\__MACOSX\pm-logos-and-fonts\._pm-inter.zip","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-full-brand\__MACOSX\pm-logos-and-fonts","._pm-inter.zip","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-full-brand\__MACOSX\pm-logos-and-fonts\._pm-inter.zip
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","._pm-inter","System.Collections.Generic.List`1[System.String]",,"._pm-inter.zip","355","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-full-brand\__MACOSX\pm-logos-and-fonts","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-full-brand\__MACOSX\pm-logos-and-fonts","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-full-brand\__MACOSX\pm-logos-and-fonts\._pm-inter.zip",".zip","18/6/2026 01:31:53","18/6/2026 00:31:53","18/6/2026 01:31:53","18/6/2026 00:31:53","5/3/2026 13:52:26","5/3/2026 12:52:26","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-inter-font\Inter-Polymarket-Italic-VariableFont_opsz,wght.ttf","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-inter-font","Inter-Polymarket-Italic-VariableFont_opsz,wght.ttf","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-inter-font\Inter-Polymarket-Italic-VariableFont_opsz,wght.ttf
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","Inter-Polymarket-Italic-VariableFont_opsz,wght","System.Collections.Generic.List`1[System.String]",,"Inter-Polymarket-Italic-VariableFont_opsz,wght.ttf","905176","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-inter-font","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-inter-font","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-inter-font\Inter-Polymarket-Italic-VariableFont_opsz,wght.ttf",".ttf","18/6/2026 01:31:53","18/6/2026 00:31:53","18/6/2026 01:31:53","18/6/2026 00:31:53","26/2/2026 13:56:58","26/2/2026 12:56:58","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-inter-font\Inter-Polymarket-VariableFont_opsz,wght.ttf","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-inter-font","Inter-Polymarket-VariableFont_opsz,wght.ttf","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-inter-font\Inter-Polymarket-VariableFont_opsz,wght.ttf
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","Inter-Polymarket-VariableFont_opsz,wght","System.Collections.Generic.List`1[System.String]",,"Inter-Polymarket-VariableFont_opsz,wght.ttf","875404","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-inter-font","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-inter-font","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-inter-font\Inter-Polymarket-VariableFont_opsz,wght.ttf",".ttf","18/6/2026 01:31:53","18/6/2026 00:31:53","18/6/2026 01:31:53","18/6/2026 00:31:53","26/2/2026 13:56:56","26/2/2026 12:56:56","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-inter-font\__MACOSX\._Inter-Polymarket-Italic-VariableFont_opsz,wght.ttf","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-inter-font\__MACOSX","._Inter-Polymarket-Italic-VariableFont_opsz,wght.ttf","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-inter-font\__MACOSX\._Inter-Polymarket-Italic-VariableFont_opsz,wght.ttf
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","._Inter-Polymarket-Italic-VariableFont_opsz,wght","System.Collections.Generic.List`1[System.String]",,"._Inter-Polymarket-Italic-VariableFont_opsz,wght.ttf","163","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-inter-font\__MACOSX","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-inter-font\__MACOSX","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-inter-font\__MACOSX\._Inter-Polymarket-Italic-VariableFont_opsz,wght.ttf",".ttf","18/6/2026 01:31:53","18/6/2026 00:31:53","18/6/2026 01:31:53","18/6/2026 00:31:53","26/2/2026 13:56:58","26/2/2026 12:56:58","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-inter-font\__MACOSX\._Inter-Polymarket-VariableFont_opsz,wght.ttf","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-inter-font\__MACOSX","._Inter-Polymarket-VariableFont_opsz,wght.ttf","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-inter-font\__MACOSX\._Inter-Polymarket-VariableFont_opsz,wght.ttf
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","._Inter-Polymarket-VariableFont_opsz,wght","System.Collections.Generic.List`1[System.String]",,"._Inter-Polymarket-VariableFont_opsz,wght.ttf","163","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-inter-font\__MACOSX","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-inter-font\__MACOSX","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-inter-font\__MACOSX\._Inter-Polymarket-VariableFont_opsz,wght.ttf",".ttf","18/6/2026 01:31:53","18/6/2026 00:31:53","18/6/2026 01:31:53","18/6/2026 00:31:53","26/2/2026 13:56:56","26/2/2026 12:56:56","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\icon-black.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","icon-black.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\icon-black.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","icon-black","System.Collections.Generic.List`1[System.String]",,"icon-black.png","5442","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\icon-black.png",".png","18/6/2026 01:31:53","18/6/2026 00:31:53","18/6/2026 01:31:53","18/6/2026 00:31:53","8/10/2025 16:45:30","8/10/2025 15:45:30","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\icon-black.svg","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","icon-black.svg","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\icon-black.svg
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","icon-black","System.Collections.Generic.List`1[System.String]",,"icon-black.svg","735","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\icon-black.svg",".svg","18/6/2026 01:31:53","18/6/2026 00:31:53","18/6/2026 01:31:54","18/6/2026 00:31:54","8/10/2025 16:45:34","8/10/2025 15:45:34","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\icon-blue.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","icon-blue.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\icon-blue.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","icon-blue","System.Collections.Generic.List`1[System.String]",,"icon-blue.png","5827","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\icon-blue.png",".png","18/6/2026 01:31:54","18/6/2026 00:31:54","18/6/2026 01:31:54","18/6/2026 00:31:54","18/9/2025 14:53:18","18/9/2025 13:53:18","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\icon-blue.svg","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","icon-blue.svg","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\icon-blue.svg
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","icon-blue","System.Collections.Generic.List`1[System.String]",,"icon-blue.svg","783","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\icon-blue.svg",".svg","18/6/2026 01:31:54","18/6/2026 00:31:54","18/6/2026 01:31:54","18/6/2026 00:31:54","18/9/2025 14:53:24","18/9/2025 13:53:24","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\icon-white.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","icon-white.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\icon-white.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","icon-white","System.Collections.Generic.List`1[System.String]",,"icon-white.png","5495","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\icon-white.png",".png","18/6/2026 01:31:54","18/6/2026 00:31:54","18/6/2026 01:31:54","18/6/2026 00:31:54","8/10/2025 16:45:40","8/10/2025 15:45:40","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\icon-white.svg","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","icon-white.svg","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\icon-white.svg
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","icon-white","System.Collections.Generic.List`1[System.String]",,"icon-white.svg","735","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\icon-white.svg",".svg","18/6/2026 01:31:54","18/6/2026 00:31:54","18/6/2026 01:31:54","18/6/2026 00:31:54","8/10/2025 16:45:20","8/10/2025 15:45:20","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\logo-black.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","logo-black.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\logo-black.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","logo-black","System.Collections.Generic.List`1[System.String]",,"logo-black.png","9816","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\logo-black.png",".png","18/6/2026 01:31:54","18/6/2026 00:31:54","18/6/2026 01:31:54","18/6/2026 00:31:54","18/9/2025 14:54:02","18/9/2025 13:54:02","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\logo-black.svg","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","logo-black.svg","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\logo-black.svg
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","logo-black","System.Collections.Generic.List`1[System.String]",,"logo-black.svg","7324","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\logo-black.svg",".svg","18/6/2026 01:31:54","18/6/2026 00:31:54","18/6/2026 01:31:54","18/6/2026 00:31:54","18/9/2025 14:53:58","18/9/2025 13:53:58","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\logo-blue-full.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","logo-blue-full.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\logo-blue-full.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","logo-blue-full","System.Collections.Generic.List`1[System.String]",,"logo-blue-full.png","13932","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\logo-blue-full.png",".png","18/6/2026 01:31:54","18/6/2026 00:31:54","18/6/2026 01:31:54","18/6/2026 00:31:54","8/10/2025 14:22:54","8/10/2025 13:22:54","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\logo-blue-full.svg","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","logo-blue-full.svg","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\logo-blue-full.svg
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","logo-blue-full","System.Collections.Generic.List`1[System.String]",,"logo-blue-full.svg","7442","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\logo-blue-full.svg",".svg","18/6/2026 01:31:54","18/6/2026 00:31:54","18/6/2026 01:31:54","18/6/2026 00:31:54","8/10/2025 16:46:04","8/10/2025 15:46:04","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\logo-blue.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","logo-blue.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\logo-blue.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","logo-blue","System.Collections.Generic.List`1[System.String]",,"logo-blue.png","11365","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\logo-blue.png",".png","18/6/2026 01:31:54","18/6/2026 00:31:54","18/6/2026 01:31:54","18/6/2026 00:31:54","8/10/2025 14:21:24","8/10/2025 13:21:24","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\logo-blue.svg","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","logo-blue.svg","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\logo-blue.svg
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","logo-blue","System.Collections.Generic.List`1[System.String]",,"logo-blue.svg","7231","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\logo-blue.svg",".svg","18/6/2026 01:31:55","18/6/2026 00:31:55","18/6/2026 01:31:55","18/6/2026 00:31:55","8/10/2025 14:21:18","8/10/2025 13:21:18","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\logo-white.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","logo-white.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\logo-white.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","logo-white","System.Collections.Generic.List`1[System.String]",,"logo-white.png","10159","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\logo-white.png",".png","18/6/2026 01:31:55","18/6/2026 00:31:55","18/6/2026 01:31:55","18/6/2026 00:31:55","18/9/2025 14:53:44","18/9/2025 13:53:44","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\logo-white.svg","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","logo-white.svg","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\logo-white.svg
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","logo-white","System.Collections.Generic.List`1[System.String]",,"logo-white.svg","7324","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\logo-white.svg",".svg","18/6/2026 01:31:55","18/6/2026 00:31:55","18/6/2026 01:31:55","18/6/2026 00:31:55","18/9/2025 14:53:48","18/9/2025 13:53:48","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._icon-black.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","._icon-black.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._icon-black.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","._icon-black","System.Collections.Generic.List`1[System.String]",,"._icon-black.png","163","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._icon-black.png",".png","18/6/2026 01:31:53","18/6/2026 00:31:53","18/6/2026 01:31:53","18/6/2026 00:31:53","8/10/2025 16:45:30","8/10/2025 15:45:30","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._icon-black.svg","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","._icon-black.svg","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._icon-black.svg
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","._icon-black","System.Collections.Generic.List`1[System.String]",,"._icon-black.svg","163","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._icon-black.svg",".svg","18/6/2026 01:31:54","18/6/2026 00:31:54","18/6/2026 01:31:54","18/6/2026 00:31:54","8/10/2025 16:45:34","8/10/2025 15:45:34","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._icon-blue.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","._icon-blue.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._icon-blue.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","._icon-blue","System.Collections.Generic.List`1[System.String]",,"._icon-blue.png","163","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._icon-blue.png",".png","18/6/2026 01:31:54","18/6/2026 00:31:54","18/6/2026 01:31:54","18/6/2026 00:31:54","18/9/2025 14:53:18","18/9/2025 13:53:18","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._icon-blue.svg","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","._icon-blue.svg","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._icon-blue.svg
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","._icon-blue","System.Collections.Generic.List`1[System.String]",,"._icon-blue.svg","163","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._icon-blue.svg",".svg","18/6/2026 01:31:54","18/6/2026 00:31:54","18/6/2026 01:31:54","18/6/2026 00:31:54","18/9/2025 14:53:24","18/9/2025 13:53:24","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._icon-white.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","._icon-white.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._icon-white.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","._icon-white","System.Collections.Generic.List`1[System.String]",,"._icon-white.png","163","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._icon-white.png",".png","18/6/2026 01:31:54","18/6/2026 00:31:54","18/6/2026 01:31:54","18/6/2026 00:31:54","8/10/2025 16:45:40","8/10/2025 15:45:40","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._icon-white.svg","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","._icon-white.svg","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._icon-white.svg
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","._icon-white","System.Collections.Generic.List`1[System.String]",,"._icon-white.svg","163","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._icon-white.svg",".svg","18/6/2026 01:31:54","18/6/2026 00:31:54","18/6/2026 01:31:54","18/6/2026 00:31:54","8/10/2025 16:45:20","8/10/2025 15:45:20","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._logo-black.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","._logo-black.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._logo-black.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","._logo-black","System.Collections.Generic.List`1[System.String]",,"._logo-black.png","163","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._logo-black.png",".png","18/6/2026 01:31:54","18/6/2026 00:31:54","18/6/2026 01:31:54","18/6/2026 00:31:54","18/9/2025 14:54:02","18/9/2025 13:54:02","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._logo-black.svg","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","._logo-black.svg","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._logo-black.svg
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","._logo-black","System.Collections.Generic.List`1[System.String]",,"._logo-black.svg","163","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._logo-black.svg",".svg","18/6/2026 01:31:54","18/6/2026 00:31:54","18/6/2026 01:31:54","18/6/2026 00:31:54","18/9/2025 14:53:58","18/9/2025 13:53:58","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._logo-blue-full.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","._logo-blue-full.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._logo-blue-full.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","._logo-blue-full","System.Collections.Generic.List`1[System.String]",,"._logo-blue-full.png","163","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._logo-blue-full.png",".png","18/6/2026 01:31:54","18/6/2026 00:31:54","18/6/2026 01:31:54","18/6/2026 00:31:54","8/10/2025 14:22:54","8/10/2025 13:22:54","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._logo-blue-full.svg","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","._logo-blue-full.svg","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._logo-blue-full.svg
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","._logo-blue-full","System.Collections.Generic.List`1[System.String]",,"._logo-blue-full.svg","163","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._logo-blue-full.svg",".svg","18/6/2026 01:31:54","18/6/2026 00:31:54","18/6/2026 01:31:54","18/6/2026 00:31:54","8/10/2025 16:46:04","8/10/2025 15:46:04","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._logo-blue.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","._logo-blue.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._logo-blue.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","._logo-blue","System.Collections.Generic.List`1[System.String]",,"._logo-blue.png","163","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._logo-blue.png",".png","18/6/2026 01:31:55","18/6/2026 00:31:55","18/6/2026 01:31:55","18/6/2026 00:31:55","8/10/2025 14:21:24","8/10/2025 13:21:24","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._logo-blue.svg","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","._logo-blue.svg","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._logo-blue.svg
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","._logo-blue","System.Collections.Generic.List`1[System.String]",,"._logo-blue.svg","163","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._logo-blue.svg",".svg","18/6/2026 01:31:55","18/6/2026 00:31:55","18/6/2026 01:31:55","18/6/2026 00:31:55","8/10/2025 14:21:18","8/10/2025 13:21:18","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._logo-white.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","._logo-white.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._logo-white.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","._logo-white","System.Collections.Generic.List`1[System.String]",,"._logo-white.png","163","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._logo-white.png",".png","18/6/2026 01:31:55","18/6/2026 00:31:55","18/6/2026 01:31:55","18/6/2026 00:31:55","18/9/2025 14:53:44","18/9/2025 13:53:44","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._logo-white.svg","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","._logo-white.svg","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._logo-white.svg
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","._logo-white","System.Collections.Generic.List`1[System.String]",,"._logo-white.svg","163","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX","False","True","C:\Users\LENOVO\rug-or-hug\assets\brand\polymarket-logos\__MACOSX\._logo-white.svg",".svg","18/6/2026 01:31:55","18/6/2026 00:31:55","18/6/2026 01:31:55","18/6/2026 00:31:55","18/9/2025 14:53:48","18/9/2025 13:53:48","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\icons\fear-greed-index.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\icons","fear-greed-index.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\icons\fear-greed-index.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","fear-greed-index","System.Collections.Generic.List`1[System.String]",,"fear-greed-index.png","28970","C:\Users\LENOVO\rug-or-hug\assets\icons","C:\Users\LENOVO\rug-or-hug\assets\icons","False","True","C:\Users\LENOVO\rug-or-hug\assets\icons\fear-greed-index.png",".png","18/6/2026 01:31:51","18/6/2026 00:31:51","18/6/2026 01:31:52","18/6/2026 00:31:52","18/6/2026 01:31:52","18/6/2026 00:31:52","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\official\bitcoin-orange.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\official","bitcoin-orange.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\official\bitcoin-orange.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","bitcoin-orange","System.Collections.Generic.List`1[System.String]",,"bitcoin-orange.png","2378","C:\Users\LENOVO\rug-or-hug\assets\logos\official","C:\Users\LENOVO\rug-or-hug\assets\logos\official","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\official\bitcoin-orange.png",".png","18/6/2026 01:31:25","18/6/2026 00:31:25","18/6/2026 01:31:25","18/6/2026 00:31:25","18/6/2026 01:31:25","18/6/2026 00:31:25","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\official\bitcoin.svg","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\official","bitcoin.svg","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\official\bitcoin.svg
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","bitcoin","System.Collections.Generic.List`1[System.String]",,"bitcoin.svg","2028","C:\Users\LENOVO\rug-or-hug\assets\logos\official","C:\Users\LENOVO\rug-or-hug\assets\logos\official","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\official\bitcoin.svg",".svg","18/6/2026 01:31:24","18/6/2026 00:31:24","18/6/2026 01:31:24","18/6/2026 00:31:24","18/6/2026 01:31:24","18/6/2026 00:31:24","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\official\circle-logo.avif","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\official","circle-logo.avif","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\official\circle-logo.avif
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","circle-logo","System.Collections.Generic.List`1[System.String]",,"circle-logo.avif","3741","C:\Users\LENOVO\rug-or-hug\assets\logos\official","C:\Users\LENOVO\rug-or-hug\assets\logos\official","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\official\circle-logo.avif",".avif","18/6/2026 01:30:20","18/6/2026 00:30:20","18/6/2026 01:30:20","18/6/2026 00:30:20","18/6/2026 01:30:20","18/6/2026 00:30:20","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\official\ethereum-chain.svg","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\official","ethereum-chain.svg","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\official\ethereum-chain.svg
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","ethereum-chain","System.Collections.Generic.List`1[System.String]",,"ethereum-chain.svg","9062","C:\Users\LENOVO\rug-or-hug\assets\logos\official","C:\Users\LENOVO\rug-or-hug\assets\logos\official","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\official\ethereum-chain.svg",".svg","18/6/2026 01:30:20","18/6/2026 00:30:20","18/6/2026 01:30:20","18/6/2026 00:30:20","18/6/2026 01:30:20","18/6/2026 00:30:20","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\official\hyperevm-chain.svg","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\official","hyperevm-chain.svg","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\official\hyperevm-chain.svg
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","hyperevm-chain","System.Collections.Generic.List`1[System.String]",,"hyperevm-chain.svg","6568","C:\Users\LENOVO\rug-or-hug\assets\logos\official","C:\Users\LENOVO\rug-or-hug\assets\logos\official","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\official\hyperevm-chain.svg",".svg","18/6/2026 01:30:21","18/6/2026 00:30:21","18/6/2026 01:30:21","18/6/2026 00:30:21","18/6/2026 01:30:21","18/6/2026 00:30:21","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\official\solana-chain.svg","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\official","solana-chain.svg","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\official\solana-chain.svg
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","solana-chain","System.Collections.Generic.List`1[System.String]",,"solana-chain.svg","6033","C:\Users\LENOVO\rug-or-hug\assets\logos\official","C:\Users\LENOVO\rug-or-hug\assets\logos\official","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\official\solana-chain.svg",".svg","18/6/2026 01:30:21","18/6/2026 00:30:21","18/6/2026 01:30:21","18/6/2026 00:30:21","18/6/2026 01:30:21","18/6/2026 00:30:21","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\official\solana-logo-black.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\official","solana-logo-black.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\official\solana-logo-black.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","solana-logo-black","System.Collections.Generic.List`1[System.String]",,"solana-logo-black.png","123409","C:\Users\LENOVO\rug-or-hug\assets\logos\official","C:\Users\LENOVO\rug-or-hug\assets\logos\official","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\official\solana-logo-black.png",".png","18/6/2026 01:31:20","18/6/2026 00:31:20","18/6/2026 01:31:22","18/6/2026 00:31:22","18/6/2026 01:31:22","18/6/2026 00:31:22","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\official\solana-logo.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\official","solana-logo.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\official\solana-logo.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","solana-logo","System.Collections.Generic.List`1[System.String]",,"solana-logo.png","28416","C:\Users\LENOVO\rug-or-hug\assets\logos\official","C:\Users\LENOVO\rug-or-hug\assets\logos\official","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\official\solana-logo.png",".png","18/6/2026 01:31:23","18/6/2026 00:31:23","18/6/2026 01:31:23","18/6/2026 00:31:23","18/6/2026 01:31:23","18/6/2026 00:31:23","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\platforms\hyperliquid-hype.svg","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\platforms","hyperliquid-hype.svg","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\platforms\hyperliquid-hype.svg
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","hyperliquid-hype","System.Collections.Generic.List`1[System.String]",,"hyperliquid-hype.svg","497","C:\Users\LENOVO\rug-or-hug\assets\logos\platforms","C:\Users\LENOVO\rug-or-hug\assets\logos\platforms","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\platforms\hyperliquid-hype.svg",".svg","18/6/2026 01:32:19","18/6/2026 00:32:19","18/6/2026 01:32:19","18/6/2026 00:32:19","18/6/2026 01:32:19","18/6/2026 00:32:19","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\platforms\ondo-icon.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\platforms","ondo-icon.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\platforms\ondo-icon.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","ondo-icon","System.Collections.Generic.List`1[System.String]",,"ondo-icon.png","2512","C:\Users\LENOVO\rug-or-hug\assets\logos\platforms","C:\Users\LENOVO\rug-or-hug\assets\logos\platforms","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\platforms\ondo-icon.png",".png","18/6/2026 01:31:50","18/6/2026 00:31:50","18/6/2026 01:31:50","18/6/2026 00:31:50","18/6/2026 01:31:50","18/6/2026 00:31:50","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\platforms\ondo-large.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\platforms","ondo-large.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\platforms\ondo-large.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","ondo-large","System.Collections.Generic.List`1[System.String]",,"ondo-large.png","14004","C:\Users\LENOVO\rug-or-hug\assets\logos\platforms","C:\Users\LENOVO\rug-or-hug\assets\logos\platforms","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\platforms\ondo-large.png",".png","18/6/2026 01:32:52","18/6/2026 00:32:52","18/6/2026 01:32:52","18/6/2026 00:32:52","18/6/2026 01:32:52","18/6/2026 00:32:52","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\platforms\polymarket-icon-black.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\platforms","polymarket-icon-black.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\platforms\polymarket-icon-black.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","polymarket-icon-black","System.Collections.Generic.List`1[System.String]",,"polymarket-icon-black.png","5442","C:\Users\LENOVO\rug-or-hug\assets\logos\platforms","C:\Users\LENOVO\rug-or-hug\assets\logos\platforms","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\platforms\polymarket-icon-black.png",".png","18/6/2026 01:30:06","18/6/2026 00:30:06","18/6/2026 01:30:06","18/6/2026 00:30:06","18/6/2026 01:30:06","18/6/2026 00:30:06","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\platforms\polymarket-icon-blue.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\platforms","polymarket-icon-blue.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\platforms\polymarket-icon-blue.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","polymarket-icon-blue","System.Collections.Generic.List`1[System.String]",,"polymarket-icon-blue.png","5827","C:\Users\LENOVO\rug-or-hug\assets\logos\platforms","C:\Users\LENOVO\rug-or-hug\assets\logos\platforms","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\platforms\polymarket-icon-blue.png",".png","18/6/2026 01:30:06","18/6/2026 00:30:06","18/6/2026 01:30:06","18/6/2026 00:30:06","18/6/2026 01:30:06","18/6/2026 00:30:06","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\platforms\polymarket-icon-white.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\platforms","polymarket-icon-white.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\platforms\polymarket-icon-white.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","polymarket-icon-white","System.Collections.Generic.List`1[System.String]",,"polymarket-icon-white.png","5495","C:\Users\LENOVO\rug-or-hug\assets\logos\platforms","C:\Users\LENOVO\rug-or-hug\assets\logos\platforms","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\platforms\polymarket-icon-white.png",".png","18/6/2026 01:30:05","18/6/2026 00:30:05","18/6/2026 01:30:05","18/6/2026 00:30:05","18/6/2026 01:30:05","18/6/2026 00:30:05","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\platforms\polymarket-logo-black.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\platforms","polymarket-logo-black.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\platforms\polymarket-logo-black.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","polymarket-logo-black","System.Collections.Generic.List`1[System.String]",,"polymarket-logo-black.png","9816","C:\Users\LENOVO\rug-or-hug\assets\logos\platforms","C:\Users\LENOVO\rug-or-hug\assets\logos\platforms","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\platforms\polymarket-logo-black.png",".png","18/6/2026 01:30:05","18/6/2026 00:30:05","18/6/2026 01:30:05","18/6/2026 00:30:05","18/6/2026 01:30:05","18/6/2026 00:30:05","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\platforms\polymarket-logo-blue.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\platforms","polymarket-logo-blue.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\platforms\polymarket-logo-blue.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","polymarket-logo-blue","System.Collections.Generic.List`1[System.String]",,"polymarket-logo-blue.png","11365","C:\Users\LENOVO\rug-or-hug\assets\logos\platforms","C:\Users\LENOVO\rug-or-hug\assets\logos\platforms","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\platforms\polymarket-logo-blue.png",".png","18/6/2026 01:30:06","18/6/2026 00:30:06","18/6/2026 01:30:06","18/6/2026 00:30:06","18/6/2026 01:30:06","18/6/2026 00:30:06","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\bonk.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","bonk.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\bonk.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","bonk","System.Collections.Generic.List`1[System.String]",,"bonk.png","9640","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\bonk.png",".png","18/6/2026 01:30:24","18/6/2026 00:30:24","18/6/2026 01:30:24","18/6/2026 00:30:24","18/6/2026 01:30:24","18/6/2026 00:30:24","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\btc.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","btc.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\btc.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","btc","System.Collections.Generic.List`1[System.String]",,"btc.png","9454","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\btc.png",".png","18/6/2026 01:30:31","18/6/2026 00:30:31","18/6/2026 01:30:31","18/6/2026 00:30:31","18/6/2026 01:30:31","18/6/2026 00:30:31","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\dai.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","dai.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\dai.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","dai","System.Collections.Generic.List`1[System.String]",,"dai.png","7297","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\dai.png",".png","18/6/2026 01:30:24","18/6/2026 00:30:24","18/6/2026 01:30:24","18/6/2026 00:30:24","18/6/2026 01:30:24","18/6/2026 00:30:24","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\dash.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","dash.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\dash.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","dash","System.Collections.Generic.List`1[System.String]",,"dash.png","34068","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\dash.png",".png","18/6/2026 01:30:28","18/6/2026 00:30:28","18/6/2026 01:30:29","18/6/2026 00:30:29","18/6/2026 01:30:29","18/6/2026 00:30:29","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\eth.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","eth.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\eth.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","eth","System.Collections.Generic.List`1[System.String]",,"eth.png","9561","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\eth.png",".png","18/6/2026 01:30:26","18/6/2026 00:30:26","18/6/2026 01:30:26","18/6/2026 00:30:26","18/6/2026 01:30:26","18/6/2026 00:30:26","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\hype.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","hype.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\hype.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","hype","System.Collections.Generic.List`1[System.String]",,"hype.png","8018","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\hype.png",".png","18/6/2026 01:30:31","18/6/2026 00:30:31","18/6/2026 01:30:32","18/6/2026 00:30:32","18/6/2026 01:30:32","18/6/2026 00:30:32","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\inj.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","inj.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\inj.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","inj","System.Collections.Generic.List`1[System.String]",,"inj.png","8707","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\inj.png",".png","18/6/2026 01:30:36","18/6/2026 00:30:36","18/6/2026 01:30:36","18/6/2026 00:30:36","18/6/2026 01:30:36","18/6/2026 00:30:36","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\jupiter.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","jupiter.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\jupiter.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","jupiter","System.Collections.Generic.List`1[System.String]",,"jupiter.png","41976","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\jupiter.png",".png","18/6/2026 01:30:27","18/6/2026 00:30:27","18/6/2026 01:30:27","18/6/2026 00:30:27","18/6/2026 01:30:27","18/6/2026 00:30:27","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\near.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","near.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\near.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","near","System.Collections.Generic.List`1[System.String]",,"near.png","5516","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\near.png",".png","18/6/2026 01:30:23","18/6/2026 00:30:23","18/6/2026 01:30:23","18/6/2026 00:30:23","18/6/2026 01:30:23","18/6/2026 00:30:23","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\ondo.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","ondo.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\ondo.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","ondo","System.Collections.Generic.List`1[System.String]",,"ondo.png","14004","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\ondo.png",".png","18/6/2026 01:30:33","18/6/2026 00:30:33","18/6/2026 01:30:33","18/6/2026 00:30:33","18/6/2026 01:30:33","18/6/2026 00:30:33","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\pump-fun-site.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","pump-fun-site.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\pump-fun-site.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","pump-fun-site","System.Collections.Generic.List`1[System.String]",,"pump-fun-site.png","15689","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\pump-fun-site.png",".png","18/6/2026 01:32:28","18/6/2026 00:32:28","18/6/2026 01:32:29","18/6/2026 00:32:29","18/6/2026 01:32:29","18/6/2026 00:32:29","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\raydium.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","raydium.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\raydium.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","raydium","System.Collections.Generic.List`1[System.String]",,"raydium.png","6864","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\raydium.png",".png","18/6/2026 01:30:25","18/6/2026 00:30:25","18/6/2026 01:30:25","18/6/2026 00:30:25","18/6/2026 01:30:25","18/6/2026 00:30:25","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\render.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","render.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\render.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","render","System.Collections.Generic.List`1[System.String]",,"render.png","16779","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\render.png",".png","18/6/2026 01:30:31","18/6/2026 00:30:31","18/6/2026 01:30:31","18/6/2026 00:30:31","18/6/2026 01:30:31","18/6/2026 00:30:31","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\sol.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","sol.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\sol.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","sol","System.Collections.Generic.List`1[System.String]",,"sol.png","15753","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\sol.png",".png","18/6/2026 01:30:32","18/6/2026 00:30:32","18/6/2026 01:30:33","18/6/2026 00:30:33","18/6/2026 01:30:33","18/6/2026 00:30:33","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\tao.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","tao.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\tao.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","tao","System.Collections.Generic.List`1[System.String]",,"tao.png","2359","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\tao.png",".png","18/6/2026 01:30:25","18/6/2026 00:30:25","18/6/2026 01:30:25","18/6/2026 00:30:25","18/6/2026 01:30:25","18/6/2026 00:30:25","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\usdc.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","usdc.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\usdc.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","usdc","System.Collections.Generic.List`1[System.String]",,"usdc.png","19904","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\usdc.png",".png","18/6/2026 01:30:27","18/6/2026 00:30:27","18/6/2026 01:30:27","18/6/2026 00:30:27","18/6/2026 01:30:27","18/6/2026 00:30:27","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\usdt.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","usdt.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\usdt.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","usdt","System.Collections.Generic.List`1[System.String]",,"usdt.png","9119","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\usdt.png",".png","18/6/2026 01:30:24","18/6/2026 00:30:24","18/6/2026 01:30:24","18/6/2026 00:30:24","18/6/2026 01:30:24","18/6/2026 00:30:24","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\wif.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","wif.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\wif.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","wif","System.Collections.Generic.List`1[System.String]",,"wif.png","7545","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\wif.png",".png","18/6/2026 01:30:26","18/6/2026 00:30:26","18/6/2026 01:30:26","18/6/2026 00:30:26","18/6/2026 01:30:26","18/6/2026 00:30:26","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\x-twitter-logo.svg","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","x-twitter-logo.svg","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\x-twitter-logo.svg
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","x-twitter-logo","System.Collections.Generic.List`1[System.String]",,"x-twitter-logo.svg","5742","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\x-twitter-logo.svg",".svg","18/6/2026 01:32:43","18/6/2026 00:32:43","18/6/2026 01:32:44","18/6/2026 00:32:44","18/6/2026 01:32:44","18/6/2026 00:32:44","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\zec.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","zec.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\zec.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","zec","System.Collections.Generic.List`1[System.String]",,"zec.png","14759","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens","False","True","C:\Users\LENOVO\rug-or-hug\assets\logos\tokens\zec.png",".png","18/6/2026 01:30:22","18/6/2026 00:30:22","18/6/2026 01:30:23","18/6/2026 00:30:23","18/6/2026 01:30:23","18/6/2026 00:30:23","Archive"

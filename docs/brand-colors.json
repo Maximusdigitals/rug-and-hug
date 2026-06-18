@@ -1,0 +1,212 @@
+﻿{
+    "sources":  [
+                    "https://hyperliquid.gitbook.io/hyperliquid-docs/brand-kit",
+                    "https://polymarket.com/brand",
+                    "https://www.circle.com/en/usdc",
+                    "https://solana.com/branding",
+                    "https://bitcoin.design"
+                ],
+    "narrativeMap":  {
+                         "day11":  {
+                                       "logos":  [
+                                                     "zec.png",
+                                                     "dash.png",
+                                                     "dusk.png"
+                                                 ],
+                                       "level":  "ZEC Identity Crisis"
+                                   },
+                         "day12":  {
+                                       "logos":  [
+                                                     "venice-vvv.png",
+                                                     "tao.png",
+                                                     "near.png",
+                                                     "render.png"
+                                                 ],
+                                       "level":  "AI Agent Union Strike"
+                                   },
+                         "day15":  {
+                                       "logos":  [
+                                                     "hype.png"
+                                                 ],
+                                       "level":  "Pre-IPO Astronaut"
+                                   },
+                         "day05":  {
+                                       "logos":  [
+                                                     "bonk.png",
+                                                     "wif.png"
+                                                 ],
+                                       "level":  "Meme Coin Naming Committee"
+                                   },
+                         "day07":  {
+                                       "logos":  [
+                                                     "hype.png",
+                                                     "hyperliquid-logo.png",
+                                                     "hyperevm-chain.svg"
+                                                 ],
+                                       "level":  "Hyperliquid Baptism"
+                                   },
+                         "day17":  {
+                                       "logos":  [
+                                                     "x-twitter-logo.svg"
+                                                 ],
+                                       "level":  "KOL Ventriloquist"
+                                   },
+                         "day14":  {
+                                       "logos":  [
+                                                     "sol.png",
+                                                     "hype.png",
+                                                     "ondo.png"
+                                                 ],
+                                       "level":  "Proof of Vibes"
+                                   },
+                         "day04":  {
+                                       "logos":  [
+                                                     "fear-greed-index.png"
+                                                 ],
+                                       "level":  "Fear \u0026 Greed Exorcism"
+                                   },
+                         "day10":  {
+                                       "logos":  [
+                                                     "usdc.png",
+                                                     "usdt.png",
+                                                     "dai.png",
+                                                     "circle-logo.avif"
+                                                 ],
+                                       "level":  "Stablecoin Trust Fall"
+                                   },
+                         "day19":  {
+                                       "logos":  [
+                                                     "x-twitter-logo.svg"
+                                                 ],
+                                       "level":  "Zach Thread Boss Fight"
+                                   },
+                         "day01":  {
+                                       "logos":  [
+                                                     "eth.png",
+                                                     "btc.png"
+                                                 ],
+                                       "level":  "Gas Fee Seance"
+                                   },
+                         "day09":  {
+                                       "logos":  [
+                                                     "ondo.png",
+                                                     "ondo-icon.png"
+                                                 ],
+                                       "level":  "Tokenized Grandma"
+                                   },
+                         "day16":  {
+                                       "logos":  [
+                                                     "megaeth.png",
+                                                     "eigenlayer.png"
+                                                 ],
+                                       "level":  "Airdrop Trauma Unit"
+                                   },
+                         "day06":  {
+                                       "logos":  [
+                                                     "btc.png",
+                                                     "blackrock-ibit.png",
+                                                     "coinbase.png"
+                                                 ],
+                                       "level":  "ETF Funeral Director"
+                                   },
+                         "day08":  {
+                                       "logos":  [
+                                                     "hype.png",
+                                                     "usdc.png"
+                                                 ],
+                                       "level":  "HIP-3 Possession"
+                                   },
+                         "day03":  {
+                                       "logos":  [
+                                                     "btc.png",
+                                                     "blackrock-ibit.png"
+                                                 ],
+                                       "level":  "BTC Range Prison"
+                                   },
+                         "day20":  {
+                                       "logos":  [
+                                                     "x-twitter-logo.svg"
+                                                 ],
+                                       "level":  "Touch Grass"
+                                   },
+                         "day13":  {
+                                       "logos":  [
+                                                     "polymarket-logo-blue.png",
+                                                     "polymarket-icon-blue.png"
+                                                 ],
+                                       "level":  "Polymarket Wedding"
+                                   },
+                         "day18":  {
+                                       "logos":  [
+                                                     "sol.png",
+                                                     "hype.png",
+                                                     "zec.png",
+                                                     "ondo.png",
+                                                     "venice-vvv.png"
+                                                 ],
+                                       "level":  "Narrative Whiplash"
+                                   },
+                         "day02":  {
+                                       "logos":  [
+                                                     "sol.png",
+                                                     "pump-fun.png",
+                                                     "bonk.png",
+                                                     "wif.png",
+                                                     "jupiter.png"
+                                                 ],
+                                       "level":  "Solana Trench Foot"
+                                   }
+                     },
+    "brands":  {
+                   "ctTerminal":  {
+                                      "bg":  "#0D1117",
+                                      "amber":  "#D29922",
+                                      "red":  "#F85149",
+                                      "green":  "#3FB950",
+                                      "panel":  "#161B22"
+                                  },
+                   "polymarket":  {
+                                      "secondary":  "#000000",
+                                      "primary":  "#2E5CFF",
+                                      "white":  "#FFFFFF"
+                                  },
+                   "solana":  {
+                                  "secondary":  "#14F195",
+                                  "primary":  "#9945FF",
+                                  "gradient":  "linear-gradient(90deg, #9945FF, #14F195)"
+                              },
+                   "hyperliquid":  {
+                                       "secondary":  "#0A0A0A",
+                                       "primary":  "#00D4AA",
+                                       "note":  "Teal/green accent on dark UI"
+                                   },
+                   "zcash":  {
+                                 "primary":  "#F4B728",
+                                 "secondary":  "#000000"
+                             },
+                   "usdc":  {
+                                "primary":  "#2775CA",
+                                "secondary":  "#FFFFFF"
+                            },
+                   "ondo":  {
+                                "secondary":  "#4ECDC4",
+                                "primary":  "#1A1A2E",
+                                "note":  "RWA fintech palette"
+                            },
+                   "ethereum":  {
+                                    "primary":  "#627EEA",
+                                    "secondary":  "#FFFFFF"
+                                },
+                   "fearGreed":  {
+                                     "greed":  "#16C784",
+                                     "fear":  "#EA3943",
+                                     "neutral":  "#F3D42F"
+                                 },
+                   "bitcoin":  {
+                                   "primary":  "#F7931A",
+                                   "secondary":  "#FFFFFF"
+                               }
+               },
+    "game":  "Rug or Hug",
+    "updated":  "2026-06-18"
+}
