@@ -964,4 +964,7 @@ window.addEventListener("beforeinstallprompt", (e) => {
   if (bar) bar.hidden = false;
 });
 
-document.addEventListener("DOMContentLoaded", () => { window.game = new GameEngine(); });
+document.addEventListener("DOMContentLoaded", () => {
+  window.game = new GameEngine();
+  requestAnimationFrame(() => document.body.classList.add("ui-ready"));
+});

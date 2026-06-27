@@ -1,8 +1,9 @@
-const CACHE = "rug-or-hug-v5";
+const CACHE = "rug-or-hug-v6";
 const ASSETS = [
   "./",
   "./index.html",
   "./css/game.css",
+  "./css/premium.css",
   "./js/audio.js",
   "./js/storage.js",
   "./js/progression.js",

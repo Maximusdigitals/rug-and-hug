@@ -6,8 +6,8 @@
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#07070a",
-  "theme_color": "#07070a",
+  "background_color": "#030305",
+  "theme_color": "#030305",
   "icons": [
     {
       "src": "assets/logos/curated/hyperliquid.png",
