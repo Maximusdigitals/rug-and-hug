@@ -799,49 +799,110 @@ const LEVELS = [
     },
   },
   {
-    id: 13, name: "Polymarket Wedding",
-    boss: "Seat guests: YES left, NO right. Tap the correct side.",
-    instruction: "YES ← → NO", mobileInstruction: "Tap correct side",
+    id: 13, name: "Polymarket Spread Squeeze",
+    boss: "Wedding market is illiquid. Tap when YES and NO odds snap together at the altar.",
+    instruction: "Tap when spread closes", mobileInstruction: "Tap tight spread",
     logos: ["polymarket-icon.png"],
     accent: "#2e5cff",
-    win: "Wedding saved. Both sides lost money.", fail: "Brawl at the reception.",
+    win: "Spread married. Both sides lost money.", fail: "Liquidity divorced you.",
     ctWin: ["@Polymarket: balanced", "@YES: ok"], ctFail: ["@NO: fight", "@Odds: chaos"],
-    duration: 24,
-    init(e) { this.done = 0; this.need = 9; this.miss = 0; this.maxMiss = 2; this.spawn = 0; this.guests = []; },
+    duration: 26, showTapButton: true,
+    init(e) {
+      this.hits = 0; this.need = 8;
+      this.misses = 0; this.maxMiss = 2;
+      this.phase = 0;
+      this.speed = 2.4;
+      this.tight = 0.14;
+      this.cooldown = 0;
+    },
     update(dt, e) {
-      this.spawn += dt;
-      if (this.spawn > 0.58 && this.guests.length < 3) {
-        this.spawn = 0;
-        this.guests.push({ yes: Math.random() < 0.5, y: 50 + Math.random() * (e.displayHeight - 140), life: 1.15, t: 0 });
+      this.phase += dt * this.speed;
+      this.spread = 0.12 + (Math.sin(this.phase) + 1) * 0.38;
+      this.speed = Math.min(3.6, 2.4 + e.elapsed * 0.04);
+      if (this.cooldown > 0) this.cooldown -= dt;
+      if (this.hits >= this.need) e.winLevel();
+      else if (this.misses > this.maxMiss || (e.elapsed >= e.duration && this.hits < this.need)) e.loseLevel();
+    },
+    tap(e) {
+      if (this.cooldown > 0) return;
+      const tight = this.spread < this.tight;
+      if (tight) {
+        this.hits++;
+        this.cooldown = 0.35;
+        e.juice(e.displayWidth / 2, e.displayHeight * 0.5, "#2e5cff", "MATCHED");
+        if (this.hits >= this.need) e.winLevel();
+      } else {
+        this.misses++;
+        this.cooldown = 0.25;
+        e.juice(e.displayWidth / 2, e.displayHeight * 0.5, "#f85149", "WIDE");
+        e.shake();
+        if (this.misses > this.maxMiss) e.loseLevel();
       }
-      this.guests.forEach(g => { g.t += dt; });
-      this.guests = this.guests.filter(g => { if (g.t >= g.life) { this.miss++; return false; } return true; });
-      if (this.done >= this.need) e.winLevel();
-      else if (this.miss > this.maxMiss || (e.elapsed >= e.duration && this.done < this.need)) e.loseLevel();
     },
-    onTapAt(e, x, y) {
-      const w = e.displayWidth;
-      const g = this.guests.find(g => Math.abs(g.y - y) < 40);
-      if (!g) return;
-      const left = x < w * 0.5;
-      if ((g.yes && left) || (!g.yes && !left)) { this.done++; this.guests = this.guests.filter(o => o !== g); e.juice(x, y, "#2e5cff", "SEATED"); }
-      else { this.miss++; e.juice(x, y, "#f85149"); e.shake(); }
-    },
+    onKey(e, k) { if ((k === " " || k === "Space") && e.keyDown) this.tap(e); },
+    onTap(e) { this.tap(e); },
     draw(ctx, e, w, h) {
-      ctx.fillStyle = "#080c1a"; ctx.fillRect(0, 0, w, h);
-      ctx.fillStyle = "#2e5cff18"; ctx.fillRect(0, 0, w / 2, h); ctx.fillStyle = "#f8514918"; ctx.fillRect(w / 2, 0, w / 2, h);
-      ctx.strokeStyle = "#30363d"; ctx.beginPath(); ctx.moveTo(w / 2, 0); ctx.lineTo(w / 2, h); ctx.stroke();
-      ctx.fillStyle = "#2e5cff"; ctx.font = "bold 16px system-ui"; ctx.fillText("YES", 24, 32);
-      ctx.fillStyle = "#f85149"; ctx.textAlign = "right"; ctx.fillText("NO", w - 24, 32); ctx.textAlign = "left";
-      drawLogo(ctx, e, "polymarket-icon.png", w / 2, 28, 32);
-      this.guests.forEach(g => {
-        const col = g.yes ? "#2e5cff" : "#f85149";
-        drawGlow(ctx, w / 2, g.y, 30, col);
-        ctx.fillStyle = col; ctx.font = "bold 13px system-ui"; ctx.textAlign = "center";
-        ctx.fillText(g.yes ? "YES guest" : "NO guest", w / 2, g.y);
-      });
+      const bg = ctx.createLinearGradient(0, 0, 0, h);
+      bg.addColorStop(0, "#080c1a");
+      bg.addColorStop(1, "#060810");
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, 0, w, h);
+
+      const cy = h * 0.48;
+      const gap = this.spread * h * 0.42;
+      const yesY = cy - gap / 2;
+      const noY = cy + gap / 2;
+      const tight = this.spread < this.tight;
+
+      drawLogo(ctx, e, "polymarket-icon.png", w / 2, h * 0.16, e.mobile ? 40 : 34);
+      ctx.fillStyle = "#71717a";
+      ctx.font = "11px system-ui";
+      ctx.textAlign = "center";
+      ctx.fillText("WEDDING MARKET", w / 2, h * 0.16 + 38);
+
+      if (tight) drawGlow(ctx, w / 2, cy, 90, "#2e5cff");
+
+      ctx.fillStyle = "#2e5cff33";
+      ctx.fillRect(24, yesY - 28, w - 48, 56);
+      ctx.fillStyle = "#f8514933";
+      ctx.fillRect(24, noY - 28, w - 48, 56);
+
+      ctx.strokeStyle = tight ? "#3fb950" : "#30363d";
+      ctx.lineWidth = tight ? 3 : 1;
+      ctx.setLineDash(tight ? [] : [6, 6]);
+      ctx.strokeRect(w * 0.12, cy - 36, w * 0.76, 72);
+      ctx.setLineDash([]);
+
+      ctx.fillStyle = "#2e5cff";
+      ctx.font = "bold 15px system-ui";
       ctx.textAlign = "left";
-      e.drawProgress(this.done, this.need, w, h);
+      ctx.fillText(`YES ${Math.round((0.5 - this.spread / 2) * 100)}¢`, 32, yesY + 5);
+      ctx.fillStyle = "#f85149";
+      ctx.textAlign = "right";
+      ctx.fillText(`NO ${Math.round((0.5 + this.spread / 2) * 100)}¢`, w - 32, noY + 5);
+
+      ctx.strokeStyle = "#2e5cff";
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      ctx.moveTo(32, yesY);
+      ctx.lineTo(w - 32, yesY);
+      ctx.stroke();
+      ctx.strokeStyle = "#f85149";
+      ctx.beginPath();
+      ctx.moveTo(32, noY);
+      ctx.lineTo(w - 32, noY);
+      ctx.stroke();
+
+      ctx.textAlign = "center";
+      ctx.fillStyle = tight ? "#3fb950" : "#d29922";
+      ctx.font = `bold ${e.mobile ? 18 : 15}px system-ui`;
+      ctx.fillText(tight ? "TAP — SPREAD TIGHT!" : "Wait for spread to close...", w / 2, cy + 72);
+
+      ctx.font = "28px system-ui";
+      ctx.fillText("💒", w / 2, cy - 4);
+
+      ctx.textAlign = "left";
+      e.drawProgress(this.hits, this.need, w, h);
     },
   },
   {

@@ -63,9 +63,9 @@ const SKIP_TWEETS = {
     "if you beat Bot Union Bargain first try you're not human. Rug or Hug day 12 humbled me",
   ],
   13: [
-    "Polymarket Wedding seating chaos. YES left NO right my brain can't. Rug or Hug day 13 @voidhl",
-    "day 13 of Rug or Hug and the reception is a brawl. wedding level is unfair",
-    "who seats every guest in Polymarket Wedding?? Rug or Hug day 13 is fast af",
+    "Polymarket Spread Squeeze has me tapping wide spreads like an idiot. Rug or Hug day 13 @voidhl",
+    "day 13 of Rug or Hug — wait for YES/NO to snap together. spread timing is brutal",
+    "who clears Polymarket Spread Squeeze first try?? Rug or Hug day 13 humbled me",
   ],
   14: [
     "Proof of Vibes — i rated a rug bullish. Rug or Hug day 14 @voidhl",
@@ -130,7 +130,7 @@ const LEVEL_ENRICHMENT = {
   10: { hint: "Catch blue USDC only. Red-glow coins are depegging — let them fall.", voidMark: "stamp" },
   11: { hint: "Wait for the 👁 eye, then tap SHIELD fast. Tapping early counts as a miss.", voidMark: "shield" },
   12: { hint: "Demands slide to the green ACCEPT line — tap on the beat like Gas Fee Seance. Early/late taps count as misses.", voidMark: "badge" },
-  13: { hint: "YES guests go LEFT. NO guests go RIGHT. Tap the side while guest is in the middle.", voidMark: "invite" },
+  13: { hint: "YES and NO price lines pulse apart and together. Tap only when spread is TIGHT (green box glows). Early taps = miss.", voidMark: "invite" },
   14: { hint: "Only tap when VC screams BUY and you see 🚀. 'Hard pass' = hands off.", voidMark: "vc" },
   15: { hint: "Tap to boost through gaps. Time your taps — coast through the red obstacle holes.", voidMark: "serial" },
   16: { hint: "Patient must be IN the scanner (center box). Read the symptom text, then tap the matching triage bin below before the timer hits 0.", voidMark: "wristband" },
