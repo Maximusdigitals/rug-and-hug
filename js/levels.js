@@ -987,146 +987,113 @@ const LEVELS = [
 
   // ── ACT IV: CT FINAL BOSS ────────────────────────────────────
   {
-    id: 16, name: "Airdrop ER Rush",
-    boss: "TGE casualties flood the ER. Wait for the scanner, read symptoms, tap the triage bin — fast.",
-    instruction: "Scan → read symptom → tap matching bin", mobileInstruction: "Scanner → tap bin",
+    id: 16, name: "Airdrop Supply Drop",
+    boss: "TGE crates rain from the sky. Tap legit airdrops — let scam crates crash.",
+    instruction: "Tap green airdrops only", mobileInstruction: "Tap green drops",
     logos: ["megaeth.png", "eigenlayer.png"],
     accent: "#ff6b6b",
-    win: "ER cleared. Malpractice narrowly avoided.", fail: "Patient coded at TGE.",
-    ctWin: ["@Airdrop: triaged", "@TGE: brutal"], ctFail: ["@Farm: still clicking", "@Dump: instant"],
-    duration: 30,
+    win: "Bags secured. Sybil tears optional.", fail: "You claimed a phishing drop.",
+    ctWin: ["@Airdrop: claimed", "@TGE: brutal"], ctFail: ["@Scam: thanks", "@Farm: rekt"],
+    duration: 28,
     init(e) {
-      this.done = 0; this.need = 8; this.miss = 0; this.maxMiss = 2;
-      this.bins = [
-        { id: "SOLD", label: "SOLD TGE", symptom: "Dumped entire bag at TGE open", color: "#f85149" },
-        { id: "FARM", label: "STILL FARMING", symptom: "47 testnets · 0 tokens", color: "#d29922" },
-        { id: "HACK", label: "HACKED", symptom: "Discord mod drained wallet", color: "#a371f7" },
-        { id: "DELAY", label: "DELAYED TGE", symptom: "Mainnet soon™ since 2023", color: "#627eea" },
-      ];
-      this.cases = [
-        { bin: "SOLD", logo: "megaeth.png" }, { bin: "FARM", logo: "eigenlayer.png" },
-        { bin: "HACK", logo: "megaeth.png" }, { bin: "DELAY", logo: "eigenlayer.png" },
-        { bin: "FARM", logo: "megaeth.png" }, { bin: "SOLD", logo: "eigenlayer.png" },
-        { bin: "DELAY", logo: "megaeth.png" },
-      ];
-      this.caseIdx = 0;
-      this.patient = null;
-      this.scanX = 0.5;
-      this.scannerW = 0.38;
-      this.triageWindow = 1.4;
-      this.spawnDelay = 0.28;
-      this.beat = 0;
-      this.pulse = 0;
-    },
-    spawnPatient(e) {
-      const c = this.cases[this.caseIdx % this.cases.length];
-      this.caseIdx++;
-      this.patient = {
-        x: -0.12, bin: c.bin, logo: c.logo,
-        phase: "incoming", scanT: 0, speed: 0.52 + Math.random() * 0.1,
-      };
+      this.drops = [];
+      this.claimed = 0; this.need = 10;
+      this.scamTaps = 0; this.maxScam = 2;
+      this.missed = 0; this.maxMissed = 2;
+      this.spawn = 0;
+      this.logos = ["megaeth.png", "eigenlayer.png"];
+      this.hitR = e.mobile ? 46 : 40;
+      this.wind = 0;
     },
     update(dt, e) {
-      this.pulse += dt * 4;
-      this.beat += dt;
-      if (!this.patient && this.beat >= this.spawnDelay) {
-        this.beat = 0;
-        this.spawnPatient(e);
+      this.wind += dt;
+      this.spawn += dt;
+      if (this.spawn > 0.42) {
+        this.spawn = 0;
+        const scam = Math.random() < 0.36;
+        this.drops.push({
+          x: 40 + Math.random() * (e.displayWidth - 80),
+          y: -50,
+          scam,
+          logo: scam ? "pump-fun.png" : this.logos[Math.floor(Math.random() * this.logos.length)],
+          speed: 95 + Math.random() * 55,
+          sway: Math.random() * Math.PI * 2,
+          chute: !scam,
+        });
       }
-      if (this.patient) {
-        const p = this.patient;
-        if (p.phase === "incoming") {
-          p.x += p.speed * dt;
-          if (p.x >= this.scanX - 0.02) { p.phase = "scanning"; p.x = this.scanX; p.scanT = this.triageWindow; }
-        } else if (p.phase === "scanning") {
-          p.scanT -= dt;
-          if (p.scanT <= 0) { this.miss++; this.patient = null; e.shake(); this.spawnDelay = 0.8; }
+
+      this.drops.forEach(d => {
+        d.y += d.speed * dt;
+        d.x += Math.sin(this.wind * 2 + d.sway) * 28 * dt;
+      });
+
+      for (let i = this.drops.length - 1; i >= 0; i--) {
+        const d = this.drops[i];
+        if (d.y > h(e) + 50) {
+          if (!d.scam) this.missed++;
+          this.drops.splice(i, 1);
         }
       }
-      if (this.done >= this.need) e.winLevel();
-      else if (this.miss > this.maxMiss || (e.elapsed >= e.duration && this.done < this.need)) e.loseLevel();
-    },
-    triage(e, binId, x, y) {
-      const p = this.patient;
-      if (!p || p.phase !== "scanning") return;
-      if (p.bin === binId) {
-        this.done++;
-        e.juice(x, y, "#3fb950", "STABLE");
-        this.patient = null;
-        this.spawnDelay = 0.5;
-      } else {
-        this.miss++;
-        e.juice(x, y, "#f85149", "CODE BLUE");
-        e.shake();
-        this.patient = null;
-        this.spawnDelay = 0.9;
-      }
+
+      if (this.claimed >= this.need) e.winLevel();
+      else if (this.scamTaps > this.maxScam || this.missed > this.maxMissed
+        || (e.elapsed >= e.duration && this.claimed < this.need)) e.loseLevel();
     },
     onTapAt(e, x, y) {
-      const w = e.displayWidth; const ht = e.displayHeight;
-      const binH = e.mobile ? 68 : 58;
-      if (y < ht - binH - 8) return;
-      const bi = Math.floor((x / w) * 4);
-      if (bi < 0 || bi > 3) return;
-      this.triage(e, this.bins[bi].id, x, y);
+      const hit = this.drops.find(d => Math.hypot(d.x - x, d.y - y) < this.hitR);
+      if (!hit) return;
+      this.drops = this.drops.filter(d => d !== hit);
+      if (hit.scam) {
+        this.scamTaps++;
+        e.juice(x, y, "#f85149", "SCAM");
+        e.shake();
+      } else {
+        this.claimed++;
+        e.juice(x, y, "#3fb950", "CLAIMED");
+      }
     },
     draw(ctx, e, w, h) {
-      const g = ctx.createLinearGradient(0, 0, 0, h);
-      g.addColorStop(0, "#12080c"); g.addColorStop(1, "#1a0a10");
-      ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+      const bg = ctx.createLinearGradient(0, 0, 0, h);
+      bg.addColorStop(0, "#1a1030");
+      bg.addColorStop(0.45, "#120818");
+      bg.addColorStop(1, "#0a0610");
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, 0, w, h);
 
-      const scanL = (this.scanX - this.scannerW / 2) * w;
-      const scanR = (this.scanX + this.scannerW / 2) * w;
-      const scanY = h * 0.38;
-      const scanH = h * 0.28;
-      const pulse = 0.5 + Math.sin(this.pulse) * 0.5;
-
-      ctx.strokeStyle = `rgba(255,107,107,${0.35 + pulse * 0.35})`;
-      ctx.lineWidth = 2; ctx.setLineDash([8, 6]);
-      ctx.strokeRect(scanL, scanY, scanR - scanL, scanH);
-      ctx.setLineDash([]);
-      ctx.fillStyle = "rgba(255,107,107,0.06)";
-      ctx.fillRect(scanL, scanY, scanR - scanL, scanH);
-      ctx.fillStyle = "#ff6b6b"; ctx.font = `bold ${e.mobile ? 10 : 9}px ui-monospace,monospace`;
-      ctx.textAlign = "center"; ctx.fillText("◈ SCANNER ◈", w / 2, scanY - 8);
-
-      ctx.fillStyle = "rgba(255,107,107,0.15)";
-      for (let i = 0; i < 12; i++) {
-        const lx = scanL + 8 + (i * (scanR - scanL - 16)) / 11;
-        const ly = scanY + scanH - 18 + Math.sin(this.pulse + i * 0.5) * 6;
-        ctx.fillRect(lx, ly, 3, 10);
+      ctx.fillStyle = "rgba(255,255,255,0.04)";
+      for (let i = 0; i < 18; i++) {
+        const sx = (i * 97 + this.wind * 12) % w;
+        const sy = (i * 53) % (h * 0.7);
+        ctx.fillRect(sx, sy, 2, 2);
       }
 
-      if (this.patient) {
-        const p = this.patient;
-        const px = p.x * w;
-        const py = scanY + scanH * 0.45;
-        drawGlow(ctx, px, py, 40, p.phase === "scanning" ? "#ff6b6b" : "#627eea");
-        drawLogo(ctx, e, p.logo, px, py, e.mobile ? 48 : 42);
-        if (p.phase === "scanning") {
-          const bin = this.bins.find(b => b.id === p.bin);
-          drawCard(ctx, scanL + 6, scanY + 10, scanR - scanL - 12, scanH - 20, 10, "#21262dcc", bin.color + "88");
-          ctx.fillStyle = bin.color; ctx.font = `bold ${e.mobile ? 12 : 11}px system-ui`;
-          ctx.fillText(bin.symptom, w / 2, scanY + scanH * 0.42);
-          ctx.fillStyle = "#ff6b6b"; ctx.font = `bold ${e.mobile ? 14 : 12}px system-ui`;
-          ctx.fillText(`${Math.ceil(p.scanT)}s`, w / 2, scanY + scanH * 0.68);
-        } else {
-          ctx.fillStyle = "#8b949e"; ctx.font = "11px system-ui";
-          ctx.fillText("incoming…", px, py + 34);
+      ctx.fillStyle = "#ff6b6b";
+      ctx.font = "bold 11px system-ui";
+      ctx.textAlign = "center";
+      ctx.fillText("TGE SUPPLY DROP", w / 2, 28);
+
+      this.drops.forEach(d => {
+        const col = d.scam ? "#f85149" : "#3fb950";
+        if (d.chute) {
+          ctx.strokeStyle = col + "55";
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.moveTo(d.x - 18, d.y - 34);
+          ctx.quadraticCurveTo(d.x, d.y - 52, d.x + 18, d.y - 34);
+          ctx.stroke();
         }
-      }
-
-      const binH = e.mobile ? 68 : 58;
-      const bw = w / 4;
-      this.bins.forEach((b, i) => {
-        const bx = i * bw + 3;
-        const by = h - binH - 4;
-        drawCard(ctx, bx, by, bw - 6, binH, 10, b.color + "22", b.color + "66");
-        ctx.fillStyle = b.color; ctx.font = `bold ${e.mobile ? 9 : 8}px system-ui`;
-        ctx.fillText(b.label, bx + (bw - 6) / 2, by + binH * 0.55);
+        drawGlow(ctx, d.x, d.y, 34, col);
+        drawCard(ctx, d.x - 28, d.y - 22, 56, 44, 8, d.scam ? "#2a1018" : "#102818", col + "66");
+        drawLogo(ctx, e, d.logo, d.x, d.y - 2, 30);
+        ctx.fillStyle = col;
+        ctx.font = "bold 9px system-ui";
+        ctx.fillText(d.scam ? "FAKE" : "AIRDROP", d.x, d.y + 22);
       });
+
+      ctx.fillStyle = "#3fb95044";
+      ctx.fillRect(0, h - 6, w, 6);
       ctx.textAlign = "left";
-      e.drawProgress(this.done, this.need, w, h);
+      e.drawProgress(this.claimed, this.need, w, h);
     },
   },
   {

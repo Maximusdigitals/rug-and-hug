@@ -78,9 +78,9 @@ const SKIP_TWEETS = {
     "who flies through every gap in Rug or Hug?? day 15 has me mad lol",
   ],
   16: [
-    "Airdrop ER Rush at TGE is hell. 4 bins 2 seconds i'm coding blue. Rug or Hug day 16 @voidhl",
-    "day 16 triage patients in Rug or Hug — this level is actually unfair",
-    "if you beat Airdrop ER Rush you're not normal. Rug or Hug day 16 broke me",
+    "Airdrop Supply Drop in Rug or Hug has me claiming scam crates. day 16 TGE rain is chaos @voidhl",
+    "day 16 of Rug or Hug — tap green airdrops skip fake drops. supply drop level is mean",
+    "if you beat Airdrop Supply Drop without touching a scam you're built different",
   ],
   17: [
     "KOL Ventriloquist — shilled without NFA. Rug or Hug day 17 got me @voidhl",
@@ -133,7 +133,7 @@ const LEVEL_ENRICHMENT = {
   13: { hint: "YES and NO price lines pulse apart and together. Tap only when spread is TIGHT (green box glows). Early taps = miss.", voidMark: "invite" },
   14: { hint: "Only tap when VC screams BUY and you see 🚀. 'Hard pass' = hands off.", voidMark: "vc" },
   15: { hint: "Tap to boost through gaps. Time your taps — coast through the red obstacle holes.", voidMark: "serial" },
-  16: { hint: "Patient must be IN the scanner (center box). Read the symptom text, then tap the matching triage bin below before the timer hits 0.", voidMark: "wristband" },
+  16: { hint: "Green AIRDROP crates = tap to claim. Red FAKE crates = let them fall — tapping scam = strike. Miss 2 legit drops = rekt.", voidMark: "wristband" },
   17: { hint: "Tap ONLY when 'NFA' appears. WAGMI / 100x / GEM = do not tap.", voidMark: "fineprint" },
   18: { hint: "Wait for LOCKED on the wheel — only then tap chips matching that meta. Tapping during SPIN/WHIPLASH = strike.", voidMark: "channel" },
   19: { hint: "Tap 🚩 flags only. Green AUDITED/SAFU pills are bait. Escaped flags split into two — don't let the swarm hit 10.", voidMark: "thread" },
