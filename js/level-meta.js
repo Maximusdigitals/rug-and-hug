@@ -98,9 +98,9 @@ const SKIP_TWEETS = {
     "who clears the Zach thread in Rug or Hug?? only degens fr",
   ],
   20: [
-    "Liquidation Leviathan boss in Rug or Hug day 20 is actually insane. dodge the flash then strike HYPE @voidhl",
-    "day 20 final boss humbled me. Hyperliquid Leviathan timing is brutal in Rug or Hug",
-    "if you beat the Liquidation Leviathan first try you're not human. Rug or Hug day 20 @voidhl",
+    "HYPE Meltdown final boss in Rug or Hug - tap on TAP skip the red LIQUIDATION. day 20 is actually fun @voidhl",
+    "day 20 of Rug or Hug final boss is simple but mean. HYPE Meltdown timing got me @voidhl",
+    "if you beat HYPE Meltdown first try you're built different. Rug or Hug day 20 boss @voidhl",
   ],
 };
 
@@ -137,7 +137,7 @@ const LEVEL_ENRICHMENT = {
   17: { hint: "WIN: 6 NFA taps. Tap only when NFA shows — WAGMI/100x/GEM are traps.", voidMark: "fineprint" },
   18: { hint: "WIN: 10 meta taps. Wait for LOCKED, then tap chips matching that narrative (3 strikes = fail).", voidMark: "channel" },
   19: { hint: "WIN: kill 9 flags. Tap 🚩 only — green AUDITED/SAFU pills are bait. Escaped flags multiply.", voidMark: "thread" },
-  20: { hint: "WIN: 6 boss hits. Drag into teal safe zone before the red flash, then tap STRIKE when the core glows (max 2 mistakes).", voidMark: "notif" },
+  20: { hint: "WIN: 8 hits. Tap only on green TAP! - never tap red LIQUIDATION. Miss the TAP window or tap wrong twice = rekt.", voidMark: "notif" },
 };
 
 LEVELS.forEach((lv) => {

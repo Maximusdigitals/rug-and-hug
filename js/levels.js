@@ -1463,267 +1463,160 @@ const LEVELS = [
     },
   },
   {
-    id: 20, name: "Liquidation Leviathan",
+    id: 20, name: "HYPE Meltdown",
     boss: goalBrief(
-      "Strike the Leviathan 6 times",
-      "Drag into the teal safe zone before the red flash - then tap STRIKE when the core glows",
-      "Miss the safe zone or miss a strike window twice = liquidated"
+      "Land 8 hits on the boss",
+      "Tap only when the screen says TAP! and the ring is green",
+      "Never tap on red LIQUIDATION - max 2 wrong taps"
     ),
-    instruction: "Dodge flash -> tap STRIKE", mobileInstruction: "Safe zone -> STRIKE",
+    instruction: "WIN: 8 TAP! hits - skip red", mobileInstruction: "Tap on TAP!",
     logos: ["hyperliquid.png", "hyperliquid-mark.svg"],
     accent: "#00d4aa",
-    win: "Boss rekt. You are the house now.", fail: "Liquidated by the engine.",
-    ctWin: ["@HYPE: W", "@Hyperliquid: respect"], ctFail: ["@Liquidation: thanks", "@CT: rekt"],
-    duration: 42,
+    win: "Boss melted. You own the perps now.", fail: "Liquidated by the meltdown.",
+    ctWin: ["@HYPE: W", "@Hyperliquid: gg"], ctFail: ["@Liquidation: thanks", "@CT: rekt"],
+    duration: 30,
     showTapButton: true,
     init(e) {
-      this.bossHp = 6;
       this.hits = 0;
-      this.maxHits = 2;
-      this.round = 0;
-      this.state = "telegraph";
-      this.stateT = 0;
-      this.playerX = 0.5;
-      this.safeX = 0.5;
-      this.safeW = 0.26;
-      this.flash = 0;
+      this.need = 8;
+      this.miss = 0;
+      this.maxMiss = 2;
+      this.phase = "wait";
+      this.timer = 0.7;
       this.pulse = 0;
-      this.laneY = 0.86;
-      this.pickSafeZone();
-      this.pendingAdvance = false;
-      this.syncTapBtn(e);
-      this.setPrompt(e);
-    },
-    pickSafeZone() {
-      this.safeW = Math.max(0.12, 0.27 - this.round * 0.022);
-      this.safeX = 0.14 + Math.random() * (0.72 - this.safeW);
-      this.safeX = Math.max(this.safeW / 2 + 0.06, Math.min(1 - this.safeW / 2 - 0.06, this.safeX));
-    },
-    telegraphTime() {
-      return Math.max(0.48, 0.98 - this.round * 0.065);
-    },
-    strikeTime() {
-      return Math.max(0.55, 0.82 - this.round * 0.03);
-    },
-    syncTapBtn(e) {
-      if (!e.tapBtn) return;
-      e.tapBtn.textContent = "STRIKE";
-      e.tapBtn.style.display = this.state === "strike" ? "flex" : "none";
-    },
-    setPrompt(e) {
-      const map = {
-        telegraph: ["Drag into teal zone before flash", "Get in teal zone"],
-        flash: ["LIQUIDATION!", "Dodge!"],
-        strike: ["Tap STRIKE on glowing core", "Tap STRIKE"],
-        recover: ["Boss recoiling...", "Next wave..."],
-      };
-      const p = map[this.state];
-      if (e.instructionEl && p) e.instructionEl.textContent = e.mobile ? p[1] : p[0];
-    },
-    beginTelegraph(e) {
-      this.state = "telegraph";
-      this.stateT = 0;
-      this.pickSafeZone();
-      this.syncTapBtn(e);
-      this.setPrompt(e);
-    },
-    resolveFlash(e) {
-      if (this.inSafe()) {
-        this.state = "strike";
-        this.stateT = 0;
-        e.juice(e.displayWidth / 2, e.displayHeight * 0.32, "#00d4aa", "DODGED");
-      } else {
-        this.hits++;
-        e.juice(this.playerX * e.displayWidth, e.displayHeight * this.laneY, "#f85149", "LIQ");
-        e.shake();
-        if (this.hits > this.maxHits) { e.loseLevel(); return; }
-        this.state = "recover";
-        this.stateT = 0;
+      this.hitFlash = 0;
+      this.bossScale = 1;
+      this.rollPhase();
+      if (e.tapBtn) {
+        e.tapBtn.textContent = "TAP";
+        e.tapBtn.style.display = "flex";
       }
-      this.syncTapBtn(e);
-      this.setPrompt(e);
     },
-    inSafe() {
-      return this.playerX >= this.safeX - this.safeW / 2 && this.playerX <= this.safeX + this.safeW / 2;
+    speedMul() {
+      return 1 + this.hits * 0.09;
+    },
+    rollPhase() {
+      const left = this.need - this.hits;
+      const r = Math.random();
+      if (r < 0.55) {
+        this.phase = "tap";
+        this.timer = (0.62 + Math.random() * 0.18) / this.speedMul();
+      } else if (r < 0.8) {
+        this.phase = "trap";
+        this.timer = (0.5 + Math.random() * 0.14) / this.speedMul();
+      } else {
+        this.phase = "wait";
+        this.timer = (0.45 + Math.random() * 0.35) / this.speedMul();
+      }
+      if (left <= 2) this.timer *= 0.82;
+    },
+    resolveMiss(e, w, ht, label) {
+      this.miss++;
+      e.juice(w / 2, ht * 0.42, "#f85149", label);
+      e.shake();
+      if (this.miss >= this.maxMiss) e.loseLevel();
     },
     update(dt, e) {
       const w = e.displayWidth;
       const ht = e.displayHeight;
-      this.pulse += dt * 3.2;
-      this.flash = Math.max(0, this.flash - dt * 5.5);
+      this.pulse += dt * 4.5;
+      this.hitFlash = Math.max(0, this.hitFlash - dt * 3.5);
+      this.bossScale += ((1 - this.hits * 0.04) - this.bossScale) * Math.min(1, dt * 5);
 
-      if (e.pointer.down && this.state === "telegraph") {
-        this.playerX += (e.pointer.x / w - this.playerX) * Math.min(1, dt * 14);
-      }
-      this.playerX = Math.max(0.08, Math.min(0.92, this.playerX));
-
-      if (this.state === "telegraph") {
-        this.stateT += dt;
-        if (this.stateT >= this.telegraphTime()) {
-          this.flash = 1;
-          this.state = "flash";
-          this.stateT = 0;
-          this.setPrompt(e);
-          this.resolveFlash(e);
-        }
-      } else if (this.state === "strike") {
-        this.stateT += dt;
-        if (this.stateT >= this.strikeTime()) {
-          this.hits++;
-          e.juice(w / 2, ht * 0.3, "#f85149", "MISS");
-          e.shake();
-          if (this.hits > this.maxHits) { e.loseLevel(); return; }
-          this.state = "recover";
-          this.stateT = 0;
-          this.syncTapBtn(e);
-          this.setPrompt(e);
-        }
-      } else if (this.state === "recover") {
-        this.stateT += dt;
-        if (this.stateT >= 0.38) {
-          if (this.pendingAdvance) {
-            this.round++;
-            this.pendingAdvance = false;
-          }
-          if (this.bossHp <= 0) { e.winLevel(); return; }
-          this.beginTelegraph(e);
-        }
+      this.timer -= dt;
+      if (this.timer <= 0) {
+        if (this.phase === "tap") this.resolveMiss(e, w, ht, "MISS");
+        this.rollPhase();
       }
 
-      if (e.elapsed >= e.duration && this.bossHp > 0) e.loseLevel();
+      if (this.hits >= this.need) e.winLevel();
+      else if (e.elapsed >= e.duration && this.hits < this.need) e.loseLevel();
     },
-    strike(e) {
-      if (this.state !== "strike") return;
-      this.bossHp--;
-      this.pendingAdvance = true;
-      this.state = "recover";
-      this.stateT = 0;
-      this.syncTapBtn(e);
-      this.setPrompt(e);
-      e.juice(e.displayWidth / 2, e.displayHeight * 0.28, "#00d4aa", `HIT ${6 - this.bossHp}/6`);
-      e.shake();
-      if (this.bossHp <= 0) e.winLevel();
-    },
-    tap(e) { this.strike(e); },
-    onTap(e) { this.strike(e); },
-    onTapAt(e, x, y) {
-      if (this.state === "telegraph") {
-        this.playerX = x / e.displayWidth;
-      } else if (this.state === "strike" && y < e.displayHeight * 0.55) {
-        this.strike(e);
+    tap(e) {
+      const w = e.displayWidth;
+      const ht = e.displayHeight;
+      if (this.phase === "tap") {
+        this.hits++;
+        this.hitFlash = 1;
+        this.bossScale = Math.max(0.72, 1 - this.hits * 0.04);
+        e.juice(w / 2, ht * 0.42, "#00d4aa", `-${this.hits}`);
+        e.shake();
+        if (this.hits >= this.need) { e.winLevel(); return; }
+        this.rollPhase();
+      } else if (this.phase === "trap") {
+        this.resolveMiss(e, w, ht, "LIQ");
+        this.phase = "wait";
+        this.timer = 0.55 / this.speedMul();
       }
     },
-    drawGrid(ctx, w, ht) {
-      ctx.strokeStyle = "rgba(0,212,170,0.06)";
-      ctx.lineWidth = 1;
-      const s = 40;
-      for (let x = 0; x < w; x += s) {
-        ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, ht); ctx.stroke();
-      }
-      for (let y = 0; y < ht; y += s) {
-        ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
-      }
-    },
+    onKey(ev, k) { if ((k === " " || k === "Space") && ev.keyDown) this.tap(ev); },
+    onTap(e) { this.tap(e); },
     draw(ctx, e, w, ht) {
       const bg = ctx.createLinearGradient(0, 0, 0, ht);
       bg.addColorStop(0, "#030807");
-      bg.addColorStop(0.45, "#061210");
+      bg.addColorStop(0.5, "#061210");
       bg.addColorStop(1, "#040a09");
       ctx.fillStyle = bg;
       ctx.fillRect(0, 0, w, ht);
-      this.drawGrid(ctx, w, ht);
 
       const bx = w / 2;
-      const by = ht * 0.34;
-      const bossR = Math.min(w, ht) * (e.mobile ? 0.14 : 0.12);
-      const hp = this.bossHp / 6;
-      const enraged = this.bossHp <= 3;
+      const by = ht * 0.44;
+      const baseR = Math.min(w, ht) * (e.mobile ? 0.17 : 0.15) * this.bossScale;
+      const enraged = this.hits >= 5;
 
-      if (this.state === "strike") {
-        const strikePulse = 0.65 + Math.sin(this.pulse * 6) * 0.35;
-        drawGlow(ctx, bx, by, bossR * (1.6 + strikePulse * 0.4), "#00d4aa");
-        ctx.strokeStyle = "#00d4aa";
-        ctx.lineWidth = 3;
-        ctx.beginPath();
-        ctx.arc(bx, by, bossR + 14 + strikePulse * 10, 0, Math.PI * 2);
-        ctx.stroke();
-      } else {
-        drawGlow(ctx, bx, by, bossR * 1.1, enraged ? "#f8514966" : "#00d4aa44");
+      const phaseCol = this.phase === "tap" ? "#00d4aa"
+        : this.phase === "trap" ? "#f85149" : "#8b949e";
+      const ringPulse = this.phase === "tap"
+        ? 0.55 + Math.sin(this.pulse * 7) * 0.45
+        : this.phase === "trap" ? 0.7 + Math.sin(this.pulse * 9) * 0.3 : 0.35;
+
+      if (this.hitFlash > 0) {
+        ctx.fillStyle = `rgba(0,212,170,${this.hitFlash * 0.22})`;
+        ctx.fillRect(0, 0, w, ht);
       }
 
-      drawLogo(ctx, e, "hyperliquid.png", bx, by, bossR * 1.45);
+      drawGlow(ctx, bx, by, baseR * (1.35 + ringPulse * 0.35), phaseCol);
+      ctx.strokeStyle = phaseCol;
+      ctx.lineWidth = this.phase === "tap" ? 4 : 2;
+      ctx.beginPath();
+      ctx.arc(bx, by, baseR + 18 + ringPulse * 14, 0, Math.PI * 2);
+      ctx.stroke();
 
-      for (let i = 0; i < 6; i++) {
-        const ang = -Math.PI / 2 + (i / 6) * Math.PI * 2;
-        const px = bx + Math.cos(ang) * (bossR + 22);
-        const py = by + Math.sin(ang) * (bossR + 22);
-        const alive = i < this.bossHp;
-        ctx.fillStyle = alive ? "#00d4aa" : "#21262d";
+      drawLogo(ctx, e, "hyperliquid.png", bx, by, baseR * 1.5);
+
+      const labels = { tap: "TAP!", trap: "LIQUIDATION!", wait: "WAIT..." };
+      const labelCol = this.phase === "tap" ? "#00d4aa"
+        : this.phase === "trap" ? "#f85149" : "#8b949e";
+      ctx.fillStyle = labelCol;
+      ctx.font = `bold ${e.mobile ? 28 : 24}px system-ui`;
+      ctx.textAlign = "center";
+      ctx.fillText(labels[this.phase], bx, by + baseR + 52);
+
+      if (this.phase === "tap") {
+        const barW = Math.min(200, w - 48);
+        const pct = Math.max(0, this.timer / 0.8);
+        ctx.fillStyle = "#21262d";
         ctx.beginPath();
-        ctx.arc(px, py, e.mobile ? 6 : 5, 0, Math.PI * 2);
+        ctx.roundRect(bx - barW / 2, by + baseR + 64, barW, 6, 3);
+        ctx.fill();
+        ctx.fillStyle = "#00d4aa";
+        ctx.beginPath();
+        ctx.roundRect(bx - barW / 2, by + baseR + 64, barW * pct, 6, 3);
         ctx.fill();
       }
 
+      ctx.textAlign = "left";
       ctx.fillStyle = enraged ? "#f85149" : "#8b949e";
       ctx.font = `bold ${e.mobile ? 10 : 9}px system-ui`;
       ctx.textAlign = "center";
-      ctx.fillText(enraged ? "ENRAGED Â· HIP-3 MODE" : "LIQUIDATION ENGINE", bx, by - bossR - 18);
+      ctx.fillText(enraged ? "MELTDOWN MODE" : "FINAL BOSS", bx, by - baseR - 22);
       ctx.textAlign = "left";
 
-      const laneY = ht * this.laneY;
-      const laneH = Math.max(44, ht * (e.mobile ? 0.1 : 0.085));
-      const lanePad = Math.max(8, w * 0.03);
-      drawCard(ctx, lanePad, laneY - laneH / 2, w - lanePad * 2, laneH, 14, "#0a121088", "#00d4aa22");
-
-      if (this.state === "telegraph") {
-        const sx = this.safeX * w;
-        const sw = this.safeW * w;
-        const pulse = 0.5 + Math.sin(this.pulse * 5) * 0.5;
-        drawGlow(ctx, sx, laneY, sw * 0.45, `rgba(0,212,170,${0.25 + pulse * 0.2})`);
-        ctx.fillStyle = `rgba(0,212,170,${0.18 + pulse * 0.12})`;
-        ctx.beginPath();
-        ctx.roundRect(sx - sw / 2, laneY - laneH / 2 + 4, sw, laneH - 8, 10);
-        ctx.fill();
-        ctx.strokeStyle = "#00d4aa";
-        ctx.lineWidth = 2;
-        ctx.stroke();
-        const left = Math.max(0, this.telegraphTime() - this.stateT);
-        ctx.fillStyle = "#00d4aa";
-        ctx.font = `bold ${e.mobile ? 13 : 11}px system-ui`;
-        ctx.textAlign = "center";
-        ctx.fillText(`FLASH IN ${left.toFixed(1)}s`, w / 2, laneY - laneH / 2 - 10);
-      }
-
-      const px = this.playerX * w;
-      drawGlow(ctx, px, laneY, 32, this.inSafe() && this.state === "telegraph" ? "#00d4aa" : "#00d4aa88");
-      drawLogo(ctx, e, "hyperliquid-mark.svg", px, laneY, e.mobile ? 36 : 30);
-
-      if (this.flash > 0) {
-        ctx.fillStyle = `rgba(248,81,73,${this.flash * 0.42})`;
-        ctx.fillRect(0, 0, w, ht);
-        if (!this.inSafe()) {
-          ctx.strokeStyle = "#f85149";
-          ctx.lineWidth = 4;
-          ctx.beginPath();
-          ctx.moveTo(px, by + bossR);
-          ctx.lineTo(px, laneY - laneH / 2);
-          ctx.stroke();
-        }
-      }
-
-      if (this.state === "strike") {
-        ctx.fillStyle = "#00d4aa";
-        ctx.font = `bold ${e.mobile ? 16 : 14}px system-ui`;
-        ctx.textAlign = "center";
-        ctx.fillText("STRIKE NOW!", bx, by + bossR + 36);
-      }
-
-      ctx.textAlign = "left";
       ctx.fillStyle = "#8b949e";
       ctx.font = "11px system-ui";
-      ctx.fillText(`Hits ${this.hits}/${this.maxHits}`, 16, ht - 14);
+      ctx.fillText(`Miss ${this.miss}/${this.maxMiss}`, 14, ht - 14);
 
-      e.drawProgress(6 - this.bossHp, 6, w, ht);
+      e.drawProgress(this.hits, this.need, w, ht);
     },
   },
 ];
