@@ -1466,68 +1466,113 @@ const LEVELS = [
     id: 20, name: "HYPE Meltdown",
     boss: goalBrief(
       "Land 8 hits on the boss",
-      "Tap only when the screen says TAP! and the ring is green",
-      "Never tap on red LIQUIDATION - max 2 wrong taps"
+      "Tap when you see green TAP! - ignore WAIT, skip red LIQUIDATION",
+      "Only misclicks hurt you (tap on red) - missing TAP! is fine"
     ),
-    instruction: "WIN: 8 TAP! hits - skip red", mobileInstruction: "Tap on TAP!",
+    instruction: "WIN: 8 TAP! - only red misclicks fail", mobileInstruction: "Tap green only",
     logos: ["hyperliquid.png", "hyperliquid-mark.svg"],
     accent: "#00d4aa",
     win: "Boss melted. You own the perps now.", fail: "Liquidated by the meltdown.",
     ctWin: ["@HYPE: W", "@Hyperliquid: gg"], ctFail: ["@Liquidation: thanks", "@CT: rekt"],
-    duration: 30,
+    duration: 50,
     showTapButton: true,
     init(e) {
       this.hits = 0;
       this.need = 8;
-      this.miss = 0;
-      this.maxMiss = 2;
+      this.misclick = 0;
+      this.maxMisclick = 3;
       this.phase = "wait";
-      this.timer = 0.7;
+      this.timer = 0.8;
       this.pulse = 0;
+      this.spin = 0;
       this.hitFlash = 0;
+      this.badFlash = 0;
+      this.wobble = 0;
       this.bossScale = 1;
+      this.shockwaves = [];
+      this.embers = [];
+      this.orbiters = Array.from({ length: 10 }, (_, i) => ({
+        ang: (i / 10) * Math.PI * 2,
+        dist: 0.92 + (i % 3) * 0.08,
+        speed: 0.7 + (i % 4) * 0.15,
+        col: i % 2 ? "#00d4aa" : "#14f195",
+      }));
       this.rollPhase();
       if (e.tapBtn) {
         e.tapBtn.textContent = "TAP";
         e.tapBtn.style.display = "flex";
       }
     },
-    speedMul() {
-      return 1 + this.hits * 0.09;
-    },
     rollPhase() {
-      const left = this.need - this.hits;
       const r = Math.random();
-      if (r < 0.55) {
+      if (r < 0.62) {
         this.phase = "tap";
-        this.timer = (0.62 + Math.random() * 0.18) / this.speedMul();
-      } else if (r < 0.8) {
+        this.timer = 1.05 + Math.random() * 0.35;
+      } else if (r < 0.78) {
         this.phase = "trap";
-        this.timer = (0.5 + Math.random() * 0.14) / this.speedMul();
+        this.timer = 0.75 + Math.random() * 0.25;
       } else {
         this.phase = "wait";
-        this.timer = (0.45 + Math.random() * 0.35) / this.speedMul();
+        this.timer = 0.5 + Math.random() * 0.4;
       }
-      if (left <= 2) this.timer *= 0.82;
     },
-    resolveMiss(e, w, ht, label) {
-      this.miss++;
-      e.juice(w / 2, ht * 0.42, "#f85149", label);
+    spawnEmbers(bx, by, n) {
+      for (let i = 0; i < n; i++) {
+        const a = Math.random() * Math.PI * 2;
+        const s = 60 + Math.random() * 120;
+        this.embers.push({
+          x: bx, y: by,
+          vx: Math.cos(a) * s,
+          vy: Math.sin(a) * s - 40,
+          life: 0.5 + Math.random() * 0.4,
+          t: 0,
+          col: Math.random() > 0.5 ? "#00d4aa" : "#fbbf24",
+        });
+      }
+    },
+    misclickHit(e, w, ht) {
+      this.misclick++;
+      this.badFlash = 1;
+      this.wobble = 1.2;
+      e.juice(w / 2, ht * 0.42, "#f85149", "MISCLICK");
       e.shake();
-      if (this.miss >= this.maxMiss) e.loseLevel();
+      if (this.misclick >= this.maxMisclick) e.loseLevel();
+      else {
+        this.phase = "wait";
+        this.timer = 0.65;
+      }
     },
     update(dt, e) {
       const w = e.displayWidth;
       const ht = e.displayHeight;
-      this.pulse += dt * 4.5;
-      this.hitFlash = Math.max(0, this.hitFlash - dt * 3.5);
-      this.bossScale += ((1 - this.hits * 0.04) - this.bossScale) * Math.min(1, dt * 5);
+      const bx = w / 2;
+      const by = ht * 0.44;
+
+      this.pulse += dt * 5;
+      this.spin += dt * (this.phase === "tap" ? 2.8 : this.phase === "trap" ? 3.6 : 1.2);
+      this.hitFlash = Math.max(0, this.hitFlash - dt * 2.8);
+      this.badFlash = Math.max(0, this.badFlash - dt * 3.2);
+      this.wobble *= 0.9;
+      this.bossScale += ((1 - this.hits * 0.035) - this.bossScale) * Math.min(1, dt * 6);
+
+      this.orbiters.forEach(o => { o.ang += dt * o.speed * (this.phase === "tap" ? 1.4 : 1); });
+
+      this.shockwaves = this.shockwaves.filter(sw => {
+        sw.t += dt;
+        sw.r += dt * (220 + sw.t * 180);
+        return sw.t < sw.life;
+      });
+
+      this.embers = this.embers.filter(em => {
+        em.t += dt;
+        em.x += em.vx * dt;
+        em.y += em.vy * dt;
+        em.vy += 90 * dt;
+        return em.t < em.life;
+      });
 
       this.timer -= dt;
-      if (this.timer <= 0) {
-        if (this.phase === "tap") this.resolveMiss(e, w, ht, "MISS");
-        this.rollPhase();
-      }
+      if (this.timer <= 0) this.rollPhase();
 
       if (this.hits >= this.need) e.winLevel();
       else if (e.elapsed >= e.duration && this.hits < this.need) e.loseLevel();
@@ -1535,86 +1580,180 @@ const LEVELS = [
     tap(e) {
       const w = e.displayWidth;
       const ht = e.displayHeight;
-      if (this.phase === "tap") {
-        this.hits++;
-        this.hitFlash = 1;
-        this.bossScale = Math.max(0.72, 1 - this.hits * 0.04);
-        e.juice(w / 2, ht * 0.42, "#00d4aa", `-${this.hits}`);
-        e.shake();
-        if (this.hits >= this.need) { e.winLevel(); return; }
-        this.rollPhase();
-      } else if (this.phase === "trap") {
-        this.resolveMiss(e, w, ht, "LIQ");
-        this.phase = "wait";
-        this.timer = 0.55 / this.speedMul();
+      const bx = w / 2;
+      const by = ht * 0.44;
+
+      if (this.phase === "trap") {
+        this.misclickHit(e, w, ht);
+        return;
       }
+      if (this.phase !== "tap") return;
+
+      this.hits++;
+      this.hitFlash = 1;
+      this.wobble = 0.55;
+      this.bossScale = Math.max(0.7, 1 - this.hits * 0.035);
+      this.shockwaves.push({ x: bx, y: by, r: 20, t: 0, life: 0.55, col: "#00d4aa" });
+      this.shockwaves.push({ x: bx, y: by, r: 10, t: 0, life: 0.38, col: "#fbbf24" });
+      this.spawnEmbers(bx, by, e.lowPower ? 8 : 14);
+      e.juice(bx, by, "#00d4aa", `HIT ${this.hits}`);
+      e.shake();
+      if (this.hits >= this.need) { e.winLevel(); return; }
+      this.rollPhase();
     },
     onKey(ev, k) { if ((k === " " || k === "Space") && ev.keyDown) this.tap(ev); },
     onTap(e) { this.tap(e); },
     draw(ctx, e, w, ht) {
-      const bg = ctx.createLinearGradient(0, 0, 0, ht);
-      bg.addColorStop(0, "#030807");
-      bg.addColorStop(0.5, "#061210");
-      bg.addColorStop(1, "#040a09");
+      const bg = ctx.createLinearGradient(0, 0, w, ht);
+      bg.addColorStop(0, "#020605");
+      bg.addColorStop(0.45, "#061a14");
+      bg.addColorStop(1, "#030807");
       ctx.fillStyle = bg;
       ctx.fillRect(0, 0, w, ht);
 
       const bx = w / 2;
       const by = ht * 0.44;
-      const baseR = Math.min(w, ht) * (e.mobile ? 0.17 : 0.15) * this.bossScale;
+      const wobX = Math.sin(this.pulse * 11) * this.wobble * 6;
+      const wobY = Math.cos(this.pulse * 9) * this.wobble * 5;
+      const cx = bx + wobX;
+      const cy = by + wobY;
+      const baseR = Math.min(w, ht) * (e.mobile ? 0.18 : 0.16) * this.bossScale;
       const enraged = this.hits >= 5;
 
-      const phaseCol = this.phase === "tap" ? "#00d4aa"
-        : this.phase === "trap" ? "#f85149" : "#8b949e";
-      const ringPulse = this.phase === "tap"
-        ? 0.55 + Math.sin(this.pulse * 7) * 0.45
-        : this.phase === "trap" ? 0.7 + Math.sin(this.pulse * 9) * 0.3 : 0.35;
+      ctx.save();
+      ctx.translate(cx, cy);
+      ctx.rotate(this.spin * 0.08);
+      for (let i = 0; i < 6; i++) {
+        const a = this.spin + i * (Math.PI / 3);
+        const len = baseR * 1.8;
+        const g = ctx.createLinearGradient(0, 0, Math.cos(a) * len, Math.sin(a) * len);
+        g.addColorStop(0, "transparent");
+        g.addColorStop(0.5, this.phase === "tap" ? "rgba(0,212,170,0.12)" : "rgba(0,212,170,0.04)");
+        g.addColorStop(1, "transparent");
+        ctx.strokeStyle = g;
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(Math.cos(a) * len, Math.sin(a) * len);
+        ctx.stroke();
+      }
+      ctx.restore();
 
       if (this.hitFlash > 0) {
-        ctx.fillStyle = `rgba(0,212,170,${this.hitFlash * 0.22})`;
+        ctx.fillStyle = `rgba(0,212,170,${this.hitFlash * 0.28})`;
+        ctx.fillRect(0, 0, w, ht);
+      }
+      if (this.badFlash > 0) {
+        ctx.fillStyle = `rgba(248,81,73,${this.badFlash * 0.35})`;
         ctx.fillRect(0, 0, w, ht);
       }
 
-      drawGlow(ctx, bx, by, baseR * (1.35 + ringPulse * 0.35), phaseCol);
+      this.shockwaves.forEach(sw => {
+        const a = 1 - sw.t / sw.life;
+        ctx.globalAlpha = a * 0.9;
+        ctx.strokeStyle = sw.col;
+        ctx.lineWidth = 3 * a;
+        ctx.beginPath();
+        ctx.arc(sw.x, sw.y, sw.r, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.globalAlpha = 1;
+      });
+
+      this.embers.forEach(em => {
+        const a = 1 - em.t / em.life;
+        ctx.globalAlpha = a;
+        drawGlow(ctx, em.x, em.y, 8 * a, em.col);
+        ctx.fillStyle = em.col;
+        ctx.beginPath();
+        ctx.arc(em.x, em.y, 3 * a, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      });
+
+      const phaseCol = this.phase === "tap" ? "#00d4aa"
+        : this.phase === "trap" ? "#f85149" : "#71717a";
+      const ringPulse = this.phase === "tap"
+        ? 0.6 + Math.sin(this.pulse * 8) * 0.4
+        : this.phase === "trap" ? 0.75 + Math.sin(this.pulse * 10) * 0.25 : 0.3;
+
+      drawGlow(ctx, cx, cy, baseR * (1.5 + ringPulse * 0.4), phaseCol);
+      ctx.globalAlpha = 0.5;
+      drawGlow(ctx, cx, cy, baseR * 0.85, phaseCol);
+      ctx.globalAlpha = 1;
+
+      this.orbiters.forEach(o => {
+        const ox = cx + Math.cos(o.ang + this.spin) * baseR * o.dist;
+        const oy = cy + Math.sin(o.ang + this.spin) * baseR * o.dist * 0.85;
+        const hot = this.phase === "tap";
+        ctx.fillStyle = hot ? o.col : "#30363d";
+        ctx.beginPath();
+        ctx.arc(ox, oy, hot ? 4 : 2.5, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
       ctx.strokeStyle = phaseCol;
-      ctx.lineWidth = this.phase === "tap" ? 4 : 2;
+      ctx.lineWidth = this.phase === "tap" ? 5 : 2;
       ctx.beginPath();
-      ctx.arc(bx, by, baseR + 18 + ringPulse * 14, 0, Math.PI * 2);
+      ctx.arc(cx, cy, baseR + 20 + ringPulse * 16, 0, Math.PI * 2);
       ctx.stroke();
+      ctx.lineWidth = 2;
+      ctx.globalAlpha = 0.45;
+      ctx.beginPath();
+      ctx.arc(cx, cy, baseR + 36 + ringPulse * 10, this.spin, this.spin + Math.PI * 1.35);
+      ctx.stroke();
+      ctx.globalAlpha = 1;
 
-      drawLogo(ctx, e, "hyperliquid.png", bx, by, baseR * 1.5);
+      const squash = 1 + Math.sin(this.pulse * 14) * 0.04 * (this.phase === "tap" ? 1 : 0.3);
+      ctx.save();
+      ctx.translate(cx, cy);
+      ctx.scale(squash, 1 / squash);
+      drawLogo(ctx, e, "hyperliquid.png", 0, 0, baseR * 1.55);
+      ctx.restore();
 
-      const labels = { tap: "TAP!", trap: "LIQUIDATION!", wait: "WAIT..." };
+      const labels = { tap: "TAP!", trap: "DON'T TAP!", wait: "WAIT..." };
       const labelCol = this.phase === "tap" ? "#00d4aa"
         : this.phase === "trap" ? "#f85149" : "#8b949e";
+      const labelScale = this.phase === "tap" ? 1 + Math.sin(this.pulse * 12) * 0.06 : 1;
       ctx.fillStyle = labelCol;
-      ctx.font = `bold ${e.mobile ? 28 : 24}px system-ui`;
+      ctx.font = `bold ${(e.mobile ? 30 : 26) * labelScale}px system-ui`;
       ctx.textAlign = "center";
-      ctx.fillText(labels[this.phase], bx, by + baseR + 52);
+      ctx.fillText(labels[this.phase], cx, cy + baseR + 54);
 
       if (this.phase === "tap") {
-        const barW = Math.min(200, w - 48);
-        const pct = Math.max(0, this.timer / 0.8);
+        const barW = Math.min(220, w - 40);
+        const pct = Math.max(0, this.timer / 1.4);
         ctx.fillStyle = "#21262d";
         ctx.beginPath();
-        ctx.roundRect(bx - barW / 2, by + baseR + 64, barW, 6, 3);
+        ctx.roundRect(cx - barW / 2, cy + baseR + 68, barW, 8, 4);
         ctx.fill();
-        ctx.fillStyle = "#00d4aa";
+        const barG = ctx.createLinearGradient(cx - barW / 2, 0, cx + barW / 2, 0);
+        barG.addColorStop(0, "#00d4aa");
+        barG.addColorStop(1, "#14f195");
+        ctx.fillStyle = barG;
         ctx.beginPath();
-        ctx.roundRect(bx - barW / 2, by + baseR + 64, barW * pct, 6, 3);
+        ctx.roundRect(cx - barW / 2, cy + baseR + 68, barW * pct, 8, 4);
         ctx.fill();
       }
 
-      ctx.textAlign = "left";
-      ctx.fillStyle = enraged ? "#f85149" : "#8b949e";
-      ctx.font = `bold ${e.mobile ? 10 : 9}px system-ui`;
       ctx.textAlign = "center";
-      ctx.fillText(enraged ? "MELTDOWN MODE" : "FINAL BOSS", bx, by - baseR - 22);
+      ctx.fillStyle = enraged ? "#f85149" : "#8b949e";
+      ctx.font = `bold ${e.mobile ? 11 : 10}px system-ui`;
+      ctx.fillText(enraged ? "MELTDOWN MODE" : "FINAL BOSS", cx, cy - baseR - 24);
+
+      for (let i = 0; i < this.need; i++) {
+        const ang = -Math.PI / 2 + (i / this.need) * Math.PI * 2;
+        const px = cx + Math.cos(ang) * (baseR + 34);
+        const py = cy + Math.sin(ang) * (baseR + 34);
+        ctx.fillStyle = i < this.hits ? "#00d4aa" : "#21262d";
+        ctx.beginPath();
+        ctx.arc(px, py, 5, 0, Math.PI * 2);
+        ctx.fill();
+      }
       ctx.textAlign = "left";
 
       ctx.fillStyle = "#8b949e";
       ctx.font = "11px system-ui";
-      ctx.fillText(`Miss ${this.miss}/${this.maxMiss}`, 14, ht - 14);
+      ctx.fillText(`Misclicks ${this.misclick}/${this.maxMisclick}`, 14, ht - 14);
 
       e.drawProgress(this.hits, this.need, w, ht);
     },

@@ -1,4 +1,4 @@
-const CACHE = "rug-or-hug-v11";
+const CACHE = "rug-or-hug-v12";
 const ASSETS = [
   "./",
   "./index.html",

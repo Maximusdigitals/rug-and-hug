@@ -137,7 +137,7 @@ const LEVEL_ENRICHMENT = {
   17: { hint: "WIN: 6 NFA taps. Tap only when NFA shows — WAGMI/100x/GEM are traps.", voidMark: "fineprint" },
   18: { hint: "WIN: 10 meta taps. Wait for LOCKED, then tap chips matching that narrative (3 strikes = fail).", voidMark: "channel" },
   19: { hint: "WIN: kill 9 flags. Tap 🚩 only — green AUDITED/SAFU pills are bait. Escaped flags multiply.", voidMark: "thread" },
-  20: { hint: "WIN: 8 hits. Tap only on green TAP! - never tap red LIQUIDATION. Miss the TAP window or tap wrong twice = rekt.", voidMark: "notif" },
+  20: { hint: "WIN: 8 hits. Tap green TAP! only - skip WAIT and red DON'T TAP. Missing TAP! is OK; only misclicks on red cost you (3 max).", voidMark: "notif" },
 };
 
 LEVELS.forEach((lv) => {
