@@ -904,6 +904,10 @@ class GameEngine {
     this.skippedDays.add(this.dayIndex);
     this.streak = 0;
     this.conviction = Math.max(0, this.conviction - penalty);
+    if (this.saveData?.stats) {
+      this.saveData.stats.skips = this.skippedDays.size;
+      Storage.save(this.saveData);
+    }
     const msgs = via === "code"
       ? [`<strong>@InternZero</strong> day ${day} skipped`, `<strong>@HyperboleCap</strong> no questions asked`]
       : [`<strong>@InternZero</strong> paid CT tax to skip Day ${day}`, `<strong>@HyperboleCap</strong> no DD, no shame`];
@@ -935,13 +939,20 @@ class GameEngine {
     const day = this.dayIndex + 1;
     const name = this.level?.name || `Day ${day}`;
     const tweet = this.level?.buildSkipTweet?.()
-      || `stuck on Rug or Hug day ${day}. this game is actually hard @voidhl`;
+      || `stuck on Rug or Hug day ${day}. this game is actually hard @voidhl https://maximusdigitals.github.io/rug-and-hug/`;
     const ok = confirm(
       `Skip "${name}"?\n\nPost on X to continue (−12 conviction):\n\n"${tweet}"`
     );
     if (!ok) return;
-    window.open(this.xSkipUrl(tweet), "_blank", "noopener,noreferrer");
+
+    const url = this.xSkipUrl(tweet);
+    // Apply skip BEFORE opening X — mobile often navigates away and never reaches code after window.open
     this.applySkip(12, "x");
+
+    setTimeout(() => {
+      const tab = window.open(url, "_blank", "noopener,noreferrer");
+      if (!tab) window.location.assign(url);
+    }, 80);
   }
 
   resetToTitle() {
