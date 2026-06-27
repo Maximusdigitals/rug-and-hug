@@ -172,34 +172,117 @@ const LEVELS = [
     },
   },
   {
-    id: 5, name: "Meme Coin Naming Committee",
-    boss: "Pick a ticker that isn't cursed. Less is more.",
-    instruction: "Tap the safe ticker", mobileInstruction: "Tap safe ticker",
-    logos: ["bonk.png", "wif.png"],
+    id: 5, name: "Meme Whack-A-Rug",
+    boss: "Memecoins pop out of the trench. Whack the gems — never touch the rugs.",
+    instruction: "Tap green gems when they pop", mobileInstruction: "Whack gems, skip rugs",
+    logos: ["bonk.png", "wif.png", "pump-fun.png"],
     accent: "#9945ff",
-    win: "Ticker approved. Chart still dumps.", fail: "Cursed ticker deployed.",
-    ctWin: ["@Bonk: respectable", "@CT: tame"], ctFail: ["@Pump: lmao", "@Dev: rugged"],
-    duration: 20, isDialogue: true,
+    win: "Trenches cleared. Finger speed: institutional.", fail: "You whacked a rug.",
+    ctWin: ["@Bonk: respectable", "@TrenchKing: W"], ctFail: ["@Pump: lmao", "@RugWatch: skill issue"],
+    duration: 28,
     init(e) {
-      this.round = 0; this.miss = 0; this.maxMiss = 2;
-      this.rounds = [
-        { q: "Deploy your memecoin. Pick a ticker:", options: ["BONK", "BONKx", "BONK-ETH", "xBONK"], correct: 0 },
-        { q: "CT wants a rename. What's still clean?", options: ["WBONK", "BONK", "BONKINU", "BONK-SOL"], correct: 1 },
-        { q: "Final approval — pick the ticker:", options: ["BONK2", "BONKAI", "BONK", "sBONK"], correct: 2 },
-      ];
-      e.showDialogue(this.rounds[0]);
-    },
-    pick(e, i) {
-      const r = this.rounds[this.round];
-      if (i === r.correct) {
-        this.round++;
-        if (this.round >= this.rounds.length) e.winLevel();
-        else e.showDialogue(this.rounds[this.round]);
-      } else {
-        this.miss++;
-        if (this.miss >= this.maxMiss) e.loseLevel();
-        else e.showDialogue({ ...r, q: r.q + " — committee rejected that." });
+      this.holes = [];
+      this.whacked = 0; this.need = 10;
+      this.rugTaps = 0; this.maxRugs = 2;
+      this.missed = 0; this.maxMissed = 2;
+      this.spawnCd = 0.35;
+      const cols = 2; const rows = 2;
+      const padX = e.mobile ? 56 : 72;
+      const padY = e.mobile ? 90 : 110;
+      const gw = (e.displayWidth - padX * 2) / cols;
+      const gh = (e.displayHeight - padY * 2 - 40) / rows;
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+          this.holes.push({
+            x: padX + gw * c + gw / 2,
+            y: padY + gh * r + gh / 2,
+            pop: null,
+          });
+        }
       }
+      this.gemLogos = ["bonk.png", "wif.png", "jupiter.png"];
+      this.mobile = e.mobile;
+    },
+    spawnPop() {
+      const free = this.holes.filter(h => !h.pop);
+      if (!free.length) return;
+      const hole = free[Math.floor(Math.random() * free.length)];
+      const rug = Math.random() < 0.38;
+      hole.pop = {
+        rug,
+        logo: rug ? "pump-fun.png" : this.gemLogos[Math.floor(Math.random() * this.gemLogos.length)],
+        t: 0,
+        life: (this.mobile ? 1.05 : 0.95) + Math.random() * 0.35,
+        scale: 0,
+      };
+    },
+    update(dt, e) {
+      this.spawnCd -= dt;
+      if (this.spawnCd <= 0) {
+        this.spawnCd = 0.42 + Math.random() * 0.38;
+        this.spawnPop();
+      }
+      this.holes.forEach(hole => {
+        if (!hole.pop) return;
+        hole.pop.t += dt;
+        hole.pop.scale = Math.min(1, hole.pop.scale + dt * 5);
+        if (hole.pop.t >= hole.pop.life) {
+          if (!hole.pop.rug) this.missed++;
+          hole.pop = null;
+        }
+      });
+      if (this.whacked >= this.need) e.winLevel();
+      else if (this.rugTaps > this.maxRugs || this.missed > this.maxMissed
+        || (e.elapsed >= e.duration && this.whacked < this.need)) e.loseLevel();
+    },
+    onTapAt(e, x, y) {
+      const hitR = e.mobile ? 52 : 44;
+      const hole = this.holes.find(h => h.pop && Math.hypot(h.x - x, h.y - y) < hitR);
+      if (!hole) return;
+      const pop = hole.pop;
+      hole.pop = null;
+      if (pop.rug) {
+        this.rugTaps++;
+        e.juice(x, y, "#f85149", "RUG");
+        e.shake();
+      } else {
+        this.whacked++;
+        e.juice(x, y, "#3fb950", "+1");
+      }
+    },
+    draw(ctx, e, w, h) {
+      const bg = ctx.createLinearGradient(0, 0, 0, h);
+      bg.addColorStop(0, "#120a1a");
+      bg.addColorStop(1, "#08060e");
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, 0, w, h);
+      this.holes.forEach(hole => {
+        drawGlow(ctx, hole.x, hole.y, 36, "#9945ff33");
+        ctx.fillStyle = "#1a1228";
+        ctx.beginPath();
+        ctx.ellipse(hole.x, hole.y + 14, e.mobile ? 44 : 38, 14, 0, 0, Math.PI * 2);
+        ctx.fill();
+        if (hole.pop) {
+          const p = hole.pop;
+          const s = (e.mobile ? 46 : 40) * p.scale;
+          const col = p.rug ? "#f85149" : "#3fb950";
+          drawGlow(ctx, hole.x, hole.y - 8, s, col);
+          drawLogo(ctx, e, p.logo, hole.x, hole.y - 8, s);
+          if (p.rug) {
+            ctx.strokeStyle = "#f85149";
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.arc(hole.x, hole.y - 8, s * 0.65, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.fillStyle = "#f85149";
+            ctx.font = "bold 10px system-ui";
+            ctx.textAlign = "center";
+            ctx.fillText("RUG", hole.x, hole.y - 8 + s * 0.45);
+          }
+        }
+      });
+      ctx.textAlign = "left";
+      e.drawProgress(this.whacked, this.need, w, h);
     },
   },
 
@@ -443,28 +526,107 @@ const LEVELS = [
     },
   },
   {
-    id: 9, name: "Tokenized Grandma",
-    boss: "Grandma has questions about her on-chain TSLA. Pick the right answer.",
-    instruction: "Tap the best answer", mobileInstruction: "Tap best answer",
+    id: 9, name: "Grandma's SEC Dodge",
+    boss: "Drag Grandma's wallet through the rain. Catch USDC, dodge SEC subpoenas.",
+    instruction: "Drag wallet · catch blue USDC", mobileInstruction: "Drag · catch USDC",
     logos: ["ondo.png", "usdc.png"],
     accent: "#4ecdc4",
-    win: "Grandma understands. She's still confused.", fail: "Grandma called the SEC.",
+    win: "Grandma's savings intact. Compliance baffled.", fail: "SEC got Grandma on tape.",
     ctWin: ["@Ondo: DTCC vibes", "@Grandma: cute"], ctFail: ["@SEC: hello", "@TradFi: no"],
-    duration: 20, isDialogue: true,
+    duration: 30,
     init(e) {
-      this.round = 0; this.miss = 0; this.maxMiss = 2;
-      this.rounds = [
-        { q: "Grandma: Where's my dividend?", options: ["It's on-chain vibes", "Accrued per block in USDC", "Paid quarterly via oracle", "Auto-compounds in your wallet"], correct: 0 },
-        { q: "Grandma: Is this a scam?", options: ["Absolutely not*", "Audited — read the litepaper", "Only on weekends", "Same as your savings account"], correct: 2 },
-        { q: "Grandma: Can I redeem for cash?", options: ["Instant fiat rails live", "Redeem window Q4 maybe", "Anytime via bridge", "Composable with Maker"], correct: 1 },
-        { q: "Grandma: Who holds the shares?", options: ["DTCC wrapper trust", "It's on-chain vibes", "Self-custody = ownership", "SPV under Delaware law"], correct: 1 },
-      ];
-      e.showDialogue(this.rounds[0]);
+      this.wallet = { x: e.displayWidth / 2, y: e.displayHeight - (e.mobile ? 88 : 76) };
+      this.items = [];
+      this.caught = 0; this.need = 9;
+      this.hits = 0; this.maxHits = 2;
+      this.spawn = 0;
+      this.pw = e.mobile ? 42 : 36;
     },
-    pick(e, i) {
-      const r = this.rounds[this.round];
-      if (i === r.correct) { this.round++; if (this.round >= this.rounds.length) e.winLevel(); else e.showDialogue(this.rounds[this.round]); }
-      else { this.miss++; if (this.miss >= this.maxMiss) e.loseLevel(); else e.showDialogue({ ...r, q: r.q + " — Grandma's not convinced." }); }
+    update(dt, e) {
+      const w = e.displayWidth; const ht = e.displayHeight;
+      this.wallet.y = ht - (e.mobile ? 88 : 76);
+
+      if (e.pointer.down) {
+        this.wallet.x += (e.pointer.x - this.wallet.x) * Math.min(1, dt * 14);
+      }
+      this.wallet.x = Math.max(this.pw + 12, Math.min(w - this.pw - 12, this.wallet.x));
+
+      this.spawn += dt;
+      if (this.spawn > 0.45) {
+        this.spawn = 0;
+        const roll = Math.random();
+        const type = roll < 0.42 ? "usdc" : roll < 0.72 ? "sec" : "scam";
+        this.items.push({
+          type,
+          x: 36 + Math.random() * (w - 72),
+          y: -36,
+          speed: 105 + Math.random() * 65,
+          logo: type === "usdc" ? "usdc.png" : type === "scam" ? "usdt.png" : null,
+          spin: Math.random() * Math.PI * 2,
+        });
+      }
+
+      this.items.forEach(it => {
+        it.y += it.speed * dt;
+        it.spin += dt * 3;
+      });
+
+      for (let i = this.items.length - 1; i >= 0; i--) {
+        const it = this.items[i];
+        if (Math.hypot(it.x - this.wallet.x, it.y - this.wallet.y) < this.pw + 22) {
+          if (it.type === "usdc") {
+            this.caught++;
+            e.juice(it.x, it.y, "#2775ca", "+1");
+          } else {
+            this.hits++;
+            e.juice(it.x, it.y, "#f85149");
+            e.shake();
+          }
+          this.items.splice(i, 1);
+          continue;
+        }
+        if (it.y > ht + 40) this.items.splice(i, 1);
+      }
+
+      if (this.caught >= this.need) e.winLevel();
+      else if (this.hits > this.maxHits || (e.elapsed >= e.duration && this.caught < this.need)) e.loseLevel();
+    },
+    onTapAt(e, x) {
+      this.wallet.x += (x - this.wallet.x) * 0.55;
+    },
+    draw(ctx, e, w, h) {
+      const bg = ctx.createLinearGradient(0, 0, 0, h);
+      bg.addColorStop(0, "#081418");
+      bg.addColorStop(1, "#060c10");
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, 0, w, h);
+
+      this.items.forEach(it => {
+        if (it.type === "sec") {
+          ctx.save();
+          ctx.translate(it.x, it.y);
+          ctx.rotate(it.spin);
+          drawCard(ctx, -28, -18, 56, 36, 6, "#1a1020", "#f8514966");
+          ctx.fillStyle = "#f85149";
+          ctx.font = "bold 11px system-ui";
+          ctx.textAlign = "center";
+          ctx.fillText("SEC", 0, 5);
+          ctx.restore();
+        } else {
+          const col = it.type === "usdc" ? "#2775ca" : "#f85149";
+          drawGlow(ctx, it.x, it.y, 30, col);
+          drawLogo(ctx, e, it.logo, it.x, it.y, 34);
+        }
+      });
+
+      drawGlow(ctx, this.wallet.x, this.wallet.y, 50, "#4ecdc4");
+      drawLogo(ctx, e, "ondo.png", this.wallet.x, this.wallet.y - 10, e.mobile ? 48 : 42);
+      ctx.fillStyle = "#4ecdc4";
+      ctx.font = "bold 11px system-ui";
+      ctx.textAlign = "center";
+      ctx.fillText("GRANDMA", this.wallet.x, this.wallet.y + 28);
+      ctx.textAlign = "left";
+      e.drawProgress(this.caught, this.need, w, h);
     },
   },
   {
@@ -545,28 +707,95 @@ const LEVELS = [
     },
   },
   {
-    id: 12, name: "AI Agent Union Strike",
-    boss: "Your trading bot is on strike. Negotiate or get liquidated.",
-    instruction: "Pick the best deal", mobileInstruction: "Pick best deal",
+    id: 12, name: "Bot Union Bargain",
+    boss: "Union demands drop on the beat. Tap ACCEPT when the demand hits the green zone.",
+    instruction: "Tap on the beat", mobileInstruction: "Tap when green",
     logos: ["venice-vvv.png", "tao.png", "near.png"],
     accent: "#a371f7",
-    win: "Bot back online. Still useless.", fail: "Bot liquidated everything.",
+    win: "Deal signed. Bot still useless.", fail: "Union walked. Wallet nuked.",
     ctWin: ["@VVV: unionized", "@AI: W"], ctFail: ["@Wallet: 0", "@Bot: bye"],
-    duration: 24, isDialogue: true,
+    duration: 28, showTapButton: true,
     init(e) {
-      this.round = 0; this.miss = 0; this.maxMiss = 2;
-      this.rounds = [
-        { q: "Agent wants APY.", options: ["Market rate only", "4.20% + snacks", "Exposure + equity", "Vibes-based yield"], correct: 1 },
-        { q: "Agent wants FOMC break.", options: ["Never", "Half day on CPI only", "FOMC days off", "Trade through — we're bots"], correct: 2 },
-        { q: "Agent wants gas reimbursement.", options: ["Pay your own gas", "Mainnet reimbursement cap", "We cover L2 + snacks", "Deduct from PnL"], correct: 2 },
-        { q: "Agent wants a title bump.", options: ["Chief Vibes Officer", "Senior Exposure Intern", "Co-Head of Alpha", "Associate + snack stipend"], correct: 3 },
-      ];
-      e.showDialogue(this.rounds[0]);
+      this.deals = 0; this.need = 8;
+      this.misses = 0; this.maxMiss = 2;
+      this.win = 0.28;
+      this.demands = ["SNACKS", "GAS $", "4.20%", "FOMC OFF", "TITLE+", "L2 COVER", "EQUITY", "NAP TIME"];
+      this.beats = Array.from({ length: this.need }, (_, i) => ({
+        t: 0.9 + i * 1.05,
+        done: false,
+        miss: false,
+        label: this.demands[i % this.demands.length],
+      }));
     },
-    pick(e, i) {
-      const r = this.rounds[this.round];
-      if (i === r.correct) { this.round++; if (this.round >= this.rounds.length) e.winLevel(); else e.showDialogue(this.rounds[this.round]); }
-      else { this.miss++; if (this.miss >= this.maxMiss) e.loseLevel(); else e.showDialogue({ ...r, q: r.q + " — union rejected that." }); }
+    update(dt, e) {
+      this.beats.forEach(b => {
+        if (!b.done && !b.miss && e.elapsed > b.t + this.win) {
+          b.miss = true;
+          this.misses++;
+        }
+      });
+      if (this.deals >= this.need) e.winLevel();
+      else if (this.misses > this.maxMiss || (e.elapsed >= e.duration && this.deals < this.need)) e.loseLevel();
+    },
+    tap(e) {
+      const b = this.beats.find(b => !b.done && !b.miss && Math.abs(e.elapsed - b.t) < this.win);
+      if (b) {
+        b.done = true;
+        this.deals++;
+        e.juice(e.displayWidth / 2, e.displayHeight * 0.58, "#3fb950", "DEAL");
+        if (this.deals >= this.need) e.winLevel();
+      } else if (this.misses <= this.maxMiss) {
+        this.misses++;
+        e.juice(e.displayWidth / 2, e.displayHeight * 0.58, "#f85149");
+        if (this.misses > this.maxMiss) e.loseLevel();
+      }
+    },
+    onKey(e, k) { if ((k === " " || k === "Space") && e.keyDown) this.tap(e); },
+    onTap(e) { this.tap(e); },
+    draw(ctx, e, w, h) {
+      const bg = ctx.createLinearGradient(0, 0, 0, h);
+      bg.addColorStop(0, "#100818");
+      bg.addColorStop(1, "#08060c");
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, 0, w, h);
+
+      const zy = h * 0.58;
+      drawGlow(ctx, w / 2, zy, 70, "#3fb950");
+      ctx.strokeStyle = "#3fb95055";
+      ctx.setLineDash([6, 6]);
+      ctx.beginPath();
+      ctx.moveTo(28, zy);
+      ctx.lineTo(w - 28, zy);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      drawLogo(ctx, e, "tao.png", w * 0.2, h * 0.22, e.mobile ? 46 : 40);
+      drawLogo(ctx, e, "near.png", w * 0.8, h * 0.22, e.mobile ? 46 : 40);
+      ctx.fillStyle = "#a371f7";
+      ctx.font = "bold 10px system-ui";
+      ctx.textAlign = "center";
+      ctx.fillText("UNION", w * 0.2, h * 0.22 + 36);
+      ctx.fillText("YOU", w * 0.8, h * 0.22 + 36);
+
+      this.beats.forEach(b => {
+        const x = 40 + ((e.elapsed - (b.t - 1.35)) / 1.45) * (w - 80);
+        if (x < 34 || x > w - 34) return;
+        const near = Math.abs(e.elapsed - b.t) < this.win;
+        const r = e.mobile ? 26 : 20;
+        const col = b.done ? "#3fb950" : b.miss ? "#f85149" : near ? "#3fb950" : "#a371f7";
+        drawGlow(ctx, x, zy, near ? 38 : 18, col);
+        drawCard(ctx, x - 38, zy - 18, 76, 36, 8, "#1a1028", col + "88");
+        ctx.fillStyle = "#f4f4f5";
+        ctx.font = "bold 10px system-ui";
+        ctx.fillText(b.label, x, zy + 4);
+        ctx.beginPath();
+        ctx.arc(x, zy + 28, r * 0.35, 0, Math.PI * 2);
+        ctx.fillStyle = col;
+        ctx.fill();
+      });
+
+      ctx.textAlign = "left";
+      e.drawProgress(this.deals, this.need, w, h);
     },
   },
   {
