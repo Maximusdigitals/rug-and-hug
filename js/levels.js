@@ -196,8 +196,8 @@ const LEVELS = [
       this.missed = 0; this.maxMissed = 2;
       this.spawnCd = 0.35;
       const cols = 2; const rows = 2;
-      const padX = e.mobile ? 56 : 72;
-      const padY = e.mobile ? 90 : 110;
+      const padX = Math.max(16, Math.floor(e.displayWidth * (e.mobile ? 0.06 : 0.07)));
+      const padY = Math.max(28, Math.floor(e.displayHeight * (e.mobile ? 0.1 : 0.12)));
       const gw = (e.displayWidth - padX * 2) / cols;
       const gh = (e.displayHeight - padY * 2 - 40) / rows;
       for (let r = 0; r < rows; r++) {
@@ -1418,9 +1418,12 @@ const LEVELS = [
 
       const threadY = (this.scroll % (ht * 0.55)) - ht * 0.1;
       ctx.fillStyle = "rgba(22,27,34,0.55)";
-      ctx.fillRect(18, ht * 0.08, w - 36, ht * 0.38);
+      const threadPad = Math.max(10, w * 0.04);
+      const threadTop = ht * 0.06;
+      const threadH = ht * 0.42;
+      ctx.fillRect(threadPad, threadTop, w - threadPad * 2, threadH);
       ctx.strokeStyle = "#30363d";
-      ctx.strokeRect(18, ht * 0.08, w - 36, ht * 0.38);
+      ctx.strokeRect(threadPad, threadTop, w - threadPad * 2, threadH);
       ctx.fillStyle = "#8b949e";
       ctx.font = `11px ui-monospace, monospace`;
       this.thread.forEach((line, i) => {
@@ -1485,7 +1488,7 @@ const LEVELS = [
       this.safeW = 0.26;
       this.flash = 0;
       this.pulse = 0;
-      this.laneY = 0.82;
+      this.laneY = 0.86;
       this.pickSafeZone();
       this.pendingAdvance = false;
       this.syncTapBtn(e);
@@ -1631,8 +1634,8 @@ const LEVELS = [
       this.drawGrid(ctx, w, ht);
 
       const bx = w / 2;
-      const by = ht * 0.28;
-      const bossR = e.mobile ? 58 : 48;
+      const by = ht * 0.34;
+      const bossR = Math.min(w, ht) * (e.mobile ? 0.14 : 0.12);
       const hp = this.bossHp / 6;
       const enraged = this.bossHp <= 3;
 
@@ -1648,7 +1651,7 @@ const LEVELS = [
         drawGlow(ctx, bx, by, bossR * 1.1, enraged ? "#f8514966" : "#00d4aa44");
       }
 
-      drawLogo(ctx, e, "hyperliquid.png", bx, by, e.mobile ? 96 : 82);
+      drawLogo(ctx, e, "hyperliquid.png", bx, by, bossR * 1.45);
 
       for (let i = 0; i < 6; i++) {
         const ang = -Math.PI / 2 + (i / 6) * Math.PI * 2;
@@ -1668,8 +1671,9 @@ const LEVELS = [
       ctx.textAlign = "left";
 
       const laneY = ht * this.laneY;
-      const laneH = e.mobile ? 52 : 44;
-      drawCard(ctx, 20, laneY - laneH / 2, w - 40, laneH, 14, "#0a121088", "#00d4aa22");
+      const laneH = Math.max(44, ht * (e.mobile ? 0.1 : 0.085));
+      const lanePad = Math.max(8, w * 0.03);
+      drawCard(ctx, lanePad, laneY - laneH / 2, w - lanePad * 2, laneH, 14, "#0a121088", "#00d4aa22");
 
       if (this.state === "telegraph") {
         const sx = this.safeX * w;

@@ -80,6 +80,13 @@ class GameEngine {
     });
     window.addEventListener("resize", () => this.scheduleResize());
     window.addEventListener("orientationchange", () => this.scheduleResize());
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener("resize", () => this.scheduleResize());
+    }
+    if (this.playArea && typeof ResizeObserver !== "undefined") {
+      this._areaObserver = new ResizeObserver(() => this.scheduleResize());
+      this._areaObserver.observe(this.playArea);
+    }
     this.showScreen("title");
   }
 
@@ -292,9 +299,10 @@ class GameEngine {
     if (!area) return;
     const rect = area.getBoundingClientRect();
     const dpr = this.lowPower ? 1 : Math.min(devicePixelRatio || 1, 1.5);
-    const tapH = this.tapBtn?.offsetHeight || 0;
+    const tapVisible = this.tapBtn && this.tapBtn.style.display !== "none";
+    const tapH = tapVisible ? (this.tapBtn.offsetHeight || 0) : 0;
     const w = Math.max(280, Math.floor(rect.width));
-    const h = Math.max(200, Math.floor(rect.height - tapH));
+    const h = Math.max(240, Math.floor(rect.height - tapH));
     if (w === this.displayWidth && h === this.displayHeight && dpr === this._dpr) return;
     this._dpr = dpr;
     this.canvas.style.width = `${w}px`;
@@ -310,7 +318,9 @@ class GameEngine {
     Object.values(this.screens).forEach(s => s.classList.remove("active"));
     this.screens[name].classList.add("active");
     document.body.dataset.screen = name;
-    if (name === "play") this.scheduleResize();
+    document.body.classList.toggle("boss-day", name === "play" && Progression.isBossDay(this.dayIndex));
+    if (name !== "play") document.body.classList.remove("boss-day");
+    if (name === "play") requestAnimationFrame(() => this.scheduleResize());
     if (name === "title") this.updateTitleUI();
     this.updateVoidAlmightyUI();
   }
@@ -555,6 +565,7 @@ class GameEngine {
   }
 
   beginLevelAfterCountdown() {
+    this.resize();
     this.beginLevel();
   }
 
