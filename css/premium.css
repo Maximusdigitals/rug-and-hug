@@ -457,6 +457,31 @@ body.ui-ready #app {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
+.goal-line {
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.goal-line:last-child {
+  margin-bottom: 0;
+}
+
+.goal-tag {
+  display: inline-block;
+  min-width: 52px;
+  margin-right: 8px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.goal-win .goal-tag { color: #3fb950; }
+.goal-lose .goal-tag { color: #f85149; }
+
 .canvas-frame {
   margin: 14px 16px 16px;
   border-radius: 16px;

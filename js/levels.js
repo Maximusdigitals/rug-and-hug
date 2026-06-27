@@ -1,11 +1,20 @@
 /* 20 levels — mobile-first, tuned difficulty, modern canvas visuals */
 
+function goalBrief(win, how, lose) {
+  const loseLine = lose
+    ? `<p class="goal-line goal-lose"><span class="goal-tag">LOSE IF</span> ${lose}</p>`
+    : "";
+  return `<p class="goal-line goal-win"><span class="goal-tag">WIN</span> ${win}</p>`
+    + `<p class="goal-line goal-how"><span class="goal-tag">HOW</span> ${how}</p>`
+    + loseLine;
+}
+
 const LEVELS = [
   // ── ACT I: THE TRENCHES ──────────────────────────────────────
   {
     id: 1, name: "Gas Fee Seance",
-    boss: "Summon your pending ETH transaction. Tap when the orb hits the gold zone.",
-    instruction: "Tap on the beat", mobileInstruction: "Tap when gold",
+    boss: goalBrief("Get 8 perfect taps", "Tap when the orb turns gold in the center", "Tap too early or too late — max 2 misses"),
+    instruction: "WIN: 8 gold taps · max 2 misses", mobileInstruction: "Tap when gold",
     logos: ["ethereum.png", "bitcoin.png"],
     accent: "#627eea",
     win: "Tx confirmed. Only cost half your portfolio.", fail: "Tx failed. Gas won.",
@@ -51,8 +60,8 @@ const LEVELS = [
   },
   {
     id: 2, name: "Solana Trench Foot",
-    boss: "Green = gem. Red ring = rug. Tap the gems.",
-    instruction: "Tap green gems", mobileInstruction: "Tap green, skip red",
+    boss: goalBrief("Collect 9 green gems", "Tap falling coins with green rings", "Never tap red-ring RUG coins — 2 rugs ends the run"),
+    instruction: "WIN: 9 green gems · skip red", mobileInstruction: "Green yes · red no",
     logos: ["solana.png", "bonk.png", "wif.png", "pump-fun.png"],
     accent: "#14f195",
     win: "Trenches cleared. Dignity optional.", fail: "Too many rugs.",
@@ -101,8 +110,8 @@ const LEVELS = [
   },
   {
     id: 3, name: "BTC Range Prison",
-    boss: "BTC is sideways forever. Keep the dot between the walls.",
-    instruction: "Drag or tap sides to stay centered", mobileInstruction: "Drag to center",
+    boss: goalBrief("Survive until the timer hits zero", "Drag the orange dot and keep it in the safe zone", "Touch the red walls — they slowly close in"),
+    instruction: "WIN: survive the timer · stay centered", mobileInstruction: "Keep dot centered",
     logos: ["bitcoin.png", "blackrock-ibit.png"],
     accent: "#f7931a",
     win: "You survived boredom. Institutional.", fail: "You broke the range.",
@@ -135,8 +144,8 @@ const LEVELS = [
   },
   {
     id: 4, name: "Fear & Greed Exorcism",
-    boss: "Tap when the meter is in FEAR (green). Skip greed.",
-    instruction: "Tap in green FEAR zone", mobileInstruction: "Tap green zone",
+    boss: goalBrief("Tap 8 times in the FEAR zone", "Tap only when the slider is green on the left", "Don't tap during red GREED — max 2 wrong taps"),
+    instruction: "WIN: 8 FEAR taps · skip greed", mobileInstruction: "Green zone only",
     logos: ["fear-greed.png"],
     accent: "#16c784",
     win: "Fear mastered. Buy signal?", fail: "You aped at peak greed.",
@@ -173,8 +182,8 @@ const LEVELS = [
   },
   {
     id: 5, name: "Meme Whack-A-Rug",
-    boss: "Memecoins pop out of the trench. Whack the gems — never touch the rugs.",
-    instruction: "Tap green gems when they pop", mobileInstruction: "Whack gems, skip rugs",
+    boss: goalBrief("Whack 10 green memecoins", "Tap coins when they pop out of the holes", "Never tap red RUG coins — miss 2 green gems and you're out"),
+    instruction: "WIN: 10 green whacks · skip RUG", mobileInstruction: "Green yes · red no",
     logos: ["bonk.png", "wif.png", "pump-fun.png"],
     accent: "#9945ff",
     win: "Trenches cleared. Finger speed: institutional.", fail: "You whacked a rug.",
@@ -289,8 +298,8 @@ const LEVELS = [
   // ── ACT II: INSTITUTIONAL COSPLAY ────────────────────────────
   {
     id: 6, name: "ETF Funeral Director",
-    boss: "Institutional ghosts bail fast. Tap them before they fade — pews recycle.",
-    instruction: "Tap ghosts before they fade", mobileInstruction: "Tap the ghost",
+    boss: goalBrief("Seat 8 ghosts before they fade", "Tap the floating ghost — not the pew below", "Let 2 ghosts fade away"),
+    instruction: "WIN: seat 8 ghosts · tap fast", mobileInstruction: "Tap ghosts fast",
     logos: ["bitcoin.png", "blackrock-ibit.png", "coinbase.png"],
     accent: "#627eea",
     win: "Outflows paused. Miraculously.", fail: "They left for Hyperliquid.",
@@ -373,8 +382,8 @@ const LEVELS = [
   },
   {
     id: 7, name: "Hyperliquid Baptism",
-    boss: "Pools shuffle every few seconds. Dunk into PERPS five times — OIL and PRE-IPO will rekt you.",
-    instruction: "Drag into moving PERPS", mobileInstruction: "Dunk PERPS ×5",
+    boss: goalBrief("Dunk into PERPS 5 times", "Drag to the green PERPS pool at the bottom line and release", "Pools shuffle — OIL and PRE-IPO are wrong (1 mistake = fail)"),
+    instruction: "WIN: dunk PERPS 5× · green only", mobileInstruction: "Dunk PERPS ×5",
     logos: ["hyperliquid.png", "hyperliquid-mark.svg"],
     accent: "#00d4aa",
     win: "You are collateral now.", fail: "Wrong pool. Oil longed you.",
@@ -489,8 +498,8 @@ const LEVELS = [
   },
   {
     id: 8, name: "HIP-3 Possession",
-    boss: "Oil, gold, silver spirits attack. Tap the glowing one.",
-    instruction: "Tap the pulsing commodity", mobileInstruction: "Tap the glow",
+    boss: goalBrief("Exorcise 7 glowing commodities", "Tap oil, gold, or silver only when they pulse/glow", "Don't tap when nothing is glowing"),
+    instruction: "WIN: 7 glow taps · active only", mobileInstruction: "Tap when it glows",
     logos: ["hyperliquid.png", "usdc.png"],
     accent: "#d29922",
     win: "Exorcised. RWA perps salute you.", fail: "Commodity possessed you.",
@@ -527,8 +536,8 @@ const LEVELS = [
   },
   {
     id: 9, name: "Grandma's SEC Dodge",
-    boss: "Drag Grandma's wallet through the rain. Catch USDC, dodge SEC subpoenas.",
-    instruction: "Drag wallet · catch blue USDC", mobileInstruction: "Drag · catch USDC",
+    boss: goalBrief("Catch 9 blue USDC coins", "Drag Grandma's wallet left/right into the coins", "Dodge SEC letters and red scams — 2 hits = fail"),
+    instruction: "WIN: catch 9 USDC · dodge SEC", mobileInstruction: "Drag · catch blue",
     logos: ["ondo.png", "usdc.png"],
     accent: "#4ecdc4",
     win: "Grandma's savings intact. Compliance baffled.", fail: "SEC got Grandma on tape.",
@@ -631,8 +640,8 @@ const LEVELS = [
   },
   {
     id: 10, name: "Stablecoin Trust Fall",
-    boss: "Catch blue USDC. Let red wobbly coins fall.",
-    instruction: "Tap USDC only", mobileInstruction: "Catch blue USDC",
+    boss: goalBrief("Catch 8 blue USDC coins", "Tap falling blue USDC", "Let red wobbly coins fall — tapping them hurts you (max 2)"),
+    instruction: "WIN: 8 blue taps · skip red", mobileInstruction: "Blue yes · red no",
     logos: ["usdc.png", "usdt.png", "dai.png"],
     accent: "#2775ca",
     win: "Peg maintained. Trust restored.", fail: "Depeg emotional damage.",
@@ -675,8 +684,8 @@ const LEVELS = [
   // ── ACT III: SMART MONEY THEATER ─────────────────────────────
   {
     id: 11, name: "ZEC Identity Crisis",
-    boss: "Toggle SHIELD when the eye appears. Stay public otherwise.",
-    instruction: "Tap SHIELD when eye shows", mobileInstruction: "Tap SHIELD on eye",
+    boss: goalBrief("Shield 7 times when the eye appears", "Wait for 👁 then tap SHIELD", "Don't tap early or miss the eye — max 2 mistakes"),
+    instruction: "WIN: 7 shields · wait for 👁", mobileInstruction: "Wait for eye → tap",
     logos: ["zcash.png", "dash.png"],
     accent: "#f4b728",
     win: "Privacy preserved. Compliance confused.", fail: "Compliance caught you.",
@@ -708,8 +717,8 @@ const LEVELS = [
   },
   {
     id: 12, name: "Bot Union Bargain",
-    boss: "Union demands drop on the beat. Tap ACCEPT when the demand hits the green zone.",
-    instruction: "Tap on the beat", mobileInstruction: "Tap when green",
+    boss: goalBrief("Accept 8 union demands on the beat", "Tap when demands hit the green ACCEPT line (same timing as Day 1)", "Too early or too late counts as a miss — max 2"),
+    instruction: "WIN: 8 ACCEPT taps · on beat", mobileInstruction: "Tap when green",
     logos: ["venice-vvv.png", "tao.png", "near.png"],
     accent: "#a371f7",
     win: "Deal signed. Bot still useless.", fail: "Union walked. Wallet nuked.",
@@ -800,8 +809,8 @@ const LEVELS = [
   },
   {
     id: 13, name: "Polymarket Spread Squeeze",
-    boss: "Wedding market is illiquid. Tap when YES and NO odds snap together at the altar.",
-    instruction: "Tap when spread closes", mobileInstruction: "Tap tight spread",
+    boss: goalBrief("Match the spread 8 times", "Tap when YES and NO lines snap together and the box glows green", "Don't tap while spread is wide — max 2 bad taps"),
+    instruction: "WIN: 8 tight spreads · tap green", mobileInstruction: "Tap when tight",
     logos: ["polymarket-icon.png"],
     accent: "#2e5cff",
     win: "Spread married. Both sides lost money.", fail: "Liquidity divorced you.",
@@ -907,8 +916,8 @@ const LEVELS = [
   },
   {
     id: 14, name: "Proof of Vibes",
-    boss: "Only tap 🚀 when the VC screams BUY. Ignore the rest.",
-    instruction: "Tap 🚀 on BUY only", mobileInstruction: "Tap rocket on BUY",
+    boss: goalBrief("Rate 7 vibes as bullish", "Tap only when VC screams BUY and 🚀 appears", "Hands off on 'hard pass' — max 2 wrong taps"),
+    instruction: "WIN: 7 BUY taps · 🚀 only", mobileInstruction: "Rocket on BUY only",
     logos: ["solana.png", "hyperliquid.png", "ondo.png"],
     accent: "#9945ff",
     win: "Vibes validated. Due diligence skipped.", fail: "You rated a rug as bullish.",
@@ -941,8 +950,8 @@ const LEVELS = [
   },
   {
     id: 15, name: "Pre-IPO Astronaut",
-    boss: "Tap to boost through gaps. SpaceX perp energy.",
-    instruction: "Tap to fly up", mobileInstruction: "Tap to boost",
+    boss: goalBrief("Fly through 6 gaps", "Tap to boost up and steer through holes in the red walls", "Hit a red wall = instant fail"),
+    instruction: "WIN: pass 6 gaps · dodge walls", mobileInstruction: "Tap · dodge walls",
     logos: ["hyperliquid.png"],
     accent: "#627eea",
     win: "Pre-IPO moon mission complete.", fail: "G-force rekt you.",
@@ -988,8 +997,8 @@ const LEVELS = [
   // ── ACT IV: CT FINAL BOSS ────────────────────────────────────
   {
     id: 16, name: "Airdrop Supply Drop",
-    boss: "TGE crates rain from the sky. Tap legit airdrops — let scam crates crash.",
-    instruction: "Tap green airdrops only", mobileInstruction: "Tap green drops",
+    boss: goalBrief("Claim 10 green airdrops", "Tap green AIRDROP crates as they fall from the sky", "Let red FAKE crates fall — miss 2 real drops or tap 2 scams = fail"),
+    instruction: "WIN: 10 green drops · skip fake", mobileInstruction: "Green yes · red no",
     logos: ["megaeth.png", "eigenlayer.png"],
     accent: "#ff6b6b",
     win: "Bags secured. Sybil tears optional.", fail: "You claimed a phishing drop.",
@@ -1098,8 +1107,8 @@ const LEVELS = [
   },
   {
     id: 17, name: "KOL Ventriloquist",
-    boss: "Tap when NFA scrolls across. Don't tap the shill.",
-    instruction: "Tap on NFA only", mobileInstruction: "Tap NFA",
+    boss: goalBrief("Post disclaimer 6 times", "Tap only when NFA scrolls on screen", "Never tap WAGMI, 100x, or GEM — max 2 wrong taps"),
+    instruction: "WIN: 6 NFA taps · skip shills", mobileInstruction: "NFA only",
     logos: ["x-logo.svg"],
     accent: "#1d9bf0",
     win: "Disclaimer delivered. SEC distracted.", fail: "Shilled without NFA.",
@@ -1135,8 +1144,8 @@ const LEVELS = [
   },
   {
     id: 18, name: "Narrative Whiplash",
-    boss: "Meta roulette spins — only tap chips when LOCKED matches the wheel. Wrong narrative = strike.",
-    instruction: "Tap chips during LOCK", mobileInstruction: "LOCK → tap meta",
+    boss: goalBrief("Catch the meta 10 times", "Wait for LOCKED on the wheel, then tap chips matching that narrative", "Don't tap during SPIN or on wrong meta — 3 strikes = fail"),
+    instruction: "WIN: 10 meta taps · wait LOCK", mobileInstruction: "Wait LOCK → tap",
     logos: ["solana.png", "hyperliquid.png", "zcash.png", "ondo.png"],
     accent: "#d29922",
     win: "You caught the meta. It already rotated.", fail: "You bought last week's narrative.",
@@ -1297,8 +1306,8 @@ const LEVELS = [
   },
   {
     id: 19, name: "Zach Thread Boss Fight",
-    boss: "Thread scrolls nonstop. Tap 🚩 flags before they multiply — never tap green AUDITED pills.",
-    instruction: "Tap flags · skip pills", mobileInstruction: "🚩 yes · pills no",
+    boss: goalBrief("Kill 9 red flags before they escape", "Tap 🚩 flags as they fall down the thread", "Never tap green AUDITED/SAFU pills — let max 2 flags escape"),
+    instruction: "WIN: 9 flags · skip pills", mobileInstruction: "Flags yes · pills no",
     logos: ["x-logo.svg"],
     accent: "#f85149",
     win: "Thread neutralized. Supply unclear.", fail: "95% supply controlled.",
@@ -1452,8 +1461,12 @@ const LEVELS = [
   },
   {
     id: 20, name: "Touch Grass",
-    boss: "3-phase offline protocol: breach CT lasers, survive flickering grass, then LOG OFF while the shrine orbits.",
-    instruction: "Phase 1 · Breach GRASS", mobileInstruction: "Breach the grass",
+    boss: goalBrief(
+      "Complete all 3 phases and log off",
+      "① Drag past lasers into grass → ② Hold in grass 3 seconds → ③ Drag to grass and tap LOG OFF",
+      "Lasers, missiles, notifications, or a full dopamine bar end the run"
+    ),
+    instruction: "Phase 1: reach the grass", mobileInstruction: "Get to grass",
     logos: ["x-logo.svg", "bitcoin.png", "hyperliquid.png"],
     accent: "#3fb950",
     win: "Grass touched. CT disappointed.", fail: "Notification overdose.",
@@ -1497,9 +1510,9 @@ const LEVELS = [
     },
     setPrompt(e) {
       const prompts = {
-        1: ["Phase 1 · Breach GRASS", "Breach the grass"],
-        2: ["Phase 2 · Flicker hold 3s", "Hold when grass glows"],
-        3: ["Phase 3 · Tap LOG OFF", "Drag + tap LOG OFF"],
+        1: ["Phase 1: Drag into the grass", "Drag to grass"],
+        2: ["Phase 2: Stay in grass 3 seconds", "Hold in grass 3s"],
+        3: ["Phase 3: Tap LOG OFF at grass", "Tap LOG OFF"],
       };
       const p = prompts[this.phase];
       if (e.instructionEl && p) e.instructionEl.textContent = e.mobile ? p[1] : p[0];
