@@ -910,7 +910,7 @@ class GameEngine {
     }
     const msgs = via === "code"
       ? [`<strong>@InternZero</strong> day ${day} skipped`, `<strong>@HyperboleCap</strong> no questions asked`]
-      : [`<strong>@InternZero</strong> paid CT tax to skip Day ${day}`, `<strong>@HyperboleCap</strong> no DD, no shame`];
+      : [`<strong>@InternZero</strong> posted on X to skip Day ${day}`, `<strong>@HyperboleCap</strong> free CT tax 🫡`];
     this.setCT(msgs);
     this.updateHUD();
     this.persist();
@@ -941,13 +941,13 @@ class GameEngine {
     const tweet = this.level?.buildSkipTweet?.()
       || `stuck on Rug or Hug day ${day}. this game is actually hard @voidhl https://maximusdigitals.github.io/rug-and-hug/`;
     const ok = confirm(
-      `Skip "${name}"?\n\nPost on X to continue (−12 conviction):\n\n"${tweet}"`
+      `Skip "${name}"?\n\nPost on X to continue (free skip):\n\n"${tweet}"`
     );
     if (!ok) return;
 
     const url = this.xSkipUrl(tweet);
-    // Apply skip BEFORE opening X — mobile often navigates away and never reaches code after window.open
-    this.applySkip(12, "x");
+    // Apply skip BEFORE opening X — mobile often navigates away before post-open code runs
+    this.applySkip(0, "x");
 
     setTimeout(() => {
       const tab = window.open(url, "_blank", "noopener,noreferrer");
