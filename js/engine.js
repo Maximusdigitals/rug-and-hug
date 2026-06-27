@@ -8,12 +8,17 @@ class GameEngine {
     this.conviction = 100;
     this.dayIndex = 0;
     this.streak = 0;
+    this.mode = "career";
+    this.dailyLevelId = null;
+    this.saveData = Storage.load();
+    this._lastAct = 0;
     this.images = {};
     this.level = null;
     this.running = false;
     this.elapsed = 0;
     this.duration = 20;
     this.lastTs = 0;
+    this._accum = 0;
     this.raf = null;
     this.keyDown = false;
     this.forceMobile = new URLSearchParams(location.search).has("mobile");
@@ -57,9 +62,15 @@ class GameEngine {
     this.skipGate = document.getElementById("skip-gate");
     this.skipCodePanel = document.getElementById("skip-code-panel");
 
+    this.ctx.imageSmoothingEnabled = true;
+    this.ctx.imageSmoothingQuality = "high";
+    AudioFX.init();
     this.bindEvents();
     this.preloadImages();
     this.resize();
+    this.updateTitleUI();
+    this.registerSW();
+    Progression.applyActTheme(1);
     matchMedia("(max-width:768px)").addEventListener("change", e => {
       this.mobile = e.matches || this.forceMobile;
       this.lowPower = this.mobile || (navigator.hardwareConcurrency || 8) <= 4;
@@ -72,8 +83,91 @@ class GameEngine {
     this.showScreen("title");
   }
 
+  haptic(ms = 12) {
+    if (navigator.vibrate) navigator.vibrate(ms);
+  }
+
+  persist() {
+    this.saveData.run = Storage.snapshotRun(this);
+    Storage.save(this.saveData);
+  }
+
+  registerSW() {
+    if (!("serviceWorker" in navigator)) return;
+    const base = location.pathname.replace(/\/[^/]*$/, "/");
+    navigator.serviceWorker.register(base + "sw.js").catch(() => {});
+  }
+
+  updateTitleUI() {
+    const cont = document.getElementById("btn-continue");
+    const dailyBtn = document.getElementById("btn-daily");
+    const dailyLbl = document.getElementById("daily-label");
+    const rankEl = document.getElementById("title-rank");
+    const stats = this.saveData.stats;
+    const rank = Progression.rankFor(stats);
+
+    if (cont) cont.style.display = Storage.hasRun(this.saveData) ? "inline-flex" : "none";
+    if (rankEl) rankEl.textContent = `${rank.emoji} ${rank.title} · ${stats.clears} clears`;
+
+    const d = Daily.levelForToday(LEVELS.length);
+    if (dailyLbl) {
+      dailyLbl.textContent = Daily.isWonToday(this.saveData)
+        ? "Daily ✓"
+        : `Daily: Day ${d.levelId}`;
+    }
+    if (dailyBtn) dailyBtn.classList.toggle("done", Daily.isWonToday(this.saveData));
+
+    const muteBtn = document.getElementById("btn-mute");
+    if (muteBtn) muteBtn.textContent = AudioFX.muted ? "🔇" : "🔊";
+  }
+
+  showStats() {
+    const modal = document.getElementById("modal-stats");
+    if (!modal) return;
+    const s = this.saveData.stats;
+    const rank = Progression.rankFor(s);
+    const badges = Progression.badgeLabels(this.saveData.badges || []);
+    document.getElementById("stats-rank").textContent = `${rank.emoji} ${rank.title}`;
+    document.getElementById("stats-body").innerHTML = `
+      <div class="stat-row"><span>Clears</span><strong>${s.clears}</strong></div>
+      <div class="stat-row"><span>Best streak</span><strong>${s.bestStreak}</strong></div>
+      <div class="stat-row"><span>Best conviction</span><strong>${s.bestConviction}</strong></div>
+      <div class="stat-row"><span>Days cleared</span><strong>${s.daysCleared}</strong></div>
+      <div class="stat-row"><span>Skips</span><strong>${s.skips}</strong></div>
+      <div class="stat-row"><span>Daily wins</span><strong>${s.dailyWins || 0}</strong></div>
+      <p class="stat-badges">${badges.length ? badges.join(" · ") : "No badges yet — keep grinding."}</p>`;
+    modal.classList.add("show");
+  }
+
+  hideStats() {
+    document.getElementById("modal-stats")?.classList.remove("show");
+  }
+
   bindEvents() {
-    document.getElementById("btn-start").onclick = () => this.startRun();
+    const unlock = () => AudioFX.unlock();
+    document.addEventListener("pointerdown", unlock, { once: true });
+    document.addEventListener("keydown", unlock, { once: true });
+
+    document.getElementById("btn-start").onclick = () => { unlock(); this.startRun(); };
+    const btnCont = document.getElementById("btn-continue");
+    if (btnCont) btnCont.onclick = () => { unlock(); this.continueRun(); };
+    const btnDaily = document.getElementById("btn-daily");
+    if (btnDaily) btnDaily.onclick = () => { unlock(); this.startDaily(); };
+    const btnStats = document.getElementById("btn-stats");
+    if (btnStats) btnStats.onclick = () => this.showStats();
+    const btnStatsClose = document.getElementById("btn-stats-close");
+    if (btnStatsClose) btnStatsClose.onclick = () => this.hideStats();
+    const btnShare = document.getElementById("btn-share");
+    if (btnShare) btnShare.onclick = () => ShareCard.share(this, this.saveData);
+    const btnShareResult = document.getElementById("btn-share-result");
+    if (btnShareResult) btnShareResult.onclick = () => ShareCard.share(this, this.saveData);
+    const btnMute = document.getElementById("btn-mute");
+    if (btnMute) btnMute.onclick = () => { AudioFX.toggleMute(); this.updateTitleUI(); };
+    const btnInstall = document.getElementById("btn-install");
+    if (btnInstall) btnInstall.onclick = () => this._installPrompt?.prompt();
+    const btnTutorialOk = document.getElementById("btn-tutorial-ok");
+    if (btnTutorialOk) btnTutorialOk.onclick = () => this.dismissTutorial();
+
     document.getElementById("btn-next").onclick = () => this.advanceAfterResult();
     document.getElementById("btn-retry").onclick = () => this.retryDay();
     document.getElementById("btn-skip").onclick = () => this.skipLevel();
@@ -217,6 +311,7 @@ class GameEngine {
     this.screens[name].classList.add("active");
     document.body.dataset.screen = name;
     if (name === "play") this.scheduleResize();
+    if (name === "title") this.updateTitleUI();
     this.updateVoidAlmightyUI();
   }
 
@@ -320,12 +415,45 @@ class GameEngine {
   }
 
   startRun() {
+    this.mode = "career";
+    this.dailyLevelId = null;
     this.conviction = 100;
     this.dayIndex = 0;
     this.streak = 0;
     this.failCounts = {};
     this.skippedDays = new Set();
+    this._lastAct = 0;
+    this.saveData.stats.runs = (this.saveData.stats.runs || 0) + 1;
+    this.persist();
     this.setCT(["<strong>@HyperboleCap</strong> intern #0 starts today", "<strong>@CT</strong> no DD policy 🫡"]);
+    this.loadBriefing();
+  }
+
+  continueRun() {
+    const run = this.saveData.run;
+    if (!Storage.hasRun(run)) return this.startRun();
+    this.mode = run.mode || "career";
+    this.dailyLevelId = run.dailyLevelId;
+    Storage.restoreRun(this, run);
+    this.setCT(["<strong>@InternZero</strong> back from lunch", "<strong>@CT</strong> resume timeline 🫡"]);
+    this.loadBriefing();
+  }
+
+  startDaily() {
+    if (Daily.isWonToday(this.saveData)) {
+      this.setCT(["<strong>@voidhl</strong> daily already cleared", "<strong>@CT</strong> come back tomorrow"]);
+      return;
+    }
+    const d = Daily.levelForToday(LEVELS.length);
+    this.mode = "daily";
+    this.dailyLevelId = d.levelId;
+    this.conviction = 100;
+    this.dayIndex = d.index;
+    this.streak = 0;
+    this.failCounts = {};
+    this.skippedDays = new Set();
+    this._lastAct = 0;
+    this.setCT([`<strong>@voidhl</strong> daily challenge: day ${d.levelId}`, "<strong>@CT</strong> one shot only"]);
     this.loadBriefing();
   }
 
@@ -335,7 +463,7 @@ class GameEngine {
 
   xSkipUrl(text) {
     const msg = text
-      || `stuck on Rug or Hug day ${this.dayIndex + 1}. this game is actually hard @voidhl`;
+      || `stuck on Rug or Hug day ${this.dayIndex + 1}. this game is actually hard @voidhl https://maximusdigitals.github.io/rug-and-hug/`;
     return `https://twitter.com/intent/tweet?text=${encodeURIComponent(msg)}`;
   }
 
@@ -355,8 +483,29 @@ class GameEngine {
 
   loadBriefing() {
     this.level = LEVELS[this.dayIndex];
-    const act = this.actForDay(this.dayIndex);
-    document.getElementById("briefing-day").textContent = `Day ${this.dayIndex + 1} · Act ${act}`;
+    const act = Progression.actForDay(this.dayIndex);
+    const isBoss = Progression.isBossDay(this.dayIndex);
+    const bossEl = document.getElementById("boss-banner");
+    if (bossEl) {
+      bossEl.hidden = !isBoss;
+      if (isBoss) {
+        bossEl.textContent = `⚔ BOSS DAY ${this.dayIndex + 1}`;
+        AudioFX.boss();
+      }
+    }
+
+    if (act !== this._lastAct) {
+      Progression.applyActTheme(act);
+      if (this._lastAct) {
+        document.body.classList.add("act-transition");
+        AudioFX.act();
+        setTimeout(() => document.body.classList.remove("act-transition"), 900);
+      }
+      this._lastAct = act;
+    }
+
+    const dayLabel = this.mode === "daily" ? `Daily · Day ${this.dayIndex + 1}` : `Day ${this.dayIndex + 1} · Act ${act}`;
+    document.getElementById("briefing-day").textContent = dayLabel;
     document.getElementById("briefing-title").textContent = this.level.name;
     document.getElementById("briefing-boss").innerHTML = this.level.boss;
     document.getElementById("briefing-logos").innerHTML = (this.level.logos || [])
@@ -367,7 +516,26 @@ class GameEngine {
     if (playBar) playBar.style.background = accent;
     document.documentElement.style.setProperty("--accent", accent);
     this.updateHUD();
+    this.persist();
     this.showScreen("briefing");
+  }
+
+  maybeShowTutorial() {
+    if (this.saveData.settings.tutorialSeen || this.dayIndex > 1) return;
+    const t = document.getElementById("tutorial-overlay");
+    if (!t) return;
+    const copy = this.dayIndex === 0
+      ? "Tap when orbs hit the gold zone. Miss twice and you're rekt. Conviction = your job security."
+      : "Green = gem, red ring = rug. Conviction drops −10 per fail. Streak 3+ for bonus conviction.";
+    document.getElementById("tutorial-text").textContent = copy;
+    t.classList.add("show");
+  }
+
+  dismissTutorial() {
+    document.getElementById("tutorial-overlay")?.classList.remove("show");
+    this.saveData.settings.tutorialSeen = true;
+    Storage.save(this.saveData);
+    this.beginLevelAfterCountdown();
   }
 
   nextDay() {
@@ -380,7 +548,14 @@ class GameEngine {
     if (this.tapBtn) this.tapBtn.style.display = this.level.showTapButton ? "flex" : "none";
     this.resize();
     Effects.clear();
-    this.countdown(this.lowPower ? 1 : 2, () => this.beginLevel());
+    this.countdown(this.lowPower ? 1 : 2, () => {
+      if (!this.saveData.settings.tutorialSeen && this.dayIndex <= 1) this.maybeShowTutorial();
+      else this.beginLevelAfterCountdown();
+    });
+  }
+
+  beginLevelAfterCountdown() {
+    this.beginLevel();
   }
 
   retryDay() {
@@ -394,6 +569,8 @@ class GameEngine {
     const tick = (v) => {
       this.countdownEl.textContent = v || "GO";
       this.countdownEl.dataset.n = v || 0;
+      if (v > 0) AudioFX.tick();
+      else AudioFX.go();
       const ms = this.lowPower ? 280 : 360;
       if (v === 0) setTimeout(() => { this.countdownEl.classList.remove("show"); cb(); }, ms);
       else setTimeout(() => tick(v - 1), ms);
@@ -404,7 +581,10 @@ class GameEngine {
   beginLevel() {
     this.running = true;
     this.elapsed = 0;
-    this.duration = this.level.duration || 20;
+    this._accum = 0;
+    const base = this.level.duration || 20;
+    const mod = Progression.bossModifier(this.level, this.dayIndex);
+    this.duration = Math.round(base * mod);
     this.pointer.down = false;
     this.resultEl.classList.remove("show", "win", "fail");
     this.resetSkipCodeUI();
@@ -430,21 +610,26 @@ class GameEngine {
   loop(ts) {
     if (!this.running) return;
     const now = ts || performance.now();
-    const dt = Math.min(0.033, (now - this.lastTs) / 1000);
+    let frame = Math.min(0.05, (now - this.lastTs) / 1000);
     this.lastTs = now;
-    this.elapsed += dt;
+    this._accum += frame;
+    const step = 1 / 60;
+    while (this._accum >= step) {
+      this._accum -= step;
+      this.elapsed += step;
+      Effects.update(step);
+      if (this.level.update) this.level.update(step, this);
+    }
     const sec = Math.ceil(Math.max(0, this.duration - this.elapsed));
     if (sec !== this._timerSec) {
       this._timerSec = sec;
       if (this.timerEl) this.timerEl.textContent = sec;
     }
-    Effects.update(dt);
-    if (this.level.update) this.level.update(dt, this);
-    this.draw();
+    this.draw(frame);
     this.raf = requestAnimationFrame(t => this.loop(t));
   }
 
-  draw() {
+  draw(interp = 0) {
     const w = this.displayWidth;
     const h = this.displayHeight;
     if (this.level.draw) this.level.draw(this.ctx, this, w, h);
@@ -456,6 +641,14 @@ class GameEngine {
       this.ctx.fillStyle = this.flashColor + "33";
       this.ctx.fillRect(0, 0, w, h);
       this.flashColor = null;
+    }
+    if (!PERF_LITE && this.level && !this.level.isDialogue) {
+      const ctx = this.ctx;
+      const vg = ctx.createRadialGradient(w / 2, h / 2, h * 0.15, w / 2, h / 2, h * 0.72);
+      vg.addColorStop(0, "transparent");
+      vg.addColorStop(1, "rgba(0,0,0,0.42)");
+      ctx.fillStyle = vg;
+      ctx.fillRect(0, 0, w, h);
     }
   }
 
@@ -482,8 +675,16 @@ class GameEngine {
 
   juice(x, y, color, text) {
     if (!this.lowPower) this.flashColor = color;
-    Effects.burst(x, y, color, this.lowPower ? 5 : 8);
-    if (text) Effects.floatText(x, y - 10, text, color);
+    Effects.burst(x, y, color, this.lowPower ? 6 : 10);
+    Effects.ripple(x, y, color);
+    if (text) {
+      Effects.floatText(x, y - 10, text, color);
+      AudioFX.hit();
+      this.haptic(8);
+    } else {
+      AudioFX.tap();
+      this.haptic(4);
+    }
   }
 
   flash(c) { this.flashColor = c; }
@@ -491,10 +692,12 @@ class GameEngine {
   shake() {
     this.canvas.classList.add("shake");
     this.playArea?.classList.add("shake");
+    AudioFX.miss();
+    this.haptic([12, 30, 12]);
     setTimeout(() => {
       this.canvas.classList.remove("shake");
       this.playArea?.classList.remove("shake");
-    }, 140);
+    }, 160);
   }
 
   showDialogue(round) {
@@ -523,6 +726,11 @@ class GameEngine {
     if (this.level?.id) this.failCounts[this.level.id] = 0;
     this.streak++;
     this.conviction = Math.min(100, this.conviction + (this.streak >= 3 ? 10 : 8));
+    Progression.recordLevelResult(this.saveData, true, this);
+    if (this.mode === "daily") Daily.markWon(this.saveData, this.level.id);
+    this.persist();
+    AudioFX.win();
+    this.haptic([10, 20, 10]);
     this.showResult(true);
   }
 
@@ -531,6 +739,10 @@ class GameEngine {
     this.stopLevel();
     this.streak = 0;
     this.conviction = Math.max(0, this.conviction - 10);
+    Progression.recordLevelResult(this.saveData, false, this);
+    this.persist();
+    AudioFX.lose();
+    this.haptic(40);
     this.showResult(false);
   }
 
@@ -565,23 +777,36 @@ class GameEngine {
     this.setCT(posts);
     this.updateHUD();
 
-    const last = this.dayIndex >= LEVELS.length - 1;
-    document.getElementById("btn-next").style.display = won && this.conviction > 0 && !last ? "inline-flex" : "none";
+    const careerLast = this.mode === "career" && this.dayIndex >= LEVELS.length - 1;
+    const dailyDone = this.mode === "daily" && won;
+    const runOver = this.conviction <= 0 || careerLast && won || dailyDone;
+
+    document.getElementById("btn-next").style.display = won && this.conviction > 0 && !careerLast && this.mode === "career" ? "inline-flex" : "none";
     document.getElementById("btn-retry").style.display = !won && this.conviction > 0 ? "inline-flex" : "none";
-    document.getElementById("btn-skip").style.display = !won && this.conviction > 0 && !last ? "inline-flex" : "none";
-    document.getElementById("btn-home").style.display = this.conviction <= 0 || (won && last) ? "inline-flex" : "none";
+    document.getElementById("btn-skip").style.display = !won && this.conviction > 0 && !careerLast && this.mode === "career" ? "inline-flex" : "none";
+    document.getElementById("btn-home").style.display = runOver ? "inline-flex" : "none";
+    const btnShareResult = document.getElementById("btn-share-result");
+    if (btnShareResult) btnShareResult.style.display = won ? "inline-flex" : "none";
 
     this.updateSkipCodeUI(!won);
     this.updateVoidAlmightyUI();
 
-    if (won && last) {
+    if (runOver && won) {
+      const end = Progression.endingFor(this);
       document.getElementById("btn-home").textContent = "Play Again";
-      document.getElementById("screen-end-title").textContent = "CT Main Character";
-      document.getElementById("screen-end-msg").textContent = `20 days survived. Conviction: ${this.conviction}. Hyperbole Capital is proud.`;
+      document.getElementById("screen-end-icon").textContent = end.icon;
+      document.getElementById("screen-end-title").textContent = end.title;
+      document.getElementById("screen-end-msg").textContent = end.msg;
+      this.saveData.run = null;
+      Storage.save(this.saveData);
       setTimeout(() => this.showScreen("end"), 1800);
     } else if (this.conviction <= 0) {
-      document.getElementById("screen-end-title").textContent = "Fired";
-      document.getElementById("screen-end-msg").textContent = "Conviction zero. Mandatory grass touching.";
+      const end = Progression.endingFor(this);
+      document.getElementById("screen-end-icon").textContent = end.icon;
+      document.getElementById("screen-end-title").textContent = end.title;
+      document.getElementById("screen-end-msg").textContent = end.msg;
+      this.saveData.run = null;
+      Storage.save(this.saveData);
       setTimeout(() => this.showScreen("end"), 1800);
     }
   }
@@ -590,6 +815,7 @@ class GameEngine {
     this.resultEl.classList.remove("show", "win", "fail");
     this.resetSkipCodeUI();
     this.dayIndex++;
+    this.persist();
     this.loadBriefing();
   }
 
@@ -683,6 +909,7 @@ class GameEngine {
       : [`<strong>@InternZero</strong> paid CT tax to skip Day ${day}`, `<strong>@HyperboleCap</strong> no DD, no shame`];
     this.setCT(msgs);
     this.updateHUD();
+    this.persist();
     this.dayIndex++;
 
     if (this.conviction <= 0) {
@@ -721,10 +948,20 @@ class GameEngine {
     this.stopLevel();
     this.resultEl.classList.remove("show", "win", "fail");
     document.getElementById("btn-home").textContent = "Menu";
+    this.mode = "career";
+    this.saveData.run = null;
+    Storage.save(this.saveData);
     Effects.clear();
     this.showScreen("title");
     this.updateVoidAlmightyUI();
   }
 }
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  window.game._installPrompt = e;
+  const bar = document.getElementById("install-banner");
+  if (bar) bar.hidden = false;
+});
 
 document.addEventListener("DOMContentLoaded", () => { window.game = new GameEngine(); });

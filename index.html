@@ -7,7 +7,15 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#07070a">
-  <meta name="description" content="Rug or Hug — survive 20 days of crypto chaos">
+  <meta name="description" content="Rug or Hug — survive 20 days of crypto chaos. Mobile internship simulator.">
+  <meta property="og:title" content="Rug or Hug — 20 Days. Zero DD.">
+  <meta property="og:description" content="Survive crypto chaos at Hyperbole Capital. 20 levels. Mobile-first.">
+  <meta property="og:image" content="https://maximusdigitals.github.io/rug-and-hug/assets/og-card.svg">
+  <meta property="og:url" content="https://maximusdigitals.github.io/rug-and-hug/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rug or Hug">
+  <meta name="twitter:description" content="20 days. 20 narratives. Zero due diligence.">
+  <meta name="twitter:image" content="https://maximusdigitals.github.io/rug-and-hug/assets/og-card.svg">
   <title>Rug or Hug</title>
   <link rel="icon" href="assets/brand/hyperliquid-favicon.ico">
   <link rel="apple-touch-icon" href="assets/logos/curated/hyperliquid.png">
@@ -20,6 +28,11 @@
     <div class="orb orb-a"></div>
     <div class="orb orb-b"></div>
     <div class="orb orb-c"></div>
+  </div>
+
+  <div id="install-banner" class="install-banner glass" hidden>
+    <span>Install Rug or Hug for fullscreen play</span>
+    <button type="button" class="btn btn-glow btn-sm" id="btn-install">Install</button>
   </div>
 
   <div id="app">
@@ -44,8 +57,11 @@
           <div class="conviction-bar"><div class="conviction-fill" id="conviction-fill" style="width:100%"></div></div>
         </div>
         <div class="chip chip-timer mono"><span id="timer">20</span><small>s</small></div>
+        <button type="button" class="btn-icon" id="btn-mute" title="Sound">🔊</button>
       </div>
     </header>
+
+    <div id="boss-banner" class="boss-banner" hidden></div>
 
     <main class="stage">
       <section class="screen active" id="screen-title">
@@ -61,7 +77,16 @@
             <div class="logo-tile"><img src="assets/logos/curated/polymarket-icon.png" alt=""></div>
             <div class="logo-tile"><img src="assets/logos/curated/pump-fun.png" alt=""></div>
           </div>
-          <button class="btn btn-glow" id="btn-start">Start Internship</button>
+          <p class="title-rank" id="title-rank">📎 Unpaid Intern</p>
+          <div class="btn-row title-actions">
+            <button class="btn btn-glow" id="btn-start">Start Internship</button>
+            <button class="btn btn-ghost" id="btn-continue" style="display:none">Continue</button>
+          </div>
+          <div class="btn-row title-actions secondary">
+            <button class="btn btn-ghost btn-sm" id="btn-daily"><span id="daily-label">Daily Challenge</span></button>
+            <button class="btn btn-ghost btn-sm" id="btn-stats">Stats</button>
+            <button class="btn btn-ghost btn-sm" id="btn-share">Share</button>
+          </div>
           <div class="title-access" id="title-access">
             <input type="text" id="void-activate" class="skip-code-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Access code" maxlength="32">
             <button type="button" class="btn btn-ghost btn-sm" id="btn-void-activate">Unlock</button>
@@ -130,6 +155,7 @@
                 <button class="btn btn-glow" id="btn-next" style="display:none">Next Day</button>
                 <button class="btn btn-ghost" id="btn-retry" style="display:none">Retry</button>
                 <button class="btn btn-x" id="btn-skip" style="display:none">Skip · Post on 𝕏</button>
+                <button class="btn btn-ghost" id="btn-share-result" style="display:none">Share Score</button>
                 <button class="btn btn-ghost void-skip-btn" id="btn-void-skip-result" style="display:none">Skip Day</button>
                 <button class="btn btn-ghost" id="btn-home" style="display:none">Menu</button>
               </div>
@@ -160,6 +186,28 @@
     </footer>
   </div>
 
+  <div id="tutorial-overlay" class="tutorial-overlay">
+    <div class="panel glass tutorial-panel">
+      <p class="eyebrow">Quick briefing</p>
+      <p id="tutorial-text" class="lede"></p>
+      <button type="button" class="btn btn-glow" id="btn-tutorial-ok">Got it</button>
+    </div>
+  </div>
+
+  <div id="modal-stats" class="modal-overlay">
+    <div class="panel glass modal-panel">
+      <p class="eyebrow">Career stats</p>
+      <h2 id="stats-rank">Intern</h2>
+      <div id="stats-body" class="stats-grid"></div>
+      <button type="button" class="btn btn-ghost" id="btn-stats-close">Close</button>
+    </div>
+  </div>
+
+  <script src="js/audio.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/progression.js"></script>
+  <script src="js/daily.js"></script>
+  <script src="js/share.js"></script>
   <script src="js/effects.js"></script>
   <script src="js/levels.js"></script>
   <script src="js/level-meta.js"></script>

@@ -28,7 +28,11 @@ const LEVELS = [
     onKey(e, k) { if ((k === " " || k === "Space") && e.keyDown) this.tap(e); },
     onTap(e) { this.tap(e); },
     draw(ctx, e, w, h) {
-      ctx.fillStyle = "#080b12"; ctx.fillRect(0, 0, w, h);
+      const bg = ctx.createLinearGradient(0, 0, 0, h);
+      bg.addColorStop(0, "#0c1018");
+      bg.addColorStop(1, "#060810");
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, 0, w, h);
       const zy = h * 0.55;
       drawGlow(ctx, w / 2, zy, 80, "#d29922");
       ctx.strokeStyle = "#d2992244"; ctx.setLineDash([6, 6]); ctx.beginPath(); ctx.moveTo(24, zy); ctx.lineTo(w - 24, zy); ctx.stroke(); ctx.setLineDash([]);

@@ -2,7 +2,8 @@
   "name": "Rug or Hug",
   "short_name": "RugOrHug",
   "description": "Survive 20 days of crypto chaos at Hyperbole Capital — mobile web game",
-  "start_url": "/",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#07070a",
@@ -11,12 +12,14 @@
     {
       "src": "assets/logos/curated/hyperliquid.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "assets/logos/curated/solana.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

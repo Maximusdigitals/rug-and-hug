@@ -997,3 +997,195 @@ body.force-mobile .ambient { opacity: 0.7; }
   .hud-logo { font-size: 10px; }
   .chip { padding: 5px 8px; }
 }
+
+/* ── V2: ACT THEMES & SMOOTHNESS ── */
+body[data-act="1"] { --accent: var(--act-accent, #8b5cf6); }
+body[data-act="2"] { --accent: var(--act-accent, #627eea); }
+body[data-act="3"] { --accent: var(--act-accent, #14f195); }
+body[data-act="4"] { --accent: var(--act-accent, #f87171); }
+
+body.act-transition .stage {
+  animation: actFlash 0.9s ease;
+}
+
+@keyframes actFlash {
+  0% { filter: brightness(1); }
+  35% { filter: brightness(1.35) saturate(1.2); }
+  100% { filter: brightness(1); }
+}
+
+.screen {
+  animation: screenIn 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes screenIn {
+  from { opacity: 0; transform: translateY(10px) scale(0.985); }
+  to { opacity: 1; transform: none; }
+}
+
+.canvas-frame canvas {
+  border-radius: var(--radius-sm);
+  will-change: transform;
+}
+
+.shake {
+  animation: shakeAnim 0.16s ease;
+}
+
+@keyframes shakeAnim {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-4px, 2px); }
+  50% { transform: translate(4px, -2px); }
+  75% { transform: translate(-2px, -1px); }
+}
+
+/* ── TITLE V2 ── */
+.title-rank {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cyan);
+  margin-bottom: 14px;
+}
+
+.title-actions {
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.title-actions.secondary {
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+#btn-daily.done {
+  border-color: rgba(52, 211, 153, 0.35);
+  color: var(--green);
+}
+
+/* ── HUD ICONS ── */
+.btn-icon {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xs);
+  width: 34px;
+  height: 34px;
+  font-size: 14px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+/* ── BOSS BANNER ── */
+.boss-banner {
+  margin: 6px 12px 0;
+  padding: 8px 14px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #fef3c7;
+  background: linear-gradient(90deg, rgba(251, 191, 36, 0.15), rgba(248, 113, 113, 0.15));
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  border-radius: var(--radius-xs);
+  animation: bossPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes bossPulse {
+  0%, 100% { box-shadow: 0 0 0 rgba(251, 191, 36, 0); }
+  50% { box-shadow: 0 0 20px rgba(251, 191, 36, 0.25); }
+}
+
+/* ── INSTALL BANNER ── */
+.install-banner {
+  position: fixed;
+  top: calc(var(--safe-top) + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  font-size: 12px;
+  max-width: calc(100% - 24px);
+}
+
+.install-banner[hidden] { display: none !important; }
+
+/* ── TUTORIAL & MODALS ── */
+.tutorial-overlay,
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+}
+
+.tutorial-overlay.show,
+.modal-overlay.show {
+  display: flex;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.tutorial-panel,
+.modal-panel {
+  width: min(400px, 100%);
+  padding: 22px;
+  text-align: center;
+}
+
+.stats-grid {
+  text-align: left;
+  margin: 16px 0 20px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--glass-border);
+  font-size: 14px;
+}
+
+.stat-row strong { color: var(--text); }
+
+.stat-badges {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--cyan);
+  line-height: 1.5;
+}
+
+/* ── RESULT SHARE ── */
+.result-overlay.show {
+  animation: resultIn 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes resultIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: none; }
+}
+
+.countdown.show {
+  animation: countPop 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes countPop {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+#btn-tap.pressed {
+  transform: scale(0.94);
+  transition: transform 0.08s;
+}
