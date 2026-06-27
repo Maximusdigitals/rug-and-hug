@@ -6,7 +6,7 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="theme-color" content="#030305">
+  <meta name="theme-color" content="#050508">
   <meta name="description" content="Rug or Hug — survive 20 days of crypto chaos. Mobile internship simulator.">
   <meta property="og:title" content="Rug or Hug — 20 Days. Zero DD.">
   <meta property="og:description" content="Survive crypto chaos at Hyperbole Capital. 20 levels. Mobile-first.">
@@ -22,6 +22,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="css/game.css">
   <link rel="stylesheet" href="css/premium.css">
+  <link rel="stylesheet" href="css/mobile-ui.css">
 </head>
 <body>
   <div class="cinematic-bg" aria-hidden="true">
@@ -42,28 +43,31 @@
   </div>
 
   <div id="app" class="app-shell">
-    <header class="hud glass premium-surface">
-      <div class="hud-brand">
-        <span class="hud-logo"><span class="logo-mark">◆</span> RUG OR HUG</span>
-        <span class="hud-act" id="act-label">Hyperbole Capital</span>
-      </div>
-      <div class="hud-center">
-        <div class="progress-wrap">
-          <div class="progress-track"><div class="progress-fill" id="day-progress"></div></div>
-          <span class="progress-label mono"><span id="day-label">1/20</span> · <span id="day-progress-val">0/20</span></span>
+    <header class="hud glass premium-surface hud-v3">
+      <div class="hud-row">
+        <div class="hud-brand">
+          <span class="hud-logo"><span class="logo-mark">◆</span> RUG OR HUG</span>
+          <span class="hud-act" id="act-label">Hyperbole Capital</span>
+        </div>
+        <div class="hud-stats">
+          <div class="chip chip-void" id="void-mode-chip" hidden title="Free skip enabled">
+            <span class="chip-label">VOID</span>
+          </div>
+          <div class="chip chip-conv">
+            <span class="chip-label">CONV</span>
+            <span class="chip-val mono" id="conviction-val">100</span>
+            <div class="conviction-bar"><div class="conviction-fill" id="conviction-fill" style="width:100%"></div></div>
+          </div>
+          <div class="chip chip-timer mono"><span id="timer">20</span><small>s</small></div>
+          <button type="button" class="btn-icon" id="btn-mute" title="Sound" aria-label="Toggle sound">🔊</button>
         </div>
       </div>
-      <div class="hud-stats">
-        <div class="chip chip-void" id="void-mode-chip" hidden title="Free skip enabled">
-          <span class="chip-label">VOID</span>
+      <div class="hud-progress">
+        <div class="progress-track"><div class="progress-fill" id="day-progress"></div></div>
+        <div class="progress-meta">
+          <span class="hud-act-inline" id="act-label-mobile">Hyperbole Capital</span>
+          <span class="mono"><span id="day-label">Day 1/20</span> · <span id="day-progress-val">0/20</span></span>
         </div>
-        <div class="chip chip-conv">
-          <span class="chip-label">CONV</span>
-          <span class="chip-val mono" id="conviction-val">100</span>
-          <div class="conviction-bar"><div class="conviction-fill" id="conviction-fill" style="width:100%"></div></div>
-        </div>
-        <div class="chip chip-timer mono"><span id="timer">20</span><small>s</small></div>
-        <button type="button" class="btn-icon" id="btn-mute" title="Sound">🔊</button>
       </div>
     </header>
 

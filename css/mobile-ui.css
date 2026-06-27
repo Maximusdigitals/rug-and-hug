@@ -1,0 +1,494 @@
+/* ── V3 · Mobile-first award polish ── */
+
+:root {
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.4, 0.64, 1);
+  --touch: 48px;
+  --surface: rgba(10, 10, 14, 0.82);
+  --surface-border: rgba(255, 255, 255, 0.08);
+}
+
+html {
+  height: 100%;
+  height: 100dvh;
+}
+
+body {
+  min-height: 100dvh;
+  min-height: 100vh;
+}
+
+#app {
+  width: 100%;
+  max-width: 100%;
+  height: 100dvh;
+  height: 100vh;
+}
+
+.app-shell {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.app-shell::before {
+  display: none;
+}
+
+.cinematic-bg .grid-bg {
+  opacity: 0.35;
+  background-size: 40px 40px;
+}
+
+.orb {
+  opacity: 0.45;
+  filter: blur(70px);
+}
+
+/* ── HUD v3 ── */
+.hud-v3 {
+  margin: calc(6px + var(--safe-top)) 8px 0;
+  padding: 10px 12px 11px;
+  border-radius: 16px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: none;
+  grid-template-rows: none;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%),
+    var(--surface);
+  border: 1px solid var(--surface-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.hud-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-width: 0;
+}
+
+.hud-v3 .hud-brand {
+  min-width: 0;
+  flex: 1;
+}
+
+.hud-v3 .hud-logo {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hud-v3 .hud-act {
+  display: none;
+}
+
+.hud-v3 .hud-stats {
+  flex-shrink: 0;
+  gap: 6px;
+}
+
+.hud-v3 .chip {
+  padding: 5px 8px;
+  border-radius: 10px;
+  min-height: 32px;
+}
+
+.hud-v3 .chip-val {
+  font-size: 12px;
+}
+
+.hud-v3 .chip-timer {
+  font-size: 13px;
+  min-width: 42px;
+}
+
+.hud-v3 .conviction-bar {
+  width: 36px;
+}
+
+.hud-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hud-progress .progress-track {
+  height: 4px;
+  border-radius: 99px;
+}
+
+.progress-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.progress-meta .hud-act-inline {
+  color: var(--text-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Stage & screen transitions ── */
+.stage {
+  padding: 6px 8px 0;
+  position: relative;
+}
+
+.screen {
+  position: absolute;
+  inset: 6px 8px 0;
+  max-width: none;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(14px) scale(0.988);
+  transition:
+    opacity 0.38s var(--ease-out),
+    transform 0.42s var(--ease-out),
+    visibility 0.38s;
+  pointer-events: none;
+  z-index: 1;
+  animation: none;
+}
+
+.screen.active {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+body.screen-transitioning .screen.active {
+  transition-duration: 0.32s;
+}
+
+/* ── Feed: slim ticker ── */
+.feed {
+  margin: 0;
+  padding: 10px 12px calc(10px + var(--safe-bottom));
+  border-radius: 0;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(6, 6, 10, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+body[data-screen="play"] .feed,
+body[data-screen="briefing"] .feed,
+body[data-screen="end"] .feed {
+  display: none;
+}
+
+body[data-screen="title"] .feed-head {
+  margin-bottom: 4px;
+}
+
+body[data-screen="title"] .feed-item {
+  font-size: 11px;
+}
+
+/* ── Title ── */
+body[data-screen="title"] .stage {
+  padding-bottom: 0;
+}
+
+body[data-screen="title"] .panel-hero {
+  justify-content: flex-start;
+  padding: 24px 18px 20px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+.hero-card .display {
+  font-size: clamp(38px, 11vw, 56px);
+}
+
+.hero-card .lede {
+  font-size: 14px;
+  max-width: 100%;
+}
+
+.hero-ring {
+  width: 260px;
+  height: 260px;
+  opacity: 0.5;
+}
+
+.premium-orbit .logo-tile {
+  width: 44px;
+  height: 44px;
+}
+
+.btn-row {
+  width: 100%;
+  max-width: 320px;
+}
+
+.btn,
+.pill-btn,
+#btn-tap {
+  min-height: var(--touch);
+  transition: transform 0.2s var(--ease-spring), background 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.btn:active:not(:disabled),
+.pill-btn:active,
+#btn-tap:active {
+  transform: scale(0.97);
+}
+
+.btn-premium {
+  min-width: 0;
+  width: 100%;
+  border-radius: 14px;
+}
+
+/* ── Briefing ── */
+body[data-screen="briefing"] .stage {
+  padding: 6px 8px;
+}
+
+.briefing-card {
+  border-radius: 18px;
+  height: 100%;
+}
+
+.briefing-card .panel-body {
+  padding: 16px;
+}
+
+.briefing-card .panel-body.center {
+  align-items: stretch;
+}
+
+.briefing-card .callout {
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 16px;
+  border-radius: 14px;
+}
+
+.briefing-card .panel-foot {
+  padding: 12px 16px calc(12px + var(--safe-bottom));
+  background: rgba(0, 0, 0, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.briefing-card .btn-glow,
+.briefing-card .btn-ghost {
+  min-height: var(--touch);
+  padding: 12px 20px;
+}
+
+/* ── Play fullscreen ── */
+body[data-screen="play"] .stage {
+  padding: 0;
+}
+
+body[data-screen="play"] .screen {
+  inset: 0;
+}
+
+body[data-screen="play"] .hud-v3 {
+  margin: calc(4px + var(--safe-top)) 6px 0;
+  padding: 8px 10px;
+  border-radius: 14px;
+}
+
+body[data-screen="play"] .hud-progress {
+  display: none;
+}
+
+body[data-screen="play"] .play-meta {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  padding: 8px 12px 6px;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(3, 3, 5, 0.92) 0%, rgba(3, 3, 5, 0.35) 65%, transparent 100%);
+}
+
+body[data-screen="play"] .play-meta-row,
+body[data-screen="play"] .hint-bar {
+  pointer-events: auto;
+}
+
+body[data-screen="play"] .play-prompt {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  padding: 6px 10px;
+  border-radius: 99px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--gold);
+}
+
+#btn-tap {
+  min-height: 56px;
+  padding-bottom: calc(8px + var(--safe-bottom));
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  background: linear-gradient(180deg, rgba(167, 139, 250, 0.35), rgba(103, 232, 249, 0.12));
+  border-top: 1px solid rgba(196, 181, 253, 0.4);
+  box-shadow: 0 -8px 32px rgba(167, 139, 250, 0.15);
+}
+
+body[data-screen="play"] #boss-banner:not([hidden]) {
+  top: calc(var(--safe-top) + 48px);
+  left: 6px;
+  right: 6px;
+  border-radius: 10px;
+  padding: 6px 10px;
+}
+
+body[data-screen="play"].boss-day .play-meta {
+  padding-top: 36px;
+}
+
+/* ── Countdown & results ── */
+.countdown {
+  background: rgba(3, 3, 5, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.countdown.show {
+  animation: countPop 0.5s var(--ease-spring);
+}
+
+@keyframes countPop {
+  0% { opacity: 0; transform: scale(0.85); }
+  60% { transform: scale(1.04); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.result-overlay {
+  padding: 16px;
+  padding-bottom: calc(16px + var(--safe-bottom));
+}
+
+.result-card {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 20px;
+  padding: 24px 20px 20px;
+  animation: cardRise 0.45s var(--ease-out);
+}
+
+@keyframes cardRise {
+  from { opacity: 0; transform: translateY(20px) scale(0.96); }
+  to { opacity: 1; transform: none; }
+}
+
+.result-card .btn-row {
+  width: 100%;
+  gap: 10px;
+}
+
+.result-card .btn {
+  width: 100%;
+}
+
+/* ── Modals & tutorial ── */
+.tutorial-panel,
+.modal-panel {
+  width: min(100%, 360px);
+  margin: 16px;
+  border-radius: 20px;
+  padding: 24px 20px;
+  animation: cardRise 0.4s var(--ease-out);
+}
+
+/* ── Boss banner ── */
+.boss-banner {
+  margin: 4px 8px 0;
+  border-radius: 10px;
+}
+
+/* ── End screen ── */
+body[data-screen="end"] .panel-hero {
+  padding: 32px 20px;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .screen,
+  .screen.active,
+  .btn,
+  .countdown.show,
+  .result-card,
+  .orb,
+  .hero-ring,
+  .premium-orbit .logo-tile {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ── Larger phones / landscape hint ── */
+@media (min-width: 521px) {
+  .app-shell {
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .stage {
+    padding: 10px 12px 0;
+  }
+
+  .screen {
+    inset: 10px 12px 0;
+  }
+
+  .hud-v3 .hud-act {
+    display: block;
+  }
+
+  .progress-meta .hud-act-inline {
+    display: none;
+  }
+}
+
+.goal-line {
+  font-size: 13px;
+}
+
+.goal-tag {
+  min-width: 46px;
+  font-size: 9px;
+}
+
+.hint-bar {
+  border-radius: 12px;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.install-banner {
+  bottom: calc(12px + var(--safe-bottom));
+  top: auto;
+}

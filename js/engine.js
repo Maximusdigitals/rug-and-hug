@@ -315,14 +315,21 @@ class GameEngine {
   }
 
   showScreen(name) {
+    document.body.classList.add("screen-transitioning");
     Object.values(this.screens).forEach(s => s.classList.remove("active"));
     this.screens[name].classList.add("active");
     document.body.dataset.screen = name;
     document.body.classList.toggle("boss-day", name === "play" && Progression.isBossDay(this.dayIndex));
     if (name !== "play") document.body.classList.remove("boss-day");
-    if (name === "play") requestAnimationFrame(() => this.scheduleResize());
+    if (name === "play") {
+      requestAnimationFrame(() => {
+        this.scheduleResize();
+        setTimeout(() => this.scheduleResize(), 120);
+      });
+    }
     if (name === "title") this.updateTitleUI();
     this.updateVoidAlmightyUI();
+    setTimeout(() => document.body.classList.remove("screen-transitioning"), 420);
   }
 
   normalizeSecretCode(raw) {
@@ -410,8 +417,11 @@ class GameEngine {
 
   updateHUD() {
     const act = this.actForDay(this.dayIndex);
+    const actName = ACTS[act];
     document.getElementById("day-label").textContent = `Day ${this.dayIndex + 1}/${LEVELS.length}`;
-    document.getElementById("act-label").textContent = ACTS[act];
+    document.getElementById("act-label").textContent = actName;
+    const actMobile = document.getElementById("act-label-mobile");
+    if (actMobile) actMobile.textContent = actName;
     document.getElementById("conviction-val").textContent = this.conviction;
     document.getElementById("conviction-fill").style.width = `${this.conviction}%`;
     const prog = document.getElementById("day-progress");
