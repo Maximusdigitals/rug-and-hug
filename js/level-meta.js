@@ -98,9 +98,9 @@ const SKIP_TWEETS = {
     "who clears the Zach thread in Rug or Hug?? only degens fr",
   ],
   20: [
-    "final day Touch Grass and CT notifs won't leave me alone. Rug or Hug day 20 @voidhl",
-    "day 20 of Rug or Hug — almost made it then got hit by HYPE +12%. so close",
-    "if you beat Touch Grass and actually touch grass you're the main character. Rug or Hug is insane",
+    "Liquidation Leviathan boss in Rug or Hug day 20 is actually insane. dodge the flash then strike HYPE @voidhl",
+    "day 20 final boss humbled me. Hyperliquid Leviathan timing is brutal in Rug or Hug",
+    "if you beat the Liquidation Leviathan first try you're not human. Rug or Hug day 20 @voidhl",
   ],
 };
 
@@ -137,7 +137,7 @@ const LEVEL_ENRICHMENT = {
   17: { hint: "WIN: 6 NFA taps. Tap only when NFA shows — WAGMI/100x/GEM are traps.", voidMark: "fineprint" },
   18: { hint: "WIN: 10 meta taps. Wait for LOCKED, then tap chips matching that narrative (3 strikes = fail).", voidMark: "channel" },
   19: { hint: "WIN: kill 9 flags. Tap 🚩 only — green AUDITED/SAFU pills are bait. Escaped flags multiply.", voidMark: "thread" },
-  20: { hint: "WIN: finish 3 phases. Grass → hold 3s → tap LOG OFF at grass before dopamine bar fills.", voidMark: "notif" },
+  20: { hint: "WIN: 6 boss hits. Drag into teal safe zone before the red flash, then tap STRIKE when the core glows (max 2 mistakes).", voidMark: "notif" },
 };
 
 LEVELS.forEach((lv) => {

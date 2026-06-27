@@ -1,4 +1,4 @@
-/* 20 levels — mobile-first, tuned difficulty, modern canvas visuals */
+﻿/* 20 levels â€” mobile-first, tuned difficulty, modern canvas visuals */
 
 function goalBrief(win, how, lose) {
   const loseLine = lose
@@ -10,11 +10,11 @@ function goalBrief(win, how, lose) {
 }
 
 const LEVELS = [
-  // ── ACT I: THE TRENCHES ──────────────────────────────────────
+  // â”€â”€ ACT I: THE TRENCHES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
     id: 1, name: "Gas Fee Seance",
-    boss: goalBrief("Get 8 perfect taps", "Tap when the orb turns gold in the center", "Tap too early or too late — max 2 misses"),
-    instruction: "WIN: 8 gold taps · max 2 misses", mobileInstruction: "Tap when gold",
+    boss: goalBrief("Get 8 perfect taps", "Tap when the orb turns gold in the center", "Tap too early or too late â€” max 2 misses"),
+    instruction: "WIN: 8 gold taps Â· max 2 misses", mobileInstruction: "Tap when gold",
     logos: ["ethereum.png", "bitcoin.png"],
     accent: "#627eea",
     win: "Tx confirmed. Only cost half your portfolio.", fail: "Tx failed. Gas won.",
@@ -60,8 +60,8 @@ const LEVELS = [
   },
   {
     id: 2, name: "Solana Trench Foot",
-    boss: goalBrief("Collect 9 green gems", "Tap falling coins with green rings", "Never tap red-ring RUG coins — 2 rugs ends the run"),
-    instruction: "WIN: 9 green gems · skip red", mobileInstruction: "Green yes · red no",
+    boss: goalBrief("Collect 9 green gems", "Tap falling coins with green rings", "Never tap red-ring RUG coins â€” 2 rugs ends the run"),
+    instruction: "WIN: 9 green gems Â· skip red", mobileInstruction: "Green yes Â· red no",
     logos: ["solana.png", "bonk.png", "wif.png", "pump-fun.png"],
     accent: "#14f195",
     win: "Trenches cleared. Dignity optional.", fail: "Too many rugs.",
@@ -110,8 +110,8 @@ const LEVELS = [
   },
   {
     id: 3, name: "BTC Range Prison",
-    boss: goalBrief("Survive until the timer hits zero", "Drag the orange dot and keep it in the safe zone", "Touch the red walls — they slowly close in"),
-    instruction: "WIN: survive the timer · stay centered", mobileInstruction: "Keep dot centered",
+    boss: goalBrief("Survive until the timer hits zero", "Drag the orange dot and keep it in the safe zone", "Touch the red walls â€” they slowly close in"),
+    instruction: "WIN: survive the timer Â· stay centered", mobileInstruction: "Keep dot centered",
     logos: ["bitcoin.png", "blackrock-ibit.png"],
     accent: "#f7931a",
     win: "You survived boredom. Institutional.", fail: "You broke the range.",
@@ -144,8 +144,8 @@ const LEVELS = [
   },
   {
     id: 4, name: "Fear & Greed Exorcism",
-    boss: goalBrief("Tap 8 times in the FEAR zone", "Tap only when the slider is green on the left", "Don't tap during red GREED — max 2 wrong taps"),
-    instruction: "WIN: 8 FEAR taps · skip greed", mobileInstruction: "Green zone only",
+    boss: goalBrief("Tap 8 times in the FEAR zone", "Tap only when the slider is green on the left", "Don't tap during red GREED â€” max 2 wrong taps"),
+    instruction: "WIN: 8 FEAR taps Â· skip greed", mobileInstruction: "Green zone only",
     logos: ["fear-greed.png"],
     accent: "#16c784",
     win: "Fear mastered. Buy signal?", fail: "You aped at peak greed.",
@@ -182,8 +182,8 @@ const LEVELS = [
   },
   {
     id: 5, name: "Meme Whack-A-Rug",
-    boss: goalBrief("Whack 10 green memecoins", "Tap coins when they pop out of the holes", "Never tap red RUG coins — miss 2 green gems and you're out"),
-    instruction: "WIN: 10 green whacks · skip RUG", mobileInstruction: "Green yes · red no",
+    boss: goalBrief("Whack 10 green memecoins", "Tap coins when they pop out of the holes", "Never tap red RUG coins â€” miss 2 green gems and you're out"),
+    instruction: "WIN: 10 green whacks Â· skip RUG", mobileInstruction: "Green yes Â· red no",
     logos: ["bonk.png", "wif.png", "pump-fun.png"],
     accent: "#9945ff",
     win: "Trenches cleared. Finger speed: institutional.", fail: "You whacked a rug.",
@@ -295,11 +295,11 @@ const LEVELS = [
     },
   },
 
-  // ── ACT II: INSTITUTIONAL COSPLAY ────────────────────────────
+  // â”€â”€ ACT II: INSTITUTIONAL COSPLAY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
     id: 6, name: "ETF Funeral Director",
-    boss: goalBrief("Seat 8 ghosts before they fade", "Tap the floating ghost — not the pew below", "Let 2 ghosts fade away"),
-    instruction: "WIN: seat 8 ghosts · tap fast", mobileInstruction: "Tap ghosts fast",
+    boss: goalBrief("Seat 8 ghosts before they fade", "Tap the floating ghost â€” not the pew below", "Let 2 ghosts fade away"),
+    instruction: "WIN: seat 8 ghosts Â· tap fast", mobileInstruction: "Tap ghosts fast",
     logos: ["bitcoin.png", "blackrock-ibit.png", "coinbase.png"],
     accent: "#627eea",
     win: "Outflows paused. Miraculously.", fail: "They left for Hyperliquid.",
@@ -382,8 +382,8 @@ const LEVELS = [
   },
   {
     id: 7, name: "Hyperliquid Baptism",
-    boss: goalBrief("Dunk into PERPS 5 times", "Drag to the green PERPS pool at the bottom line and release", "Pools shuffle — OIL and PRE-IPO are wrong (1 mistake = fail)"),
-    instruction: "WIN: dunk PERPS 5× · green only", mobileInstruction: "Dunk PERPS ×5",
+    boss: goalBrief("Dunk into PERPS 5 times", "Drag to the green PERPS pool at the bottom line and release", "Pools shuffle â€” OIL and PRE-IPO are wrong (1 mistake = fail)"),
+    instruction: "WIN: dunk PERPS 5Ã— Â· green only", mobileInstruction: "Dunk PERPS Ã—5",
     logos: ["hyperliquid.png", "hyperliquid-mark.svg"],
     accent: "#00d4aa",
     win: "You are collateral now.", fail: "Wrong pool. Oil longed you.",
@@ -499,7 +499,7 @@ const LEVELS = [
   {
     id: 8, name: "HIP-3 Possession",
     boss: goalBrief("Exorcise 7 glowing commodities", "Tap oil, gold, or silver only when they pulse/glow", "Don't tap when nothing is glowing"),
-    instruction: "WIN: 7 glow taps · active only", mobileInstruction: "Tap when it glows",
+    instruction: "WIN: 7 glow taps Â· active only", mobileInstruction: "Tap when it glows",
     logos: ["hyperliquid.png", "usdc.png"],
     accent: "#d29922",
     win: "Exorcised. RWA perps salute you.", fail: "Commodity possessed you.",
@@ -536,8 +536,8 @@ const LEVELS = [
   },
   {
     id: 9, name: "Grandma's SEC Dodge",
-    boss: goalBrief("Catch 9 blue USDC coins", "Drag Grandma's wallet left/right into the coins", "Dodge SEC letters and red scams — 2 hits = fail"),
-    instruction: "WIN: catch 9 USDC · dodge SEC", mobileInstruction: "Drag · catch blue",
+    boss: goalBrief("Catch 9 blue USDC coins", "Drag Grandma's wallet left/right into the coins", "Dodge SEC letters and red scams â€” 2 hits = fail"),
+    instruction: "WIN: catch 9 USDC Â· dodge SEC", mobileInstruction: "Drag Â· catch blue",
     logos: ["ondo.png", "usdc.png"],
     accent: "#4ecdc4",
     win: "Grandma's savings intact. Compliance baffled.", fail: "SEC got Grandma on tape.",
@@ -640,8 +640,8 @@ const LEVELS = [
   },
   {
     id: 10, name: "Stablecoin Trust Fall",
-    boss: goalBrief("Catch 8 blue USDC coins", "Tap falling blue USDC", "Let red wobbly coins fall — tapping them hurts you (max 2)"),
-    instruction: "WIN: 8 blue taps · skip red", mobileInstruction: "Blue yes · red no",
+    boss: goalBrief("Catch 8 blue USDC coins", "Tap falling blue USDC", "Let red wobbly coins fall â€” tapping them hurts you (max 2)"),
+    instruction: "WIN: 8 blue taps Â· skip red", mobileInstruction: "Blue yes Â· red no",
     logos: ["usdc.png", "usdt.png", "dai.png"],
     accent: "#2775ca",
     win: "Peg maintained. Trust restored.", fail: "Depeg emotional damage.",
@@ -681,11 +681,11 @@ const LEVELS = [
     },
   },
 
-  // ── ACT III: SMART MONEY THEATER ─────────────────────────────
+  // â”€â”€ ACT III: SMART MONEY THEATER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
     id: 11, name: "ZEC Identity Crisis",
-    boss: goalBrief("Shield 7 times when the eye appears", "Wait for 👁 then tap SHIELD", "Don't tap early or miss the eye — max 2 mistakes"),
-    instruction: "WIN: 7 shields · wait for 👁", mobileInstruction: "Wait for eye → tap",
+    boss: goalBrief("Shield 7 times when the eye appears", "Wait for ðŸ‘ then tap SHIELD", "Don't tap early or miss the eye â€” max 2 mistakes"),
+    instruction: "WIN: 7 shields Â· wait for ðŸ‘", mobileInstruction: "Wait for eye â†’ tap",
     logos: ["zcash.png", "dash.png"],
     accent: "#f4b728",
     win: "Privacy preserved. Compliance confused.", fail: "Compliance caught you.",
@@ -708,7 +708,7 @@ const LEVELS = [
       drawLogo(ctx, e, "zcash.png", w / 2, h * 0.38, 64);
       if (this.showEye) {
         drawGlow(ctx, w / 2, h * 0.38, 80, "#f85149");
-        ctx.font = "48px system-ui"; ctx.textAlign = "center"; ctx.fillText("👁", w / 2, h * 0.38 + 16);
+        ctx.font = "48px system-ui"; ctx.textAlign = "center"; ctx.fillText("ðŸ‘", w / 2, h * 0.38 + 16);
         ctx.fillStyle = "#f85149"; ctx.font = "bold 14px system-ui"; ctx.fillText("TAP SHIELD!", w / 2, h * 0.6);
       } else ctx.fillStyle = "#8b949e";
       ctx.textAlign = "center"; ctx.fillText("Wait for the eye...", w / 2, h * 0.6); ctx.textAlign = "left";
@@ -717,8 +717,8 @@ const LEVELS = [
   },
   {
     id: 12, name: "Bot Union Bargain",
-    boss: goalBrief("Accept 8 union demands on the beat", "Tap when demands hit the green ACCEPT line (same timing as Day 1)", "Too early or too late counts as a miss — max 2"),
-    instruction: "WIN: 8 ACCEPT taps · on beat", mobileInstruction: "Tap when green",
+    boss: goalBrief("Accept 8 union demands on the beat", "Tap when demands hit the green ACCEPT line (same timing as Day 1)", "Too early or too late counts as a miss â€” max 2"),
+    instruction: "WIN: 8 ACCEPT taps Â· on beat", mobileInstruction: "Tap when green",
     logos: ["venice-vvv.png", "tao.png", "near.png"],
     accent: "#a371f7",
     win: "Deal signed. Bot still useless.", fail: "Union walked. Wallet nuked.",
@@ -809,8 +809,8 @@ const LEVELS = [
   },
   {
     id: 13, name: "Polymarket Spread Squeeze",
-    boss: goalBrief("Match the spread 8 times", "Tap when YES and NO lines snap together and the box glows green", "Don't tap while spread is wide — max 2 bad taps"),
-    instruction: "WIN: 8 tight spreads · tap green", mobileInstruction: "Tap when tight",
+    boss: goalBrief("Match the spread 8 times", "Tap when YES and NO lines snap together and the box glows green", "Don't tap while spread is wide â€” max 2 bad taps"),
+    instruction: "WIN: 8 tight spreads Â· tap green", mobileInstruction: "Tap when tight",
     logos: ["polymarket-icon.png"],
     accent: "#2e5cff",
     win: "Spread married. Both sides lost money.", fail: "Liquidity divorced you.",
@@ -885,10 +885,10 @@ const LEVELS = [
       ctx.fillStyle = "#2e5cff";
       ctx.font = "bold 15px system-ui";
       ctx.textAlign = "left";
-      ctx.fillText(`YES ${Math.round((0.5 - this.spread / 2) * 100)}¢`, 32, yesY + 5);
+      ctx.fillText(`YES ${Math.round((0.5 - this.spread / 2) * 100)}Â¢`, 32, yesY + 5);
       ctx.fillStyle = "#f85149";
       ctx.textAlign = "right";
-      ctx.fillText(`NO ${Math.round((0.5 + this.spread / 2) * 100)}¢`, w - 32, noY + 5);
+      ctx.fillText(`NO ${Math.round((0.5 + this.spread / 2) * 100)}Â¢`, w - 32, noY + 5);
 
       ctx.strokeStyle = "#2e5cff";
       ctx.lineWidth = 4;
@@ -905,10 +905,10 @@ const LEVELS = [
       ctx.textAlign = "center";
       ctx.fillStyle = tight ? "#3fb950" : "#d29922";
       ctx.font = `bold ${e.mobile ? 18 : 15}px system-ui`;
-      ctx.fillText(tight ? "TAP — SPREAD TIGHT!" : "Wait for spread to close...", w / 2, cy + 72);
+      ctx.fillText(tight ? "TAP â€” SPREAD TIGHT!" : "Wait for spread to close...", w / 2, cy + 72);
 
       ctx.font = "28px system-ui";
-      ctx.fillText("💒", w / 2, cy - 4);
+      ctx.fillText("ðŸ’’", w / 2, cy - 4);
 
       ctx.textAlign = "left";
       e.drawProgress(this.hits, this.need, w, h);
@@ -916,8 +916,8 @@ const LEVELS = [
   },
   {
     id: 14, name: "Proof of Vibes",
-    boss: goalBrief("Rate 7 vibes as bullish", "Tap only when VC screams BUY and 🚀 appears", "Hands off on 'hard pass' — max 2 wrong taps"),
-    instruction: "WIN: 7 BUY taps · 🚀 only", mobileInstruction: "Rocket on BUY only",
+    boss: goalBrief("Rate 7 vibes as bullish", "Tap only when VC screams BUY and ðŸš€ appears", "Hands off on 'hard pass' â€” max 2 wrong taps"),
+    instruction: "WIN: 7 BUY taps Â· ðŸš€ only", mobileInstruction: "Rocket on BUY only",
     logos: ["solana.png", "hyperliquid.png", "ondo.png"],
     accent: "#9945ff",
     win: "Vibes validated. Due diligence skipped.", fail: "You rated a rug as bullish.",
@@ -932,7 +932,7 @@ const LEVELS = [
       }
     },
     tap(e) {
-      if (this.state === "buy") { this.hits++; e.juice(e.displayWidth / 2, e.displayHeight * 0.45, "#3fb950", "🚀"); if (this.hits >= this.need) e.winLevel(); this.state = "wait"; this.timer = 1; }
+      if (this.state === "buy") { this.hits++; e.juice(e.displayWidth / 2, e.displayHeight * 0.45, "#3fb950", "ðŸš€"); if (this.hits >= this.need) e.winLevel(); this.state = "wait"; this.timer = 1; }
       else if (this.state === "pass") { this.miss++; e.juice(e.displayWidth / 2, e.displayHeight * 0.45, "#f85149"); if (this.miss >= this.maxMiss) e.loseLevel(); }
     },
     onTap(e) { this.tap(e); },
@@ -943,7 +943,7 @@ const LEVELS = [
       drawGlow(ctx, w / 2, h * 0.42, 60, col);
       ctx.fillStyle = col; ctx.font = `bold ${e.mobile ? 22 : 18}px system-ui`; ctx.textAlign = "center";
       ctx.fillText(msg, w / 2, h * 0.42);
-      if (this.state === "buy") ctx.font = "56px system-ui", ctx.fillText("🚀", w / 2, h * 0.58);
+      if (this.state === "buy") ctx.font = "56px system-ui", ctx.fillText("ðŸš€", w / 2, h * 0.58);
       ctx.textAlign = "left";
       e.drawProgress(this.hits, this.need, w, h);
     },
@@ -951,7 +951,7 @@ const LEVELS = [
   {
     id: 15, name: "Pre-IPO Astronaut",
     boss: goalBrief("Fly through 6 gaps", "Tap to boost up and steer through holes in the red walls", "Hit a red wall = instant fail"),
-    instruction: "WIN: pass 6 gaps · dodge walls", mobileInstruction: "Tap · dodge walls",
+    instruction: "WIN: pass 6 gaps Â· dodge walls", mobileInstruction: "Tap Â· dodge walls",
     logos: ["hyperliquid.png"],
     accent: "#627eea",
     win: "Pre-IPO moon mission complete.", fail: "G-force rekt you.",
@@ -989,16 +989,16 @@ const LEVELS = [
         ctx.fillStyle = "#f85149"; ctx.fillRect(gx, 0, g.w * w, gy); ctx.fillRect(gx, gy + gh, g.w * w, h);
       });
       drawGlow(ctx, w * 0.12, this.y * h, 28, "#627eea");
-      ctx.fillStyle = "#627eea"; ctx.font = "24px system-ui"; ctx.fillText("🚀", w * 0.12 - 12, this.y * h + 8);
+      ctx.fillStyle = "#627eea"; ctx.font = "24px system-ui"; ctx.fillText("ðŸš€", w * 0.12 - 12, this.y * h + 8);
       e.drawProgress(this.passed, this.need, w, h);
     },
   },
 
-  // ── ACT IV: CT FINAL BOSS ────────────────────────────────────
+  // â”€â”€ ACT IV: CT FINAL BOSS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
     id: 16, name: "Airdrop Supply Drop",
-    boss: goalBrief("Claim 10 green airdrops", "Tap green AIRDROP crates as they fall from the sky", "Let red FAKE crates fall — miss 2 real drops or tap 2 scams = fail"),
-    instruction: "WIN: 10 green drops · skip fake", mobileInstruction: "Green yes · red no",
+    boss: goalBrief("Claim 10 green airdrops", "Tap green AIRDROP crates as they fall from the sky", "Let red FAKE crates fall â€” miss 2 real drops or tap 2 scams = fail"),
+    instruction: "WIN: 10 green drops Â· skip fake", mobileInstruction: "Green yes Â· red no",
     logos: ["megaeth.png", "eigenlayer.png"],
     accent: "#ff6b6b",
     win: "Bags secured. Sybil tears optional.", fail: "You claimed a phishing drop.",
@@ -1107,8 +1107,8 @@ const LEVELS = [
   },
   {
     id: 17, name: "KOL Ventriloquist",
-    boss: goalBrief("Post disclaimer 6 times", "Tap only when NFA scrolls on screen", "Never tap WAGMI, 100x, or GEM — max 2 wrong taps"),
-    instruction: "WIN: 6 NFA taps · skip shills", mobileInstruction: "NFA only",
+    boss: goalBrief("Post disclaimer 6 times", "Tap only when NFA scrolls on screen", "Never tap WAGMI, 100x, or GEM â€” max 2 wrong taps"),
+    instruction: "WIN: 6 NFA taps Â· skip shills", mobileInstruction: "NFA only",
     logos: ["x-logo.svg"],
     accent: "#1d9bf0",
     win: "Disclaimer delivered. SEC distracted.", fail: "Shilled without NFA.",
@@ -1144,8 +1144,8 @@ const LEVELS = [
   },
   {
     id: 18, name: "Narrative Whiplash",
-    boss: goalBrief("Catch the meta 10 times", "Wait for LOCKED on the wheel, then tap chips matching that narrative", "Don't tap during SPIN or on wrong meta — 3 strikes = fail"),
-    instruction: "WIN: 10 meta taps · wait LOCK", mobileInstruction: "Wait LOCK → tap",
+    boss: goalBrief("Catch the meta 10 times", "Wait for LOCKED on the wheel, then tap chips matching that narrative", "Don't tap during SPIN or on wrong meta â€” 3 strikes = fail"),
+    instruction: "WIN: 10 meta taps Â· wait LOCK", mobileInstruction: "Wait LOCK â†’ tap",
     logos: ["solana.png", "hyperliquid.png", "zcash.png", "ondo.png"],
     accent: "#d29922",
     win: "You caught the meta. It already rotated.", fail: "You bought last week's narrative.",
@@ -1280,7 +1280,7 @@ const LEVELS = [
       ctx.stroke();
 
       const locked = this.metas[this.lockIdx];
-      const status = this.phase === "lock" ? `LOCKED · ${locked.n}` : this.phase === "whip" ? "WHIPLASH" : "SPINNING";
+      const status = this.phase === "lock" ? `LOCKED Â· ${locked.n}` : this.phase === "whip" ? "WHIPLASH" : "SPINNING";
       const statusCol = this.phase === "lock" ? "#3fb950" : this.phase === "whip" ? "#f85149" : "#d29922";
       drawCard(ctx, 14, ht * 0.34, w - 28, 36, 10, "#21262d99", statusCol + "66");
       ctx.fillStyle = statusCol;
@@ -1306,8 +1306,8 @@ const LEVELS = [
   },
   {
     id: 19, name: "Zach Thread Boss Fight",
-    boss: goalBrief("Kill 9 red flags before they escape", "Tap 🚩 flags as they fall down the thread", "Never tap green AUDITED/SAFU pills — let max 2 flags escape"),
-    instruction: "WIN: 9 flags · skip pills", mobileInstruction: "Flags yes · pills no",
+    boss: goalBrief("Kill 9 red flags before they escape", "Tap ðŸš© flags as they fall down the thread", "Never tap green AUDITED/SAFU pills â€” let max 2 flags escape"),
+    instruction: "WIN: 9 flags Â· skip pills", mobileInstruction: "Flags yes Â· pills no",
     logos: ["x-logo.svg"],
     accent: "#f85149",
     win: "Thread neutralized. Supply unclear.", fail: "95% supply controlled.",
@@ -1328,7 +1328,7 @@ const LEVELS = [
       this.thread = [
         "1/ Team anonymous since 2022",
         "2/ 90% supply OTC before TGE",
-        "3/ 'Audited' — no link attached",
+        "3/ 'Audited' â€” no link attached",
         "4/ KOL wallet funded same block",
         "5/ Liquidity unlock tomorrow",
       ];
@@ -1349,7 +1349,7 @@ const LEVELS = [
         x: 50 + Math.random() * (e.displayWidth - 100),
         y: -20,
         vy: 48 + Math.random() * 24,
-        label: Math.random() < 0.5 ? "AUDITED ✓" : "SAFU ✓",
+        label: Math.random() < 0.5 ? "AUDITED âœ“" : "SAFU âœ“",
       });
     },
     update(dt, e) {
@@ -1433,7 +1433,7 @@ const LEVELS = [
         ctx.fillStyle = "#f85149";
         ctx.font = `bold ${e.mobile ? 12 : 11}px system-ui`;
         ctx.textAlign = "center";
-        ctx.fillText("PHASE 2 · FLAGS MULTIPLY", w / 2, ht * 0.52);
+        ctx.fillText("PHASE 2 Â· FLAGS MULTIPLY", w / 2, ht * 0.52);
         ctx.textAlign = "left";
       }
 
@@ -1450,446 +1450,276 @@ const LEVELS = [
         const sz = 28 * f.size;
         drawGlow(ctx, f.x, f.y, 24 * f.size, "#f85149");
         ctx.font = `${sz}px system-ui`;
-        ctx.fillText("🚩", f.x - sz * 0.5, f.y + sz * 0.35);
+        ctx.fillText("ðŸš©", f.x - sz * 0.5, f.y + sz * 0.35);
       });
 
       ctx.fillStyle = "#8b949e";
       ctx.font = "11px system-ui";
-      ctx.fillText(`Escaped ${this.miss}/${this.maxMiss} · swarm ${this.flags.length}/10`, 14, ht - 12);
+      ctx.fillText(`Escaped ${this.miss}/${this.maxMiss} Â· swarm ${this.flags.length}/10`, 14, ht - 12);
       e.drawProgress(this.killed, this.need, w, ht);
     },
   },
   {
-    id: 20, name: "Touch Grass",
+    id: 20, name: "Liquidation Leviathan",
     boss: goalBrief(
-      "Complete all 3 phases and log off",
-      "① Drag past lasers into grass → ② Hold in grass 3 seconds → ③ Drag to grass and tap LOG OFF",
-      "Lasers, missiles, notifications, or a full dopamine bar end the run"
+      "Strike the Leviathan 6 times",
+      "Drag into the teal safe zone before the red flash - then tap STRIKE when the core glows",
+      "Miss the safe zone or miss a strike window twice = liquidated"
     ),
-    instruction: "Phase 1: reach the grass", mobileInstruction: "Get to grass",
-    logos: ["x-logo.svg", "bitcoin.png", "hyperliquid.png"],
-    accent: "#3fb950",
-    win: "Grass touched. CT disappointed.", fail: "Notification overdose.",
-    ctWin: ["@TouchGrass: W", "@CT: rare"], ctFail: ["@Alpha: missed", "@HYPE: +12%"],
-    duration: 40,
+    instruction: "Dodge flash -> tap STRIKE", mobileInstruction: "Safe zone -> STRIKE",
+    logos: ["hyperliquid.png", "hyperliquid-mark.svg"],
+    accent: "#00d4aa",
+    win: "Boss rekt. You are the house now.", fail: "Liquidated by the engine.",
+    ctWin: ["@HYPE: W", "@Hyperliquid: respect"], ctFail: ["@Liquidation: thanks", "@CT: rekt"],
+    duration: 42,
+    showTapButton: true,
     init(e) {
-      const w = e.displayWidth;
-      const ht = e.displayHeight;
-      this.player = { x: w * 0.68, y: ht * 0.44 };
-      this.phase = 1;
-      this.hold = 0;
-      this.holdNeed = 6;
-      this.dopamine = 0;
-      this.maxDopamine = 100;
+      this.bossHp = 6;
+      this.hits = 0;
+      this.maxHits = 2;
+      this.round = 0;
+      this.state = "telegraph";
+      this.stateT = 0;
+      this.playerX = 0.5;
+      this.safeX = 0.5;
+      this.safeW = 0.26;
+      this.flash = 0;
       this.pulse = 0;
-      this.grassLit = true;
-      this.flickerT = 0;
-      this.orbit = 0;
-      this.resistT = 1.05;
-      this.spawn = 0;
-      this.missileCd = 1.2;
-      this.decoyCd = 2.4;
-      this.hookCd = 1.6;
-      this.hook = null;
-      this.notifs = [];
-      this.missiles = [];
-      this.decoys = [];
-      this.texts = ["HYPE +12%", "ALPHA", "ZACH", "FOMO", "CPI", "TGE", "OTC"];
-      this.sweepers = [
-        { kind: "h", pos: 0.22, vel: 0.42, thick: 0.045 },
-        { kind: "h", pos: 0.58, vel: -0.36, thick: 0.04 },
-        { kind: "v", pos: 0.38, vel: 0.48, thick: 0.038 },
-      ];
-      this.grassBase = { x: 0, y: 0.46, w: 0.3, h: 0.54 };
-      this.pr = e.mobile ? 20 : 15;
+      this.laneY = 0.82;
+      this.pickSafeZone();
+      this.pendingAdvance = false;
+      this.syncTapBtn(e);
       this.setPrompt(e);
-      if (e.tapBtn) {
-        e.tapBtn.style.display = "none";
-        e.tapBtn.textContent = "LOG OFF";
-      }
+    },
+    pickSafeZone() {
+      this.safeW = Math.max(0.12, 0.27 - this.round * 0.022);
+      this.safeX = 0.14 + Math.random() * (0.72 - this.safeW);
+      this.safeX = Math.max(this.safeW / 2 + 0.06, Math.min(1 - this.safeW / 2 - 0.06, this.safeX));
+    },
+    telegraphTime() {
+      return Math.max(0.48, 0.98 - this.round * 0.065);
+    },
+    strikeTime() {
+      return Math.max(0.55, 0.82 - this.round * 0.03);
+    },
+    syncTapBtn(e) {
+      if (!e.tapBtn) return;
+      e.tapBtn.textContent = "STRIKE";
+      e.tapBtn.style.display = this.state === "strike" ? "flex" : "none";
     },
     setPrompt(e) {
-      const prompts = {
-        1: ["Phase 1: Drag into the grass", "Drag to grass"],
-        2: ["Phase 2: Stay in grass 3 seconds", "Hold in grass 3s"],
-        3: ["Phase 3: Tap LOG OFF at grass", "Tap LOG OFF"],
+      const map = {
+        telegraph: ["Drag into teal zone before flash", "Get in teal zone"],
+        flash: ["LIQUIDATION!", "Dodge!"],
+        strike: ["Tap STRIKE on glowing core", "Tap STRIKE"],
+        recover: ["Boss recoiling...", "Next wave..."],
       };
-      const p = prompts[this.phase];
+      const p = map[this.state];
       if (e.instructionEl && p) e.instructionEl.textContent = e.mobile ? p[1] : p[0];
     },
-    grassZone(e) {
-      const w = e.displayWidth;
-      const ht = e.displayHeight;
-      if (this.phase < 3) {
-        const g = this.grassBase;
-        return { x: g.x * w, y: g.y * ht, w: g.w * w, h: g.h * ht, r: null };
-      }
-      const cx = w * 0.17 + Math.cos(this.orbit) * w * 0.09;
-      const cy = ht * 0.74 + Math.sin(this.orbit * 1.3) * ht * 0.07;
-      const r = e.mobile ? 52 : 42;
-      return { x: cx - r, y: cy - r, w: r * 2, h: r * 2, r, cx, cy };
-    },
-    inGrass(e) {
-      const p = this.player;
-      const z = this.grassZone(e);
-      if (z.r) return Math.hypot(p.x - z.cx, p.y - z.cy) < z.r;
-      return p.x < z.x + z.w && p.y > z.y;
-    },
-    grassActive() {
-      return this.phase === 1 || (this.grassLit && this.phase >= 2);
-    },
-    spawnNotif(e, homing) {
-      const w = e.displayWidth;
-      const ht = e.displayHeight;
-      const text = this.texts[Math.floor(Math.random() * this.texts.length)];
-      if (homing) {
-        this.missiles.push({
-          x: w * 0.82 + Math.random() * w * 0.12,
-          y: 40 + Math.random() * (ht - 80),
-          speed: 95 + this.phase * 18,
-          text,
-        });
-        return;
-      }
-      const side = Math.floor(Math.random() * 3);
-      if (side === 0) {
-        this.notifs.push({ x: w + 20, y: 30 + Math.random() * (ht - 80), vx: -(140 + Math.random() * 60), vy: (Math.random() - 0.5) * 50, text });
-      } else if (side === 1) {
-        this.notifs.push({ x: 20 + Math.random() * (w - 40), y: -20, vx: (Math.random() - 0.5) * 60, vy: 110 + Math.random() * 50, text });
-      } else {
-        this.notifs.push({ x: -120, y: 40 + Math.random() * (ht - 100), vx: 125 + Math.random() * 55, vy: (Math.random() - 0.5) * 40, text });
-      }
-    },
-    spawnDecoy(e) {
-      const w = e.displayWidth;
-      const ht = e.displayHeight;
-      this.decoys.push({
-        x: w * (0.35 + Math.random() * 0.45),
-        y: ht * (0.2 + Math.random() * 0.45),
-        life: 2.2,
-        t: 0,
-      });
-    },
-    addDopamine(e, amt, x, y, label) {
-      this.dopamine = Math.min(this.maxDopamine, this.dopamine + amt);
-      if (x != null) e.juice(x, y, "#f85149", label || "+DOP");
-      e.shake();
-      if (this.dopamine >= this.maxDopamine) e.loseLevel();
-    },
-    hitLasers(e) {
-      const w = e.displayWidth;
-      const ht = e.displayHeight;
-      const p = this.player;
-      const pad = this.pr;
-      for (const s of this.sweepers) {
-        if (s.kind === "h") {
-          const ly = s.pos * ht;
-          const th = s.thick * ht;
-          if (p.y + pad > ly - th && p.y - pad < ly + th) {
-            this.addDopamine(e, 28, p.x, p.y, "LASER");
-            p.y += s.vel > 0 ? 22 : -22;
-          }
-        } else {
-          const lx = s.pos * w;
-          const tw = s.thick * w;
-          if (p.x + pad > lx - tw && p.x - pad < lx + tw) {
-            this.addDopamine(e, 28, p.x, p.y, "LASER");
-            p.x += s.vel > 0 ? 18 : -18;
-          }
-        }
-      }
-    },
-    advancePhase(e, next) {
-      this.phase = next;
+    beginTelegraph(e) {
+      this.state = "telegraph";
+      this.stateT = 0;
+      this.pickSafeZone();
+      this.syncTapBtn(e);
       this.setPrompt(e);
-      if (e.tapBtn) e.tapBtn.style.display = next >= 3 ? "flex" : "none";
-      if (next === 2) {
-        this.flickerT = 0;
-        this.grassLit = true;
+    },
+    resolveFlash(e) {
+      if (this.inSafe()) {
+        this.state = "strike";
+        this.stateT = 0;
+        e.juice(e.displayWidth / 2, e.displayHeight * 0.32, "#00d4aa", "DODGED");
+      } else {
+        this.hits++;
+        e.juice(this.playerX * e.displayWidth, e.displayHeight * this.laneY, "#f85149", "LIQ");
+        e.shake();
+        if (this.hits > this.maxHits) { e.loseLevel(); return; }
+        this.state = "recover";
+        this.stateT = 0;
       }
-      if (next === 3) {
-        this.orbit = 0;
-        this.resistT = 1.05;
-        this.sweepers.push({ kind: "h", pos: 0.78, vel: 0.55, thick: 0.035 });
-      }
-      e.juice(e.displayWidth * 0.5, e.displayHeight * 0.5, "#3fb950", `PHASE ${next}`);
+      this.syncTapBtn(e);
+      this.setPrompt(e);
+    },
+    inSafe() {
+      return this.playerX >= this.safeX - this.safeW / 2 && this.playerX <= this.safeX + this.safeW / 2;
     },
     update(dt, e) {
       const w = e.displayWidth;
       const ht = e.displayHeight;
-      this.pulse += dt * 3.5;
-      const drag = this.phase >= 3 ? 0.44 : 0.5;
+      this.pulse += dt * 3.2;
+      this.flash = Math.max(0, this.flash - dt * 5.5);
 
-      if (e.pointer.down) {
-        this.player.x += (e.pointer.x - this.player.x) * drag;
-        this.player.y += (e.pointer.y - this.player.y) * drag;
+      if (e.pointer.down && this.state === "telegraph") {
+        this.playerX += (e.pointer.x / w - this.playerX) * Math.min(1, dt * 14);
       }
+      this.playerX = Math.max(0.08, Math.min(0.92, this.playerX));
 
-      const laserMul = 1 + this.phase * 0.22 + e.elapsed * 0.02;
-      this.sweepers.forEach(s => {
-        s.pos += s.vel * dt * laserMul;
-        if (s.kind === "h" && (s.pos < 0.05 || s.pos > 0.95)) s.vel *= -1;
-        if (s.kind === "v" && (s.pos < 0.08 || s.pos > 0.92)) s.vel *= -1;
-      });
-      this.hitLasers(e);
-
-      if (this.phase >= 2) {
-        this.flickerT += dt;
-        const flickRate = this.phase >= 3 ? 0.62 : 0.88;
-        if (this.flickerT >= flickRate) {
-          this.flickerT = 0;
-          this.grassLit = !this.grassLit;
+      if (this.state === "telegraph") {
+        this.stateT += dt;
+        if (this.stateT >= this.telegraphTime()) {
+          this.flash = 1;
+          this.state = "flash";
+          this.stateT = 0;
+          this.setPrompt(e);
+          this.resolveFlash(e);
         }
-      }
-      if (this.phase >= 3) this.orbit += dt * 1.15;
-
-      this.hookCd -= dt;
-      if (this.hookCd <= 0 && !this.inGrass(e)) {
-        this.hookCd = 0.75 + Math.random() * 0.5;
-        this.hook = { t: 0.95, label: ["ONE MORE TRADE", "CT MOVING", "LAST ALPHA"][Math.floor(Math.random() * 3)] };
-      }
-      if (this.hook) {
-        this.hook.t -= dt;
-        const cx = w * 0.62;
-        const cy = ht * 0.34;
-        this.player.x += (cx - this.player.x) * dt * 2.1;
-        this.player.y += (cy - this.player.y) * dt * 2.1;
-        this.dopamine = Math.min(this.maxDopamine, this.dopamine + dt * 14);
-        if (this.hook.t <= 0) this.hook = null;
-      }
-
-      this.spawn += dt;
-      const rate = Math.max(0.28, 0.62 - this.phase * 0.08 - e.elapsed * 0.006);
-      if (this.spawn > rate) {
-        this.spawn = 0;
-        this.spawnNotif(e, false);
-        if (this.phase > 1 && Math.random() < 0.45) this.spawnNotif(e, false);
-      }
-
-      if (this.phase >= 2) {
-        this.missileCd -= dt;
-        if (this.missileCd <= 0) {
-          this.missileCd = this.phase >= 3 ? 0.55 : 0.95;
-          this.spawnNotif(e, true);
+      } else if (this.state === "strike") {
+        this.stateT += dt;
+        if (this.stateT >= this.strikeTime()) {
+          this.hits++;
+          e.juice(w / 2, ht * 0.3, "#f85149", "MISS");
+          e.shake();
+          if (this.hits > this.maxHits) { e.loseLevel(); return; }
+          this.state = "recover";
+          this.stateT = 0;
+          this.syncTapBtn(e);
+          this.setPrompt(e);
         }
-      }
-      if (this.phase >= 1) {
-        this.decoyCd -= dt;
-        if (this.decoyCd <= 0) {
-          this.decoyCd = 2.1 - this.phase * 0.25;
-          this.spawnDecoy(e);
+      } else if (this.state === "recover") {
+        this.stateT += dt;
+        if (this.stateT >= 0.38) {
+          if (this.pendingAdvance) {
+            this.round++;
+            this.pendingAdvance = false;
+          }
+          if (this.bossHp <= 0) { e.winLevel(); return; }
+          this.beginTelegraph(e);
         }
       }
 
-      this.notifs.forEach(n => { n.x += n.vx * dt; n.y += n.vy * dt; });
-      this.notifs = this.notifs.filter(n => n.x > -200 && n.x < w + 200 && n.y > -80 && n.y < ht + 80);
-
-      this.missiles.forEach(m => {
-        const dx = this.player.x - m.x;
-        const dy = this.player.y - m.y;
-        const d = Math.hypot(dx, dy) || 1;
-        m.x += (dx / d) * m.speed * dt;
-        m.y += (dy / d) * m.speed * dt;
-      });
-      this.missiles = this.missiles.filter(m => m.x > -40 && m.x < w + 40 && m.y > -40 && m.y < ht + 40);
-
-      this.decoys.forEach(d => { d.t += dt; });
-      this.decoys = this.decoys.filter(d => d.t < d.life);
-
-      const hitR = e.mobile ? 34 : 28;
-      [...this.notifs, ...this.missiles].forEach(n => {
-        if (Math.hypot(n.x - this.player.x, n.y - this.player.y) < hitR + 18) {
-          n.x = -9999;
-          this.addDopamine(e, 16, this.player.x, this.player.y);
-        }
-      });
-      this.decoys.forEach(d => {
-        if (Math.hypot(d.x - this.player.x, d.y - this.player.y) < hitR + 24) {
-          d.t = d.life;
-          this.addDopamine(e, 22, d.x, d.y, "FAKE");
-        }
-      });
-
-      this.player.x = Math.max(this.pr, Math.min(w - this.pr, this.player.x));
-      this.player.y = Math.max(this.pr, Math.min(ht - this.pr, this.player.y));
-
-      const inG = this.inGrass(e);
-      const active = this.grassActive();
-
-      if (this.phase === 1) {
-        if (inG) this.advancePhase(e, 2);
-      } else if (inG && active) {
-        this.hold += dt;
-        this.dopamine = Math.max(0, this.dopamine - dt * 38);
-        if (this.phase === 2 && this.hold >= 3) this.advancePhase(e, 3);
-      } else {
-        this.hold = Math.max(0, this.hold - dt * (this.phase >= 3 ? 2.6 : 2.1));
-        if (!inG) this.dopamine = Math.min(this.maxDopamine, this.dopamine + dt * 5);
-      }
-
-      if (this.phase >= 3) {
-        this.resistT -= dt;
-        if (this.resistT <= 0) {
-          this.resistT = 0.95;
-          this.hold = Math.max(0, this.hold - 1.4);
-          this.addDopamine(e, 10, this.player.x, this.player.y, "SCROLL");
-        }
-      }
-
-      if (this.hold >= this.holdNeed) e.winLevel();
-      else if (this.dopamine >= this.maxDopamine || e.elapsed >= e.duration) e.loseLevel();
+      if (e.elapsed >= e.duration && this.bossHp > 0) e.loseLevel();
     },
-    tap(e) {
-      if (this.phase < 3) return;
-      this.resistT = 1.05;
-      e.juice(e.displayWidth / 2, e.displayHeight * 0.72, "#3fb950", "LOG OFF");
+    strike(e) {
+      if (this.state !== "strike") return;
+      this.bossHp--;
+      this.pendingAdvance = true;
+      this.state = "recover";
+      this.stateT = 0;
+      this.syncTapBtn(e);
+      this.setPrompt(e);
+      e.juice(e.displayWidth / 2, e.displayHeight * 0.28, "#00d4aa", `HIT ${6 - this.bossHp}/6`);
+      e.shake();
+      if (this.bossHp <= 0) e.winLevel();
     },
-    onTap(e) { this.tap(e); },
+    tap(e) { this.strike(e); },
+    onTap(e) { this.strike(e); },
+    onTapAt(e, x, y) {
+      if (this.state === "telegraph") {
+        this.playerX = x / e.displayWidth;
+      } else if (this.state === "strike" && y < e.displayHeight * 0.55) {
+        this.strike(e);
+      }
+    },
+    drawGrid(ctx, w, ht) {
+      ctx.strokeStyle = "rgba(0,212,170,0.06)";
+      ctx.lineWidth = 1;
+      const s = 40;
+      for (let x = 0; x < w; x += s) {
+        ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, ht); ctx.stroke();
+      }
+      for (let y = 0; y < ht; y += s) {
+        ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
+      }
+    },
     draw(ctx, e, w, ht) {
-      const sky = ctx.createLinearGradient(0, 0, w, ht);
-      sky.addColorStop(0, "#0d1117");
-      sky.addColorStop(0.5, "#12101a");
-      sky.addColorStop(1, "#0f2418");
-      ctx.fillStyle = sky;
+      const bg = ctx.createLinearGradient(0, 0, 0, ht);
+      bg.addColorStop(0, "#030807");
+      bg.addColorStop(0.45, "#061210");
+      bg.addColorStop(1, "#040a09");
+      ctx.fillStyle = bg;
       ctx.fillRect(0, 0, w, ht);
+      this.drawGrid(ctx, w, ht);
 
-      ctx.fillStyle = "rgba(248,113,113,0.04)";
-      ctx.fillRect(w * 0.42, 0, w * 0.58, ht);
-      drawCard(ctx, w * 0.58, ht * 0.1, w * 0.36, ht * 0.55, 14, "#161b2288", "#f8514933");
-      drawLogo(ctx, e, "x-logo.svg", w * 0.76, ht * 0.2, e.mobile ? 36 : 30);
-      drawLogo(ctx, e, "hyperliquid.png", w * 0.66, ht * 0.38, 28);
-      drawLogo(ctx, e, "bitcoin.png", w * 0.86, ht * 0.38, 28);
-      ctx.fillStyle = "#f85149";
-      ctx.font = `bold ${e.mobile ? 10 : 9}px system-ui`;
-      ctx.textAlign = "center";
-      ctx.fillText("CT BUNKER", w * 0.76, ht * 0.52);
-      ctx.textAlign = "left";
+      const bx = w / 2;
+      const by = ht * 0.28;
+      const bossR = e.mobile ? 58 : 48;
+      const hp = this.bossHp / 6;
+      const enraged = this.bossHp <= 3;
 
-      this.sweepers.forEach(s => {
-        if (s.kind === "h") {
-          const ly = s.pos * ht;
-          const th = s.thick * ht;
-          const g = ctx.createLinearGradient(0, ly - th, 0, ly + th);
-          g.addColorStop(0, "transparent");
-          g.addColorStop(0.5, "rgba(248,113,113,0.55)");
-          g.addColorStop(1, "transparent");
-          ctx.fillStyle = g;
-          ctx.fillRect(0, ly - th, w, th * 2);
-        } else {
-          const lx = s.pos * w;
-          const tw = s.thick * w;
-          ctx.fillStyle = "rgba(248,113,113,0.4)";
-          ctx.fillRect(lx - tw, 0, tw * 2, ht);
-        }
-      });
-
-      const z = this.grassZone(e);
-      const lit = this.grassActive();
-      if (z.r) {
-        if (lit) {
-          drawGlow(ctx, z.cx, z.cy, z.r + 12, "#3fb950");
-          ctx.fillStyle = "rgba(35,134,54,0.55)";
-          ctx.beginPath();
-          ctx.arc(z.cx, z.cy, z.r, 0, Math.PI * 2);
-          ctx.fill();
-        } else {
-          ctx.strokeStyle = "rgba(63,185,80,0.35)";
-          ctx.setLineDash([5, 5]);
-          ctx.beginPath();
-          ctx.arc(z.cx, z.cy, z.r, 0, Math.PI * 2);
-          ctx.stroke();
-          ctx.setLineDash([]);
-        }
-      } else if (lit) {
-        ctx.fillStyle = "#238636";
-        ctx.fillRect(z.x, z.y, z.w, z.h);
-        drawGlow(ctx, z.x + z.w * 0.5, z.y + z.h * 0.5, 70 + Math.sin(this.pulse) * 20, "#3fb950");
-      } else {
-        ctx.fillStyle = "rgba(35,134,54,0.12)";
-        ctx.fillRect(z.x, z.y, z.w, z.h);
-      }
-      ctx.fillStyle = lit ? "#aff0b8" : "#8b949e";
-      ctx.font = `bold ${e.mobile ? 12 : 11}px system-ui`;
-      ctx.fillText(lit ? "GRASS" : "grass offline", 14, ht - 14);
-
-      this.decoys.forEach(d => {
-        const a = 1 - d.t / d.life;
-        ctx.globalAlpha = a * 0.85;
-        drawGlow(ctx, d.x, d.y, 36, "#3fb950");
-        ctx.fillStyle = "#238636";
+      if (this.state === "strike") {
+        const strikePulse = 0.65 + Math.sin(this.pulse * 6) * 0.35;
+        drawGlow(ctx, bx, by, bossR * (1.6 + strikePulse * 0.4), "#00d4aa");
+        ctx.strokeStyle = "#00d4aa";
+        ctx.lineWidth = 3;
         ctx.beginPath();
-        ctx.arc(d.x, d.y, 22, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.globalAlpha = 1;
-      });
-
-      if (this.hook) {
-        const cx = w * 0.62;
-        const cy = ht * 0.34;
-        ctx.strokeStyle = "rgba(248,113,113,0.5)";
-        ctx.setLineDash([5, 5]);
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.moveTo(this.player.x, this.player.y);
-        ctx.lineTo(cx, cy);
+        ctx.arc(bx, by, bossR + 14 + strikePulse * 10, 0, Math.PI * 2);
         ctx.stroke();
-        ctx.setLineDash([]);
-        ctx.fillStyle = "#f85149";
-        ctx.font = `bold ${e.mobile ? 10 : 9}px system-ui`;
-        ctx.textAlign = "center";
-        ctx.fillText(this.hook.label, cx, cy);
-        ctx.textAlign = "left";
+      } else {
+        drawGlow(ctx, bx, by, bossR * 1.1, enraged ? "#f8514966" : "#00d4aa44");
       }
 
-      this.notifs.forEach(n => {
-        drawCard(ctx, n.x - 62, n.y - 14, 124, 28, 8, "#f8514966", "#f85149");
-        ctx.fillStyle = "#fff";
-        ctx.font = `bold ${e.mobile ? 9 : 8}px system-ui`;
-        ctx.textAlign = "center";
-        ctx.fillText(n.text, n.x, n.y + 3);
-      });
-      this.missiles.forEach(m => {
-        drawGlow(ctx, m.x, m.y, 26, "#f85149");
-        drawCard(ctx, m.x - 48, m.y - 12, 96, 24, 6, "#f8514966", "#f85149");
-        ctx.fillStyle = "#fff";
-        ctx.font = "8px system-ui";
-        ctx.textAlign = "center";
-        ctx.fillText(m.text, m.x, m.y + 3);
-      });
-      ctx.textAlign = "left";
+      drawLogo(ctx, e, "hyperliquid.png", bx, by, e.mobile ? 96 : 82);
 
-      const inG = this.inGrass(e);
-      drawGlow(ctx, this.player.x, this.player.y, inG && lit ? 36 : 26, inG && lit ? "#3fb950" : "#2e5cff");
-      ctx.fillStyle = inG && lit ? "#3fb950" : "#2e5cff";
-      ctx.beginPath();
-      ctx.arc(this.player.x, this.player.y, this.pr, 0, Math.PI * 2);
-      ctx.fill();
+      for (let i = 0; i < 6; i++) {
+        const ang = -Math.PI / 2 + (i / 6) * Math.PI * 2;
+        const px = bx + Math.cos(ang) * (bossR + 22);
+        const py = by + Math.sin(ang) * (bossR + 22);
+        const alive = i < this.bossHp;
+        ctx.fillStyle = alive ? "#00d4aa" : "#21262d";
+        ctx.beginPath();
+        ctx.arc(px, py, e.mobile ? 6 : 5, 0, Math.PI * 2);
+        ctx.fill();
+      }
 
-      const phaseLabel = ["", "BREACH", "FLICKER", "LOG OFF"][this.phase];
-      drawCard(ctx, w / 2 - 72, 10, 144, 26, 8, "#21262dcc", "#3fb95055");
-      ctx.fillStyle = "#3fb950";
+      ctx.fillStyle = enraged ? "#f85149" : "#8b949e";
       ctx.font = `bold ${e.mobile ? 10 : 9}px system-ui`;
       ctx.textAlign = "center";
-      ctx.fillText(`PHASE ${this.phase} · ${phaseLabel}`, w / 2, 27);
+      ctx.fillText(enraged ? "ENRAGED Â· HIP-3 MODE" : "LIQUIDATION ENGINE", bx, by - bossR - 18);
       ctx.textAlign = "left";
 
-      ctx.fillStyle = "#21262d";
-      ctx.fillRect(14, 14, 80, 8);
-      ctx.fillStyle = this.dopamine > 70 ? "#f85149" : "#d29922";
-      ctx.fillRect(14, 14, 80 * (this.dopamine / this.maxDopamine), 8);
-      ctx.fillStyle = "#8b949e";
-      ctx.font = "9px system-ui";
-      ctx.fillText("DOPAMINE", 14, 32);
+      const laneY = ht * this.laneY;
+      const laneH = e.mobile ? 52 : 44;
+      drawCard(ctx, 20, laneY - laneH / 2, w - 40, laneH, 14, "#0a121088", "#00d4aa22");
 
-      if (this.phase >= 3) {
-        const rw = 60;
-        ctx.fillStyle = "#21262d";
-        ctx.fillRect(w / 2 - rw / 2, ht - 18, rw, 6);
-        ctx.fillStyle = this.resistT < 0.35 ? "#f85149" : "#8b5cf6";
-        ctx.fillRect(w / 2 - rw / 2, ht - 18, rw * (this.resistT / 1.05), 6);
+      if (this.state === "telegraph") {
+        const sx = this.safeX * w;
+        const sw = this.safeW * w;
+        const pulse = 0.5 + Math.sin(this.pulse * 5) * 0.5;
+        drawGlow(ctx, sx, laneY, sw * 0.45, `rgba(0,212,170,${0.25 + pulse * 0.2})`);
+        ctx.fillStyle = `rgba(0,212,170,${0.18 + pulse * 0.12})`;
+        ctx.beginPath();
+        ctx.roundRect(sx - sw / 2, laneY - laneH / 2 + 4, sw, laneH - 8, 10);
+        ctx.fill();
+        ctx.strokeStyle = "#00d4aa";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+        const left = Math.max(0, this.telegraphTime() - this.stateT);
+        ctx.fillStyle = "#00d4aa";
+        ctx.font = `bold ${e.mobile ? 13 : 11}px system-ui`;
+        ctx.textAlign = "center";
+        ctx.fillText(`FLASH IN ${left.toFixed(1)}s`, w / 2, laneY - laneH / 2 - 10);
       }
 
-      e.drawProgress(Math.floor(this.hold * 10), this.holdNeed * 10, w, ht);
+      const px = this.playerX * w;
+      drawGlow(ctx, px, laneY, 32, this.inSafe() && this.state === "telegraph" ? "#00d4aa" : "#00d4aa88");
+      drawLogo(ctx, e, "hyperliquid-mark.svg", px, laneY, e.mobile ? 36 : 30);
+
+      if (this.flash > 0) {
+        ctx.fillStyle = `rgba(248,81,73,${this.flash * 0.42})`;
+        ctx.fillRect(0, 0, w, ht);
+        if (!this.inSafe()) {
+          ctx.strokeStyle = "#f85149";
+          ctx.lineWidth = 4;
+          ctx.beginPath();
+          ctx.moveTo(px, by + bossR);
+          ctx.lineTo(px, laneY - laneH / 2);
+          ctx.stroke();
+        }
+      }
+
+      if (this.state === "strike") {
+        ctx.fillStyle = "#00d4aa";
+        ctx.font = `bold ${e.mobile ? 16 : 14}px system-ui`;
+        ctx.textAlign = "center";
+        ctx.fillText("STRIKE NOW!", bx, by + bossR + 36);
+      }
+
+      ctx.textAlign = "left";
+      ctx.fillStyle = "#8b949e";
+      ctx.font = "11px system-ui";
+      ctx.fillText(`Hits ${this.hits}/${this.maxHits}`, 16, ht - 14);
+
+      e.drawProgress(6 - this.bossHp, 6, w, ht);
     },
   },
 ];
